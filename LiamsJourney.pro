@@ -11,10 +11,15 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = LiamsJourney
 TEMPLATE = app
 
+INCLUDEPATH += "C:/Program Files/Immersion Corporation/IFC23/inc"
+
+LIBS +="C:/Program Files/Immersion Corporation/IFC23/lib/IFC23.lib"
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    gestionhaptique.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    gestionhaptique.h
 
 FORMS    += mainwindow.ui
