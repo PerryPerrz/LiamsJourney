@@ -9,6 +9,15 @@ GestionHaptique::GestionHaptique(MainWindow *fen): mFenetre(fen)
         delete mSouris;
         mSouris = NULL;
        qApp->quit();
-        qDebug()<<"===>Erreur chargemet souris ! :(";
+        qDebug()<<"===>Erreur chargement souris ! :(";
+    }
+
+    mProject = new CImmProject();
+    if(mProject->OpenFile("vibreur.ifr", mSouris))
+    {
+    }
+    else {
+        qDebug()<<"===> Erreur chargement projet IFR avec code ! :("
+                    <<CIFCErrors::GetLastErrorCode();
     }
 }
