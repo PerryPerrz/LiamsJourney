@@ -21,5 +21,6 @@ private:
     MainWindow *mFenetre;
 
     CImmProject *mProject;
+    CImmCompoundEffect *mVibreur;
 };
 #endif

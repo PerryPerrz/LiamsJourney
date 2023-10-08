@@ -13,10 +13,20 @@ GestionHaptique::GestionHaptique(MainWindow *fen): mFenetre(fen)
     }
 
     mProject = new CImmProject();
-    if(mProject->OpenFile("vibreur.ifr", mSouris))
+    if(mProject->OpenFile("E:\\LiamsJourney\\ressources\\vibreur.ifr", mSouris))
     {
-    }
-    else {
+        qDebug() << "===> Chargement réussi ! :)";
+
+        mVibreur = mProject->CreateEffect("Periodic", mSouris, IMM_PARAM_NODOWNLOAD);
+        if (!mVibreur) {
+            qDebug()<<"===>Erreur chargement eau ";
+            delete mVibreur;
+            mVibreur = NULL;
+        } else {
+            qDebug()<<"===>Chargement vibreur réussi ";
+            mVibreur->Start();
+        }
+    } else {
         qDebug()<<"===> Erreur chargement projet IFR avec code ! :("
                     <<CIFCErrors::GetLastErrorCode();
     }
