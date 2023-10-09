@@ -1,5 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "pageone.h"
+
+#include <QPushButton>
+#include <QStackedWidget>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,6 +19,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Turn on fullscreen
     setWindowState(Qt::WindowFullScreen);
+
+    //Add play button
+    QPushButton *playButton = new QPushButton("Jouer", this);
+    connect(playButton, &QPushButton::clicked, this, &MainWindow::onPlayButtonClicked);
 }
 
 /**
@@ -25,6 +33,14 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Escape) {
         close();
     }
+}
+
+/**
+ * @brief Set the first Page
+ */
+void MainWindow::onPlayButtonClicked() {
+    PageOne *pageOne = new PageOne(this);
+    setCentralWidget(pageOne);
 }
 
 MainWindow::~MainWindow()

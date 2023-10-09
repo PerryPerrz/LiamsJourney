@@ -16,11 +16,16 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     void keyReleaseEvent(QKeyEvent *event);
+
     ~MainWindow();
 
 private:
     Ui::MainWindow *ui;
     GestionHaptique *mHaptique;
+    QWidget *currentPage;
+
+private slots:
+    void onPlayButtonClicked();
 };
 
 #endif // MAINWINDOW_H
