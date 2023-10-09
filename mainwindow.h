@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <gestionhaptique.h>
+#include "haptichandler.h"
 #include <QKeyEvent>
 
 namespace Ui {
@@ -16,12 +16,13 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     void keyReleaseEvent(QKeyEvent *event);
+    HapticHandler* getGestionHaptique() const;
 
     ~MainWindow();
 
 private:
     Ui::MainWindow *ui;
-    GestionHaptique *mHaptique;
+    HapticHandler *mHaptique;
     QWidget *currentPage;
 
 public slots:

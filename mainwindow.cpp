@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->mHaptique = new GestionHaptique(this);
+    this->mHaptique = new HapticHandler(this);
 
     currentPage = new HomePage(this);
     setCentralWidget(currentPage);
@@ -41,8 +41,17 @@ void MainWindow::onPlayButtonClicked() {
     setCentralWidget(currentPage);
 }
 
+/**
+  * @brief MainWindow::getGestionHaptique
+  * @return the haptic handler
+  */
+ HapticHandler* MainWindow::getGestionHaptique() const {
+    return mHaptique;
+ }
+
 MainWindow::~MainWindow()
 {
     delete currentPage;
+    delete mHaptique;
     delete ui;
 }

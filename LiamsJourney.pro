@@ -17,14 +17,14 @@ LIBS +="C:/Program Files/Immersion Corporation/IFC23/lib/IFC23.lib"
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    gestionhaptique.cpp \
     pageone.cpp \
-    homepage.cpp
+    homepage.cpp \
+    haptichandler.cpp
 
 HEADERS  += mainwindow.h \
-    gestionhaptique.h \
     pageone.h \
-    homepage.h
+    homepage.h \
+    haptichandler.h
 
 FORMS    += mainwindow.ui \
     pageone.ui \
