@@ -1,9 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "pageone.h"
+#include "homepage.h"
 
 #include <QPushButton>
 #include <QStackedWidget>
+#include <QSizePolicy>
+#include <QVBoxLayout>
+#include <QLabel>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -12,17 +16,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     this->mHaptique = new GestionHaptique(this);
 
-    // Set the background image
-    QPalette palette;
-    palette.setBrush(QPalette::Background, QBrush(QImage("E:\\LiamsJourney\\ressources\\images\\home_image.png")));
-    setPalette(palette);
+    currentPage = new HomePage(this);
+    setCentralWidget(currentPage);
 
     // Turn on fullscreen
     setWindowState(Qt::WindowFullScreen);
-
-    //Add play button
-    QPushButton *playButton = new QPushButton("Jouer", this);
-    connect(playButton, &QPushButton::clicked, this, &MainWindow::onPlayButtonClicked);
 }
 
 /**
@@ -39,11 +37,12 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event) {
  * @brief Set the first Page
  */
 void MainWindow::onPlayButtonClicked() {
-    PageOne *pageOne = new PageOne(this);
-    setCentralWidget(pageOne);
+     currentPage = new PageOne(this);
+    setCentralWidget(currentPage);
 }
 
 MainWindow::~MainWindow()
 {
+    delete currentPage;
     delete ui;
 }

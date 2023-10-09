@@ -24,7 +24,7 @@ private:
     GestionHaptique *mHaptique;
     QWidget *currentPage;
 
-private slots:
+public slots:
     void onPlayButtonClicked();
 };
 
