@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <gestionhaptique.h>
+#include <QKeyEvent>
 
 namespace Ui {
 class MainWindow;
@@ -14,6 +15,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    void keyReleaseEvent(QKeyEvent *event);
     ~MainWindow();
 
 private:

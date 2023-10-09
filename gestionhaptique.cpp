@@ -13,7 +13,7 @@ GestionHaptique::GestionHaptique(MainWindow *fen): mFenetre(fen)
     }
 
     mProject = new CImmProject();
-    if(mProject->OpenFile("E:\\LiamsJourney\\ressources\\vibreur.ifr", mSouris))
+    if(mProject->OpenFile("E:\\LiamsJourney\\ressources\\effects\\vibreur.ifr", mSouris))
     {
         qDebug() << "===> Chargement réussi ! :)";
 
@@ -24,7 +24,7 @@ GestionHaptique::GestionHaptique(MainWindow *fen): mFenetre(fen)
             mVibreur = NULL;
         } else {
             qDebug()<<"===>Chargement vibreur réussi ";
-            mVibreur->Start();
+            //mVibreur->Start();
         }
     } else {
         qDebug()<<"===> Erreur chargement projet IFR avec code ! :("
