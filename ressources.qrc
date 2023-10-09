@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/home_image.png</file>
+        <file>effects/vibreur.ifr</file>
+    </qresource>
+</RCC>

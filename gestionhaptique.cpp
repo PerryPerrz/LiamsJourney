@@ -1,4 +1,5 @@
 #include <mainwindow.h>
+#include <QResource>
 
 GestionHaptique::GestionHaptique(MainWindow *fen): mFenetre(fen)
 {
@@ -13,7 +14,7 @@ GestionHaptique::GestionHaptique(MainWindow *fen): mFenetre(fen)
     }
 
     mProject = new CImmProject();
-    if(mProject->OpenFile("E:\\LiamsJourney\\ressources\\effects\\vibreur.ifr", mSouris))
+    if(mProject->OpenFile("E:\\LiamsJourney\\effects\\vibreur.ifr", mSouris))
     {
         qDebug() << "===> Chargement réussi ! :)";
 

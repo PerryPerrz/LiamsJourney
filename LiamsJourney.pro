@@ -32,13 +32,12 @@ FORMS    += mainwindow.ui \
 
 DISTFILES += \
     README.md \
-    ressources/effects/vibreur.ifr \
     tutoQT/Dessiner.pdf \
     tutoQT/DémonstrationQt.pdf \
     tutoQT/Evénements-QEvent.pdf \
     tutoQT/IntroductionQt.pdf \
     tutoQT/Objets-SignalSlot.pdf \
     tutoQT/WidgetsEtAgencements.pdf \
-    ressources/images/home_image.jpg
 
 RESOURCES += \
+    ressources.qrc
