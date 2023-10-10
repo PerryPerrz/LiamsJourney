@@ -2,5 +2,8 @@
     <qresource prefix="/">
         <file>images/home_image.png</file>
         <file>effects/vibreur.ifr</file>
+        <file>images/clicked_play_button.png</file>
+        <file>images/hover_play_button.png</file>
+        <file>images/idle_play_button.png</file>
     </qresource>
 </RCC>

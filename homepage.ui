@@ -39,26 +39,41 @@ margin: 0;</string>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <widget class="QPushButton" name="playButton">
+     <widget class="ClickableLabel" name="playButton">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>360</y>
-        <width>151</width>
-        <height>41</height>
+        <x>340</x>
+        <y>530</y>
+        <width>340</width>
+        <height>90</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">#playButton {
+border-radius: 30%;
+background-image: url(:/images/idle_play_button.png);
+}
+
+#playButton:hover {
+background-image: url(:/images/hover_play_button.png);
+}
+</string>
       </property>
       <property name="text">
-       <string>Jouer</string>
+       <string/>
       </property>
      </widget>
     </widget>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ClickableLabel</class>
+   <extends>QLabel</extends>
+   <header>clickablelabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

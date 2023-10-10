@@ -1,8 +1,7 @@
 #include "homepage.h"
 #include "ui_homepage.h"
 #include "mainwindow.h"
-
-#include <QPushButton>
+#include "clickablelabel.h"
 
 HomePage::HomePage(QWidget *parent) :
     QWidget(parent),
@@ -11,8 +10,8 @@ HomePage::HomePage(QWidget *parent) :
     ui->setupUi(this);
 
     // Signal defined for the play button
-    QPushButton *playButton = this->findChild<QPushButton*>("playButton");
-    connect(playButton, &QPushButton::clicked, dynamic_cast<MainWindow*>(this->parent()), &MainWindow::onPlayButtonClicked);
+    ClickableLabel *playButton = this->findChild<ClickableLabel*>("playButton");
+    connect(playButton, &ClickableLabel::clicked, dynamic_cast<MainWindow*>(this->parent()), &MainWindow::onPlayButtonClicked);
 }
 
 HomePage::~HomePage()
