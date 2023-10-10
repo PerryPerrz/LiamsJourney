@@ -7,5 +7,6 @@
         <file>images/idle_play_button.png</file>
         <file>images/idle_liam.png</file>
         <file>images/page_one.png</file>
+        <file>images/main_cursor.png</file>
     </qresource>
 </RCC>
