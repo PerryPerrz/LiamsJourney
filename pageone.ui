@@ -59,6 +59,16 @@
         <height>51</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+background-color: blue;
+border-radius: 10px;
+}
+
+QPushButton:hover {
+background-color: green;
+}</string>
+      </property>
       <property name="text">
        <string>Start</string>
       </property>
