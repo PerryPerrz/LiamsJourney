@@ -16,6 +16,7 @@ class HapticHandler : public QObject
     Q_OBJECT
 public:
     explicit HapticHandler(MainWindow *fen, QObject *parent = 0);
+    ~HapticHandler();
     CImmProject *GetProject() const;
 
 public slots:

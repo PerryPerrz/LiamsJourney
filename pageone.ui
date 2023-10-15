@@ -28,6 +28,9 @@
   <property name="styleSheet">
    <string notr="true">background-image: url(:/images/page_one.png);</string>
   </property>
+  <property name="moveable" stdset="0">
+   <bool>true</bool>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QWidget" name="widget" native="true">
@@ -37,7 +40,7 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <widget class="QLabel" name="liam">
+     <widget class="ClickableLabel" name="liam">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -52,11 +55,21 @@
       <property name="text">
        <string/>
       </property>
+      <property name="moveable" stdset="0">
+       <bool>false</bool>
+      </property>
      </widget>
     </widget>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ClickableLabel</class>
+   <extends>QLabel</extends>
+   <header>clickablelabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
