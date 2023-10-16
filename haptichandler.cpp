@@ -45,3 +45,12 @@ HapticHandler::HapticHandler(MainWindow *fen, QObject *parent) : QObject(parent)
  void HapticHandler::onStopVibrator() {
       mVibreur->Stop();
   }
+
+ HapticHandler::~HapticHandler() {
+     if (mProject) {
+         delete mProject;
+     }
+     if (mSouris) {
+         delete mSouris;
+     }
+ }

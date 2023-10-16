@@ -2,6 +2,7 @@
 #include "ui_pageone.h"
 #include "haptichandler.h"
 #include "mainwindow.h"
+#include "clickablelabel.h"
 
 #include <QPushButton>
 
@@ -21,6 +22,10 @@ PageOne::PageOne(QWidget *parent) :
     connect(stopButton, &QPushButton::clicked,
             dynamic_cast<MainWindow*>(this->parent())->getGestionHaptique(),
             &HapticHandler::onStopVibrator);*/
+
+    //Define liam moveable
+    ClickableLabel *liam = this->findChild<ClickableLabel*>("liam");
+    liam->setMoveable(true);
 }
 
 PageOne::~PageOne()
