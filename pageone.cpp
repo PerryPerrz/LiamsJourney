@@ -45,7 +45,7 @@ PageOne::~PageOne()
 }
 
 /**
- * @brief PageOne::onExit
+ * @brief PageOne::onCollide
  */
 void PageOne::onCollide(){
     //Getting all the objects that we're going to test.
@@ -54,9 +54,13 @@ void PageOne::onCollide(){
     ClickableLabel *liam = this->findChild<ClickableLabel*>("liam");
 
     Utils utils = Utils();
-    if (utils.areLabelsColliding(road,liam) && !this->isWalking) {
+    bool isLiamAndRoadColliding = utils.areLabelsColliding(road,liam);
+    if ( isLiamAndRoadColliding && !this->isWalking) {
         dynamic_cast<MainWindow*>(this->parent()->parent())->getGestionHaptique()->startVibrator();
         this->isWalking = true;
+    } else if(this->isWalking && !isLiamAndRoadColliding){
+        dynamic_cast<MainWindow*>(this->parent()->parent())->getGestionHaptique()->stopVibrator();
+        this->isWalking = false;
     }
 
     if (utils.areLabelsColliding(exit, liam)) {
