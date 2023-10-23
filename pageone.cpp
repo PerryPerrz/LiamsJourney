@@ -27,10 +27,16 @@ PageOne::PageOne(QWidget *parent) :
     //Define liam moveable
     ClickableLabel *liam = this->findChild<ClickableLabel*>("liam");
     liam->setMoveable(true);
-    connect(liam, &ClickableLabel::moved, this, &PageOne::onExit);
+    connect(liam, &ClickableLabel::moved, this, &PageOne::onCollide);
+
+    QLabel* road = this->findChild<QLabel*>("road");
+    road->setVisible(false);
 
     QLabel* exit = this->findChild<QLabel*>("exit");
     exit->setVisible(false);
+
+     this->isWalking = false;
+    connect(liam, &ClickableLabel::stopDragAndDrop, this, &PageOne::onStopDragAndDrop);
 }
 
 PageOne::~PageOne()
@@ -41,13 +47,26 @@ PageOne::~PageOne()
 /**
  * @brief PageOne::onExit
  */
-void PageOne::onExit(){
-    //get the size of the parent window
+void PageOne::onCollide(){
+    //Getting all the objects that we're going to test.
     QLabel *exit = this->findChild<QLabel*>("exit");
+    QLabel *road = this->findChild<QLabel*>("road");
     ClickableLabel *liam = this->findChild<ClickableLabel*>("liam");
 
     Utils utils = Utils();
+    if (utils.areLabelsColliding(road,liam) && !this->isWalking) {
+        dynamic_cast<MainWindow*>(this->parent()->parent())->getGestionHaptique()->startVibrator();
+        this->isWalking = true;
+    }
+
     if (utils.areLabelsColliding(exit, liam)) {
+         dynamic_cast<MainWindow*>(this->parent()->parent())->getGestionHaptique()->stopVibrator();
         dynamic_cast<MainWindow*>(this->parent()->parent())->setCurrentPage(2);
     }
 }
+
+void PageOne::onStopDragAndDrop(){
+    this->isWalking = false;
+    dynamic_cast<MainWindow*>(this->parent()->parent())->getGestionHaptique()->stopVibrator();
+}
+

@@ -19,6 +19,7 @@ public:
 signals:
     void clicked();  // Signal emit when label is clicked with left button
     void moved(); // Signal emit when label is moved
+    void stopDragAndDrop();
 
 protected:
     void mouseReleaseEvent(QMouseEvent *event) override;

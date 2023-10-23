@@ -33,6 +33,7 @@ void ClickableLabel::mouseReleaseEvent(QMouseEvent *event)
         emit clicked();
         if (m_moveable) {
             doDragAndDrop = false;
+            emit(stopDragAndDrop());
         }
     }
     QLabel::mouseReleaseEvent(event);

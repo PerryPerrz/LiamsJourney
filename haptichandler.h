@@ -18,10 +18,10 @@ public:
     explicit HapticHandler(MainWindow *fen, QObject *parent = 0);
     ~HapticHandler();
     CImmProject *GetProject() const;
+    void startVibrator();
+    void stopVibrator();
 
 public slots:
-    void onStartVibrator();
-    void onStopVibrator();
 
 private:
     CImmMouse *mSouris;

@@ -78,6 +78,19 @@
        <string/>
       </property>
      </widget>
+     <widget class="QLabel" name="road">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>500</y>
+        <width>1051</width>
+        <height>271</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
    </item>
   </layout>

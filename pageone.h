@@ -16,10 +16,15 @@ public:
     ~PageOne();
 
 public slots :
-    void onExit();
+    void onCollide();
+    void onStopDragAndDrop();
 
 private:
     Ui::PageOne *ui;
+    bool isWalking;
+
+signals:
+    void walk();
 };
 
 #endif // PAGEONE_H

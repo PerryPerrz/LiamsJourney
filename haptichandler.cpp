@@ -35,14 +35,14 @@ HapticHandler::HapticHandler(MainWindow *fen, QObject *parent) : QObject(parent)
 /**
   * @brief Start the vibratons of the haptic mouse
   */
- void HapticHandler::onStartVibrator() {
+ void HapticHandler::startVibrator() {
     mVibreur->Start();
  }
 
  /**
   * @brief Stop the vibrations
   */
- void HapticHandler::onStopVibrator() {
+ void HapticHandler::stopVibrator() {
       mVibreur->Stop();
   }
 
