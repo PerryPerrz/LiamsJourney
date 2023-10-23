@@ -1,13 +1,15 @@
 #include "collisionsmanager.h"
 
+#include <QRect>
+
 CollisionsManager::CollisionsManager(QObject *parent) : QObject(parent)
 {
 
 }
 
-bool areWidgetsColliding(QWidget *widget1, QWidget *widget2) {
-    QRect rect1 = widget1->geometry();
-    QRect rect2 = widget2->geometry();
+void CollisionsManager::areLabelsColliding(QLabel *label1, QLabel *label2) {
+    QRect rect1 = label1->geometry();
+    QRect rect2 = label2->geometry();
 
     // Utilisez les coordonnées des coins des rectangles pour vérifier la collision
     int left1 = rect1.left();
@@ -21,6 +23,7 @@ bool areWidgetsColliding(QWidget *widget1, QWidget *widget2) {
     int bottom2 = rect2.bottom();
 
     // Vérifiez si les rectangles se chevauchent
-    return !(right1 < left2 || left1 > right2 || bottom1 < top2 || top1 > bottom2);
+    // Il faut envoyé un signal
+   // return !(right1 < left2 || left1 > right2 || bottom1 < top2 || top1 > bottom2);
 }
 
