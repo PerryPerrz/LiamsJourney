@@ -11,7 +11,7 @@ PageTwo::PageTwo(QWidget *parent) :
 
     //Define liam moveable
     ClickableLabel *liam = this->findChild<ClickableLabel*>("liam");
-    liam->setMoveable(true);
+    liam->setMoveable(false);
 }
 
 PageTwo::~PageTwo()

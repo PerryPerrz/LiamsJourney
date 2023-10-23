@@ -34,10 +34,10 @@
      <widget class="ClickableLabel" name="liam">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>270</width>
-        <height>278</height>
+        <x>20</x>
+        <y>380</y>
+        <width>260</width>
+        <height>260</height>
        </rect>
       </property>
       <property name="styleSheet">

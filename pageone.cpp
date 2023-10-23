@@ -64,6 +64,5 @@ void PageOne::onExit(){
     // Il faut envoyé un signal
    if ( !(right1 < left2 || left1 > right2 || bottom1 < top2 || top1 > bottom2)) {
         dynamic_cast<MainWindow*>(this->parent()->parent())->setCurrentPage(2);
-       qDebug() << "Collision !";
    }
 }
