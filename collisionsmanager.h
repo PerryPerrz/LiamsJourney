@@ -10,10 +10,14 @@ class CollisionsManager : public QObject
 public:
     explicit CollisionsManager(QObject *parent = 0);
     void areLabelsColliding(QLabel *label1, QLabel *label2);
+    void addObject(QLabel *label);
 
 signals:
+    void collision();
 
 public slots:
+
+private:
 };
 
 #endif // COLLISIONSMANAGER_H

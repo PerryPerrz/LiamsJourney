@@ -1,10 +1,10 @@
 #include "collisionsmanager.h"
 
 #include <QRect>
+#include <QDebug>
 
 CollisionsManager::CollisionsManager(QObject *parent) : QObject(parent)
 {
-
 }
 
 void CollisionsManager::areLabelsColliding(QLabel *label1, QLabel *label2) {
@@ -24,6 +24,9 @@ void CollisionsManager::areLabelsColliding(QLabel *label1, QLabel *label2) {
 
     // Vérifiez si les rectangles se chevauchent
     // Il faut envoyé un signal
-   // return !(right1 < left2 || left1 > right2 || bottom1 < top2 || top1 > bottom2);
+   if ( !(right1 < left2 || left1 > right2 || bottom1 < top2 || top1 > bottom2)) {
+       emit(collision());
+       qDebug() << "Collision !";
+   }
 }
 
