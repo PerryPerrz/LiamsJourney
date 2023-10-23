@@ -20,17 +20,22 @@ SOURCES += main.cpp\
     pageone.cpp \
     homepage.cpp \
     haptichandler.cpp \
-    clickablelabel.cpp
+    clickablelabel.cpp \
+    pagetwo.cpp \
+    collisionsmanager.cpp
 
 HEADERS  += mainwindow.h \
     pageone.h \
     homepage.h \
     haptichandler.h \
-    clickablelabel.h
+    clickablelabel.h \
+    pagetwo.h \
+    collisionsmanager.h
 
 FORMS    += mainwindow.ui \
     pageone.ui \
-    homepage.ui
+    homepage.ui \
+    pagetwo.ui
 
 DISTFILES += \
     README.md \

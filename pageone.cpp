@@ -26,6 +26,9 @@ PageOne::PageOne(QWidget *parent) :
     //Define liam moveable
     ClickableLabel *liam = this->findChild<ClickableLabel*>("liam");
     liam->setMoveable(true);
+
+    QLabel* exit = this->findChild<QLabel*>("exit");
+    exit->setVisible(false);
 }
 
 PageOne::~PageOne()

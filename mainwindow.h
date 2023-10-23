@@ -1,9 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
 #include "haptichandler.h"
+
+#include <QMainWindow>
 #include <QKeyEvent>
+#include <QStackedWidget>
 
 namespace Ui {
 class MainWindow;
@@ -23,7 +25,7 @@ public:
 private:
     Ui::MainWindow *ui;
     HapticHandler *mHaptique;
-    QWidget *currentPage;
+    QStackedWidget *currentPage;
 
 public slots:
     void onPlayButtonClicked();

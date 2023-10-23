@@ -8,5 +8,17 @@
         <file>images/idle_liam.png</file>
         <file>images/page_one.png</file>
         <file>images/main_cursor.png</file>
+        <file>images/end.png</file>
+        <file>images/liam_head.png</file>
+        <file>images/page_five.png</file>
+        <file>images/page_four.png</file>
+        <file>images/page_seven.png</file>
+        <file>images/page_six.png</file>
+        <file>images/page_three.png</file>
+        <file>images/page_three_bis.png</file>
+        <file>images/page_two.png</file>
+        <file>images/shot_one.png</file>
+        <file>images/shot_three.png</file>
+        <file>images/shot_two.png</file>
     </qresource>
 </RCC>

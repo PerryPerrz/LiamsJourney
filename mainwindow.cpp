@@ -16,7 +16,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     this->mHaptique = new HapticHandler(this);
 
-    currentPage = new HomePage(this);
+    currentPage = new QStackedWidget();
+    currentPage->insertWidget(0, new HomePage(this));
+    currentPage->insertWidget(1, new PageOne(this));
     setCentralWidget(currentPage);
 
     // Turn on fullscreen
@@ -37,8 +39,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event) {
  * @brief Set the first Page
  */
 void MainWindow::onPlayButtonClicked() {
-     currentPage = new PageOne(this);
-    setCentralWidget(currentPage);
+    currentPage->setCurrentIndex(1);
 }
 
 /**
