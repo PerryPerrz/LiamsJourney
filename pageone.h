@@ -15,6 +15,9 @@ public:
     explicit PageOne(QWidget *parent = 0);
     ~PageOne();
 
+public slots :
+    void onExit();
+
 private:
     Ui::PageOne *ui;
 };

@@ -72,4 +72,7 @@ void ClickableLabel::mousePressEvent(QMouseEvent *event) {
 void ClickableLabel::dragAndDrop(QMouseEvent *event) {
     QPoint mousePos = this->mapToGlobal(event->pos());
     this->move(mousePos - firstPosOnDragAndDrop);
+
+    //Emit the objectMoved signal with the new position
+    emit moved();
 }

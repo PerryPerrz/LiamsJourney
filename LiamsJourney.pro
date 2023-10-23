@@ -21,16 +21,14 @@ SOURCES += main.cpp\
     homepage.cpp \
     haptichandler.cpp \
     clickablelabel.cpp \
-    pagetwo.cpp \
-    collisionsmanager.cpp
+    pagetwo.cpp
 
 HEADERS  += mainwindow.h \
     pageone.h \
     homepage.h \
     haptichandler.h \
     clickablelabel.h \
-    pagetwo.h \
-    collisionsmanager.h
+    pagetwo.h
 
 FORMS    += mainwindow.ui \
     pageone.ui \

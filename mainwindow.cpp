@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "pageone.h"
+#include "pagetwo.h"
 #include "homepage.h"
 
 #include <QPushButton>
@@ -19,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
     currentPage = new QStackedWidget();
     currentPage->insertWidget(0, new HomePage(this));
     currentPage->insertWidget(1, new PageOne(this));
+    currentPage->insertWidget(2,new PageTwo(this));
     setCentralWidget(currentPage);
 
     // Turn on fullscreen
@@ -48,6 +50,10 @@ void MainWindow::onPlayButtonClicked() {
   */
  HapticHandler* MainWindow::getGestionHaptique() const {
     return mHaptique;
+ }
+
+ void MainWindow::setCurrentPage(int pageNumber){
+    this->currentPage->setCurrentIndex(pageNumber);
  }
 
 MainWindow::~MainWindow()

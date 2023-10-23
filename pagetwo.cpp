@@ -8,6 +8,10 @@ PageTwo::PageTwo(QWidget *parent) :
     ui(new Ui::PageTwo)
 {
     ui->setupUi(this);
+
+    //Define liam moveable
+    ClickableLabel *liam = this->findChild<ClickableLabel*>("liam");
+    liam->setMoveable(true);
 }
 
 PageTwo::~PageTwo()

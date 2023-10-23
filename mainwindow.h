@@ -29,6 +29,7 @@ private:
 
 public slots:
     void onPlayButtonClicked();
+    void setCurrentPage(int pageNumber);
 };
 
 #endif // MAINWINDOW_H
