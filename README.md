@@ -34,9 +34,10 @@ Fin : Enfin, il ramena sa précieuse récolte au village. Les habitants furent e
 
 <H3>Effets haptiques</H3>
 
-- Scène 1 : déplacemetn sur le sable/gravier
-- Scène 2: vibration vers la ruche
-- Scène 3: Tirer la flèche pour libérer la ruche (tirer sur le frelon qui bloque l'entrée de la ruche).
-- Scène 4:  Dans la ruche, il fait sombre. L'utilisateur doit allumer son allumette en gratant sur la boite.
-- Scène 6: Les murs du labyrinthe/tunnel sont collants. Le curseur de l'utilisateur a des difficultés pour se décoller du mur.
-- Scène 7 : Activer l'effet miel remué .
+- Scène 1 : Déplacement de Liam sur le chemin de gravier.
+- Scène 2 : Vibration des abeilles lorsque Liam se déplace vers la ruche.
+- Scène 3 : Liam tire une flèche sur le frelon qui bloque l'entrée de la ruche pour la libérer.
+- Scène 4 : Il fait sombre à l'intérieur de la ruche. L'utilisateur doit allumer son allumette en grattant la boite.
+- Scène 6 : Les murs du labyrinthe/tunnel sont collants. Le curseur de l'utilisateur a des difficultés pour se décoller du mur.
+- Scène 7 : Activer l'effet miel remué.
+- Effet BONUS : Gratter pour récupèrer le miel entre scène 6 et scène 7.
