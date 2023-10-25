@@ -3,6 +3,7 @@
 #include "pageone.h"
 #include "pagetwo.h"
 #include "homepage.h"
+#include "pagethree.h"
 
 #include <QPushButton>
 #include <QStackedWidget>
@@ -20,7 +21,8 @@ MainWindow::MainWindow(QWidget *parent) :
     currentPage = new QStackedWidget();
     currentPage->insertWidget(0, new HomePage(this));
     currentPage->insertWidget(1, new PageOne(this));
-    currentPage->insertWidget(2,new PageTwo(this));
+    currentPage->insertWidget(2, new PageTwo(this));
+    currentPage->insertWidget(3, new PageThree(this));
     setCentralWidget(currentPage);
 
     // Turn on fullscreen
@@ -40,8 +42,9 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event) {
 /**
  * @brief Set the first Page
  */
-void MainWindow::onPlayButtonClicked() {
-    currentPage->setCurrentIndex(1);
+void MainWindow::nextPage() {
+    int index = this->currentPage->currentIndex();
+    currentPage->setCurrentIndex(++index);
 }
 
 /**

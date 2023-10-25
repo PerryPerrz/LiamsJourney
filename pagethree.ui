@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PageOne</class>
- <widget class="QWidget" name="PageOne">
+ <class>PageThree</class>
+ <widget class="QWidget" name="PageThree">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>768</height>
+    <width>1037</width>
+    <height>778</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -16,20 +16,11 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>1024</width>
-    <height>768</height>
-   </size>
-  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/images/page_one.png);</string>
-  </property>
-  <property name="moveable" stdset="0">
-   <bool>true</bool>
+   <string notr="true">background-image: url(:/images/page_three.png);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -55,52 +46,33 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <widget class="ClickableLabel" name="liam">
+     <widget class="QLabel" name="liam">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>350</y>
-        <width>260</width>
-        <height>260</height>
+        <x>80</x>
+        <y>360</y>
+        <width>221</width>
+        <height>311</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/images/idle_liam.png);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="moveable" stdset="0">
-       <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="exit">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>1000</x>
-        <y>680</y>
-        <width>31</width>
-        <height>91</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-image: url(:/images/shot_one.png);</string>
       </property>
       <property name="text">
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="road">
+     <widget class="QLabel" name="asian">
       <property name="geometry">
        <rect>
-        <x>-10</x>
-        <y>500</y>
-        <width>1051</width>
-        <height>271</height>
+        <x>570</x>
+        <y>390</y>
+        <width>161</width>
+        <height>151</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/images/asiat.png);</string>
       </property>
       <property name="text">
        <string/>
@@ -110,13 +82,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>ClickableLabel</class>
-   <extends>QLabel</extends>
-   <header>clickablelabel.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

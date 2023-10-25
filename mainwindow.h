@@ -28,7 +28,7 @@ private:
     QStackedWidget *currentPage;
 
 public slots:
-    void onPlayButtonClicked();
+    void nextPage();
     void setCurrentPage(int pageNumber);
 };
 

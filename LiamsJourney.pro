@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     haptichandler.cpp \
     clickablelabel.cpp \
     pagetwo.cpp \
-    utils.cpp
+    utils.cpp \
+    pagethree.cpp
 
 HEADERS  += mainwindow.h \
     pageone.h \
@@ -30,12 +31,14 @@ HEADERS  += mainwindow.h \
     haptichandler.h \
     clickablelabel.h \
     pagetwo.h \
-    utils.h
+    utils.h \
+    pagethree.h
 
 FORMS    += mainwindow.ui \
     pageone.ui \
     homepage.ui \
-    pagetwo.ui
+    pagetwo.ui \
+    pagethree.ui
 
 DISTFILES += \
     README.md \

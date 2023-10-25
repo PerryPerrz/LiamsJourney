@@ -23,6 +23,21 @@
    <string notr="true">background-image: url(:/images/page_two.png);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="QWidget" name="widget" native="true">
      <property name="sizePolicy">
@@ -42,6 +57,22 @@
       </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/images/idle_liam.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="ClickableLabel" name="ruche">
+      <property name="geometry">
+       <rect>
+        <x>721</x>
+        <y>315</y>
+        <width>38</width>
+        <height>83</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/images/ruche.png);</string>
       </property>
       <property name="text">
        <string/>
