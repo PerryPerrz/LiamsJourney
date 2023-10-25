@@ -14,11 +14,11 @@ HapticHandler::HapticHandler(MainWindow *fen, QObject *parent) : QObject(parent)
     }
 
     mProject = new CImmProject();
-    if(mProject->OpenFile("E:\\LiamsJourney\\effects\\vibreur.ifr", mSouris))
+    if(mProject->OpenFile("E:\\LiamsJourney\\effects\\effets.ifr", mSouris))
     {
         qDebug() << "===> Chargement réussi ! :)";
 
-        mVibreur = mProject->CreateEffect("Periodic", mSouris, IMM_PARAM_NODOWNLOAD);
+        mVibreur = mProject->CreateEffect("scene_1", mSouris, IMM_PARAM_NODOWNLOAD);
         if (!mVibreur) {
             qDebug()<<"===>Erreur chargement eau ";
             delete mVibreur;
