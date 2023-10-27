@@ -23,7 +23,12 @@ SOURCES += main.cpp\
     clickablelabel.cpp \
     pagetwo.cpp \
     utils.cpp \
-    pagethree.cpp
+    pagethree.cpp \
+    pagefour.cpp \
+    pagefive.cpp \
+    pagesix.cpp \
+    pageseven.cpp \
+    finalpage.cpp
 
 HEADERS  += mainwindow.h \
     pageone.h \
@@ -32,13 +37,23 @@ HEADERS  += mainwindow.h \
     clickablelabel.h \
     pagetwo.h \
     utils.h \
-    pagethree.h
+    pagethree.h \
+    pagefour.h \
+    pagefive.h \
+    pagesix.h \
+    pageseven.h \
+    finalpage.h
 
 FORMS    += mainwindow.ui \
     pageone.ui \
     homepage.ui \
     pagetwo.ui \
-    pagethree.ui
+    pagethree.ui \
+    pagefour.ui \
+    pagefive.ui \
+    pagesix.ui \
+    pageseven.ui \
+    finalpage.ui
 
 DISTFILES += \
     README.md \
