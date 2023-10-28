@@ -18,17 +18,28 @@ public:
     explicit HapticHandler(MainWindow *fen, QObject *parent = 0);
     ~HapticHandler();
     CImmProject *GetProject() const;
-    void startVibrator();
-    void stopVibrator();
+    void startEffect(const int effect);
+    void stopEffect(const int effect);
+    void changeMagnitudeOfScene_2(DWORD magnitude);
+
+    enum Effects {
+            SCENE_1,
+            SCENE_2,
+            SCENE_3
+        };
 
 public slots:
 
 private:
+    void createEffects();
+
     CImmMouse *mSouris;
     MainWindow *mFenetre;
 
     CImmProject *mProject;
-    CImmCompoundEffect *mVibreur;
+    CImmCompoundEffect *scene_1;
+    CImmCompoundEffect *scene_2;
+    CImmCompoundEffect *scene_3;
 };
 
 #endif // HAPTICHANDLER_H

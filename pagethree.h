@@ -15,8 +15,13 @@ public:
     explicit PageThree(QWidget *parent = 0);
     ~PageThree();
 
+public slots:
+    void changeLiamState();
+    void shotArrow();
+
 private:
     Ui::PageThree *ui;
+    int liamState;
 };
 
 #endif // PAGETHREE_H

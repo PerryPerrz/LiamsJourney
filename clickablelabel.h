@@ -4,6 +4,7 @@
 #include <QLabel>
 #include <QMouseEvent>
 #include <QPoint>
+#include <QString>
 
 class ClickableLabel : public QLabel
 {
@@ -11,10 +12,11 @@ class ClickableLabel : public QLabel
     Q_PROPERTY(bool moveable READ isMoveable WRITE setMoveable)
 
 public:
-    explicit ClickableLabel(QWidget *parent = nullptr, bool moveable = false);
+    explicit ClickableLabel(QWidget *parent = nullptr, bool moveable = false, QString restriction = "none" );
     ~ClickableLabel();
     bool isMoveable() const;
     void setMoveable(const bool &nm);
+    void setRestriction(const QString &rest);
 
 signals:
     void clicked();  // Signal emit when label is clicked with left button
@@ -34,6 +36,7 @@ private:
     bool m_moveable;
     bool doDragAndDrop;
     QPoint  firstPosOnDragAndDrop;
+    QString m_restriction;
 };
 
 #endif // CLICKABLELABEL_H

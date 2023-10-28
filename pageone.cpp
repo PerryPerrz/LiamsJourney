@@ -56,21 +56,28 @@ void PageOne::onCollide(){
     Utils utils = Utils();
     bool isLiamAndRoadColliding = utils.areLabelsColliding(road,liam);
     if ( isLiamAndRoadColliding && !this->isWalking) {
-        dynamic_cast<MainWindow*>(this->parent()->parent())->getGestionHaptique()->startVibrator();
+        dynamic_cast<MainWindow*>(this->parent()->parent())
+                ->getGestionHaptique()->startEffect(HapticHandler::SCENE_1);
         this->isWalking = true;
     } else if(this->isWalking && !isLiamAndRoadColliding){
-        dynamic_cast<MainWindow*>(this->parent()->parent())->getGestionHaptique()->stopVibrator();
+        dynamic_cast<MainWindow*>(this->parent()->parent())
+                ->getGestionHaptique()->stopEffect(HapticHandler::SCENE_1);
         this->isWalking = false;
     }
 
     if (utils.areLabelsColliding(exit, liam)) {
-         dynamic_cast<MainWindow*>(this->parent()->parent())->getGestionHaptique()->stopVibrator();
+         dynamic_cast<MainWindow*>(this->parent()->parent())
+                ->getGestionHaptique()->stopEffect(HapticHandler::SCENE_1);
+
         dynamic_cast<MainWindow*>(this->parent()->parent())->setCurrentPage(2);
+         dynamic_cast<MainWindow*>(this->parent()->parent())
+                ->getGestionHaptique()->startEffect(HapticHandler::SCENE_2);
     }
 }
 
 void PageOne::onStopDragAndDrop(){
     this->isWalking = false;
-    dynamic_cast<MainWindow*>(this->parent()->parent())->getGestionHaptique()->stopVibrator();
+    dynamic_cast<MainWindow*>(this->parent()->parent())
+            ->getGestionHaptique()->stopEffect(HapticHandler::SCENE_1);
 }
 

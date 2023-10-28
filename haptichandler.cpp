@@ -16,26 +16,9 @@ HapticHandler::HapticHandler(MainWindow *fen, QObject *parent) : QObject(parent)
     mProject = new CImmProject();
     if(mProject->OpenFile("E:\\LiamsJourney\\effects\\effets.ifr", mSouris))
     {
-        qDebug() << "===> Chargement réussi ! :)";
+        qDebug() << "===>  Loading sucessfull ! :)";
 
-        mVibreur = mProject->CreateEffect("scene_1", mSouris, IMM_PARAM_NODOWNLOAD);
-
-        // We modify the parameters : apparently they are not correctly charged from ImmStudio
-       CImmFriction *myEffect = static_cast<CImmFriction*>(mVibreur->GetContainedEffect(0L));
-        myEffect->ChangeNegativeCoefficient(8000);
-        myEffect->ChangePositiveCoefficient(8000);
-        myEffect->ChangeNegativeSaturation(10000);
-        myEffect->ChangePositiveSaturation(10000);
-        myEffect->ChangeMinVelocity(0);
-        myEffect->ChangeDirection(IMM_EFFECT_AXIS_BOTH);
-
-        if (!mVibreur) {
-            qDebug()<<"===>Erreur chargement eau ";
-            delete mVibreur;
-            mVibreur = NULL;
-        } else {
-            qDebug()<<"===>Chargement vibreur réussi ";
-        }
+       createEffects();
     } else {
         qDebug()<<"===> Erreur chargement projet IFR avec code ! :("
                     <<CIFCErrors::GetLastErrorCode();
@@ -43,17 +26,62 @@ HapticHandler::HapticHandler(MainWindow *fen, QObject *parent) : QObject(parent)
 }
 
 /**
+ * @brief This where the different effects are created
+ */
+void HapticHandler::createEffects() {
+    scene_1 = mProject->CreateEffect("scene_1", mSouris, IMM_PARAM_NODOWNLOAD);
+
+    // We modify the parameters : apparently they are not correctly charged from ImmStudio
+   CImmFriction *myEffect = static_cast<CImmFriction*>(scene_1->GetContainedEffect(0L));
+    myEffect->ChangeNegativeCoefficient(8000);
+    myEffect->ChangePositiveCoefficient(8000);
+    myEffect->ChangeNegativeSaturation(10000);
+    myEffect->ChangePositiveSaturation(10000);
+    myEffect->ChangeMinVelocity(0);
+    myEffect->ChangeDirection(IMM_EFFECT_AXIS_BOTH);
+
+    if (!scene_1) {
+        qDebug()<<"===> Error loading scene_1 ";
+        scene_1 = NULL;
+    } else {
+        qDebug()<<"===> Loading scene_1 sucessfull ";
+    }
+
+    scene_2 = mProject->CreateEffect("scene_2",  mSouris, IMM_PARAM_NODOWNLOAD);
+    if (!scene_2) {
+        qDebug()<<"===> Error loading scene_2 ";
+        scene_1 = NULL;
+    } else {
+        qDebug()<<"===> Loading scene_2 sucessfull ";
+    }
+}
+
+/**
   * @brief Start the vibratons of the haptic mouse
   */
- void HapticHandler::startVibrator() {
-   mVibreur->Start();
+ void HapticHandler::startEffect(const int effect) {
+    switch (effect) {
+        case HapticHandler::SCENE_1:
+            scene_1->Start();
+            break;
+        case HapticHandler::SCENE_2:
+            scene_2->Start();
+            break;
+    }
  }
 
  /**
   * @brief Stop the vibrations
   */
- void HapticHandler::stopVibrator() {
-      mVibreur->Stop();
+ void HapticHandler::stopEffect(const int effect) {
+     switch (effect) {
+         case HapticHandler::SCENE_1:
+             scene_1->Stop();
+             break;
+         case HapticHandler::SCENE_2:
+         scene_2->Stop();
+             break;
+     }
   }
 
  HapticHandler::~HapticHandler() {
@@ -76,4 +104,10 @@ HapticHandler::HapticHandler(MainWindow *fen, QObject *parent) : QObject(parent)
                      IMM_EFFECT_DEFAULT_DIRECTION_X,
                      IMM_EFFECT_DEFAULT_DIRECTION_Y);
     **/
+ }
+
+  void HapticHandler::changeMagnitudeOfScene_2(DWORD magnitude) {
+     // this->scene_2->Stop();
+     static_cast<CImmPeriodic*>(this->scene_2->GetContainedEffect(0L))
+              ->ChangeMagnitude(magnitude);
  }

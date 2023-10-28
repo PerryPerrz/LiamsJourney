@@ -4,7 +4,7 @@
 #include <QWindow>
 #include <QPoint>
 
-ClickableLabel::ClickableLabel(QWidget *parent,  bool moveable) : QLabel(parent), m_moveable(moveable)
+ClickableLabel::ClickableLabel(QWidget *parent,  bool moveable,  QString restriction) : QLabel(parent), m_moveable(moveable), m_restriction(restriction)
 {
     doDragAndDrop = false;
 }
@@ -36,7 +36,7 @@ void ClickableLabel::mouseReleaseEvent(QMouseEvent *event)
             emit(stopDragAndDrop());
         }
     }
-    QLabel::mouseReleaseEvent(event);
+    //QLabel::mouseReleaseEvent(event);
 }
 
 /**
@@ -51,7 +51,7 @@ void ClickableLabel::mousePressEvent(QMouseEvent *event) {
             firstPosOnDragAndDrop = event->pos();
         }
     }
-    QLabel::mousePressEvent(event);
+    //QLabel::mousePressEvent(event);
 }
 
  void ClickableLabel::mouseMoveEvent(QMouseEvent *event) {
@@ -63,7 +63,8 @@ void ClickableLabel::mousePressEvent(QMouseEvent *event) {
                  dragAndDrop(event);
              }
      }
-     QLabel::mouseMoveEvent(event);
+
+    QLabel::mouseMoveEvent(event);
  }
 
  /**
@@ -71,9 +72,27 @@ void ClickableLabel::mousePressEvent(QMouseEvent *event) {
  * @param event
  */
 void ClickableLabel::dragAndDrop(QMouseEvent *event) {
-    QPoint mousePos = this->mapToGlobal(event->pos());
-    this->move(mousePos - firstPosOnDragAndDrop);
 
-    //Emit the objectMoved signal with the new position
+    if (QString::compare(this->m_restriction, QString("none")) == 0) {
+        QPoint mousePos = this->mapToGlobal(event->pos());
+        this->move(mousePos - firstPosOnDragAndDrop);
+
+    } else if (QString::compare(this->m_restriction, QString("x")) == 0) {
+        const QPoint mousePos = this->mapToGlobal(event->pos());
+        int posX = qBound(135, mousePos.x() - firstPosOnDragAndDrop.x(), 210);
+        QPoint newPos = QPoint(posX , this->geometry().y());
+        this->move(newPos);
+    }
+
     emit moved();
 }
+
+/**
+ * @brief Set a movement restriction by default "none" cne be "x" for horizontal deplacement only
+ *  and "y" for vertical deplacement only
+* @param rest
+ */
+void ClickableLabel::setRestriction(const QString &rest) {
+    this->m_restriction = rest;
+}
+
