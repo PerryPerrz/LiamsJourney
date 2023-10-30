@@ -15,3 +15,7 @@ PageSeven::~PageSeven()
 {
     delete ui;
 }
+
+void PageSeven::initializePage() {
+
+}

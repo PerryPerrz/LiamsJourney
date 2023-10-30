@@ -15,3 +15,7 @@ PageFour::~PageFour()
 {
     delete ui;
 }
+
+void PageFour::initializePage() {
+
+}

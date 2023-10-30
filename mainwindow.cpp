@@ -18,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->mHaptique = new HapticHandler(this);
-
     currentPage = new QStackedWidget();
     currentPage->insertWidget(0, new HomePage(this));
     currentPage->insertWidget(1, new PageOne(this));
@@ -47,6 +46,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event) {
 void MainWindow::nextPage() {
     int index = this->currentPage->currentIndex();
     currentPage->setCurrentIndex(++index);
+    dynamic_cast<Page*>(currentPage->currentWidget())->initializePage();
 }
 
 /**
@@ -59,6 +59,7 @@ void MainWindow::nextPage() {
 
  void MainWindow::setCurrentPage(int pageNumber){
     this->currentPage->setCurrentIndex(pageNumber);
+    dynamic_cast<Page*>(currentPage->currentWidget())->initializePage();
  }
 
 MainWindow::~MainWindow()

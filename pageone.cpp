@@ -70,8 +70,6 @@ void PageOne::onCollide(){
                 ->getGestionHaptique()->stopEffect(HapticHandler::SCENE_1);
 
         dynamic_cast<MainWindow*>(this->parent()->parent())->setCurrentPage(2);
-         dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getGestionHaptique()->startEffect(HapticHandler::SCENE_2);
     }
 }
 
@@ -79,5 +77,9 @@ void PageOne::onStopDragAndDrop(){
     this->isWalking = false;
     dynamic_cast<MainWindow*>(this->parent()->parent())
             ->getGestionHaptique()->stopEffect(HapticHandler::SCENE_1);
+}
+
+void PageOne::initializePage() {
+
 }
 

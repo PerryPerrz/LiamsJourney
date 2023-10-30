@@ -16,3 +16,6 @@ FinalPage::~FinalPage()
     delete ui;
 }
 
+void FinalPage::initializePage() {
+
+}

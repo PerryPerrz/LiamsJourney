@@ -15,3 +15,7 @@ PageFive::~PageFive()
 {
     delete ui;
 }
+
+void PageFive::initializePage() {
+
+}

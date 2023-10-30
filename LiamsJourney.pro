@@ -42,7 +42,8 @@ HEADERS  += mainwindow.h \
     pagefive.h \
     pagesix.h \
     pageseven.h \
-    finalpage.h
+    finalpage.h \
+    page.h
 
 FORMS    += mainwindow.ui \
     pageone.ui \

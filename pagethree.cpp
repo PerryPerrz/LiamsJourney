@@ -93,3 +93,9 @@ PageThree::~PageThree()
          arrow->move(208, arrow->geometry().y());
      }
  }
+
+ void PageThree::initializePage() {
+     dynamic_cast<MainWindow*>(this->parent()->parent())
+            ->getGestionHaptique()->stopEffect(HapticHandler::SCENE_2);
+ }
+

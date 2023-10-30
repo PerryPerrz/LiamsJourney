@@ -15,3 +15,7 @@ PageSix::~PageSix()
 {
     delete ui;
 }
+
+void PageSix::initializePage() {
+
+}
