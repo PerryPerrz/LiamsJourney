@@ -52,15 +52,12 @@ void PageTwo::timerEvent(QTimerEvent *event){
 
     currentDistance = qBound(0, currentDistance, maxDistance);
 
-   // qDebug()<<maxDistance;
-    float percent = static_cast<float>(currentDistance)/ maxDistance;
+    float percent = static_cast<float>(maxDistance - currentDistance)/ maxDistance;
 
-    qDebug()<<percent;
     int val = qBound(0, static_cast<int>(10000 * percent), 10000);
     dynamic_cast<MainWindow*>(this->parent()->parent())
             ->getGestionHaptique()
             ->changeMagnitudeOfScene_2(val);
-   // qDebug() << val;
 }
 
 
