@@ -63,6 +63,15 @@ void HapticHandler::createEffects() {
     } else {
         qDebug()<<"===> Loading scene_3 sucessfull ";
     }
+
+    scene_4 = mProject->CreateEffect("scene_4",  mSouris, IMM_PARAM_NODOWNLOAD);
+
+    if (!scene_4) {
+        qDebug()<<"===> Error loading scene_4 ";
+        scene_1 = NULL;
+    } else {
+        qDebug()<<"===> Loading scene_4 sucessfull ";
+    }
 }
 
 /**
@@ -78,6 +87,9 @@ void HapticHandler::createEffects() {
             break;
         case HapticHandler::SCENE_3:
             scene_3->Start();
+            break;
+        case HapticHandler::SCENE_4:
+            scene_4->Start();
             break;
     }
  }
@@ -95,6 +107,9 @@ void HapticHandler::createEffects() {
              break;
          case HapticHandler::SCENE_3:
              scene_3->Stop();
+             break;
+         case HapticHandler::SCENE_4:
+             scene_4->Stop();
              break;
      }
   }

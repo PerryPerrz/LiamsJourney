@@ -25,7 +25,8 @@ public:
     enum Effects {
             SCENE_1,
             SCENE_2,
-            SCENE_3
+            SCENE_3,
+            SCENE_4
         };
 
 public slots:
@@ -40,6 +41,7 @@ private:
     CImmCompoundEffect *scene_1;
     CImmCompoundEffect *scene_2;
     CImmCompoundEffect *scene_3;
+    CImmCompoundEffect *scene_4;
 };
 
 #endif // HAPTICHANDLER_H

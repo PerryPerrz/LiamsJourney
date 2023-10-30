@@ -18,6 +18,10 @@ public:
     void initializePage() override;
     ~PageFour();
 
+public slots:
+    void onCollide();
+    void onStopDragAndDrop();
+
 private:
     Ui::PageFour *ui;
 };

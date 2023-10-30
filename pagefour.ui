@@ -49,10 +49,10 @@
      <widget class="QLabel" name="box_matches">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>260</y>
-        <width>431</width>
-        <height>241</height>
+        <x>260</x>
+        <y>300</y>
+        <width>436</width>
+        <height>242</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -62,10 +62,46 @@
        <string/>
       </property>
      </widget>
+     <widget class="ClickableLabel" name="match">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>450</y>
+        <width>18</width>
+        <height>142</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/images/base_match.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="grip">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>465</y>
+        <width>301</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ClickableLabel</class>
+   <extends>QLabel</extends>
+   <header>clickablelabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
