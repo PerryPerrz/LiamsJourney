@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <ctime>
 #include <QPropertyAnimation>
+#include <QTimer>
 
 PageFour::PageFour(QWidget *parent) :
     QWidget(parent),
@@ -66,7 +67,7 @@ PageFour::~PageFour()
      if (utils.areLabelsColliding(head_match, trigger) && !isTriggered) {
          float randomValue = static_cast<float>((std::rand())) / RAND_MAX;
 
-         if ( randomValue <= 0.333f) {
+         if ( randomValue <= 0.4f) {
              match->setMoveable(false);
 
              dynamic_cast<MainWindow*>(this->parent()->parent())
@@ -82,6 +83,10 @@ PageFour::~PageFour()
              mouveAnimation->setEndValue(QRect(900, 500, match->geometry().width(), match->geometry().height()));
 
              mouveAnimation->start();
+
+             this->setStyleSheet(QString("background-image: url(:/images/page_four_light.png);"));
+
+            QTimer::singleShot(3000, dynamic_cast<MainWindow*>(this->parent()->parent()), &MainWindow::nextPage);
          }
 
          isTriggered = true;

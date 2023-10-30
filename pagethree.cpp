@@ -83,11 +83,7 @@ PageThree::~PageThree()
 
 
       // Change page after 1s
-      QTimer *timer = new QTimer();
-
-      connect(timer, &QTimer::timeout,  dynamic_cast<MainWindow*>(this->parent()->parent()), &MainWindow::nextPage);
-      timer->setInterval(1000);
-      timer->start();
+      QTimer::singleShot(1000, dynamic_cast<MainWindow*>(this->parent()->parent()), &MainWindow::nextPage);
 
       shotAnimation->start();
      } else {

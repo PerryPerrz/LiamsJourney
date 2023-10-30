@@ -26,5 +26,6 @@
         <file>images/honey.png</file>
         <file>images/base_match.png</file>
         <file>images/match_on_fire.png</file>
+        <file>images/page_four_light.png</file>
     </qresource>
 </RCC>
