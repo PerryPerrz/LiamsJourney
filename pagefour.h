@@ -24,6 +24,7 @@ public slots:
 
 private:
     Ui::PageFour *ui;
+    bool isTriggered;
 };
 
 #endif // PAGEFOUR_H

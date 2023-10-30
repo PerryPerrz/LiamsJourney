@@ -13,17 +13,6 @@ PageOne::PageOne(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // Set the signals and slots of the button start and stop
-    /*QPushButton* startButton = this->findChild<QPushButton*>("startButton");
-    connect(startButton, &QPushButton::clicked,
-            dynamic_cast<MainWindow*>(this->parent())->getGestionHaptique(),
-            &HapticHandler::onStartVibrator);
-
-    QPushButton* stopButton = this->findChild<QPushButton*>("stopButton");
-    connect(stopButton, &QPushButton::clicked,
-            dynamic_cast<MainWindow*>(this->parent())->getGestionHaptique(),
-            &HapticHandler::onStopVibrator);*/
-
     //Define liam moveable
     ClickableLabel *liam = this->findChild<ClickableLabel*>("liam");
     liam->setMoveable(true);

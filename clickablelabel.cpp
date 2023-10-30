@@ -56,7 +56,7 @@ void ClickableLabel::mousePressEvent(QMouseEvent *event) {
 
  void ClickableLabel::mouseMoveEvent(QMouseEvent *event) {
 
-     if (doDragAndDrop) {
+     if (doDragAndDrop && m_moveable) {
          if (event->buttons() & Qt::LeftButton)
              {
              //qDebug() << "===> It's working";
