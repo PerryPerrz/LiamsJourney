@@ -40,6 +40,9 @@ PageThree::~PageThree()
   * the drang and drop event
   */
  void PageThree::changeLiamState() {
+     dynamic_cast<MainWindow*>(this->parent()->parent())
+             ->getGestionHaptique()
+             ->startEffect(HapticHandler::SCENE_3);
    ClickableLabel *arrow = this->findChild<ClickableLabel*>("arrow");
     QLabel *secondPos = this->findChild<QLabel*>("secondPos");
      QLabel *thirdPos = this->findChild<QLabel*>("thirdPos");
@@ -92,6 +95,10 @@ PageThree::~PageThree()
          this->liamState = 0;
          arrow->move(208, arrow->geometry().y());
      }
+
+     dynamic_cast<MainWindow*>(this->parent()->parent())
+             ->getGestionHaptique()
+             ->stopEffect(HapticHandler::SCENE_3);
  }
 
  void PageThree::initializePage() {
