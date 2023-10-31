@@ -6,6 +6,7 @@
 #include "utils.h"
 
 #include <QPushButton>
+#include <QMediaPlaylist>
 
 PageOne::PageOne(QWidget *parent) :
     QWidget(parent),

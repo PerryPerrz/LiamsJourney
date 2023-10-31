@@ -271,6 +271,19 @@
        <string/>
       </property>
      </widget>
+     <widget class="QLabel" name="exit">
+      <property name="geometry">
+       <rect>
+        <x>1024</x>
+        <y>613</y>
+        <width>1</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
    </item>
   </layout>

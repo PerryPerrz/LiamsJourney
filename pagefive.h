@@ -20,6 +20,7 @@ public:
 
 public slots:
     void onLiamMouved();
+    void onStopDragAndDrop();
 
 private:
     Ui::PageFive *ui;
