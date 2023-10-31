@@ -4,6 +4,8 @@
 #include "page.h"
 
 #include <QWidget>
+#include <QMediaPlaylist>
+#include <QMediaPlayer>
 
 namespace Ui {
 class PageOne;
@@ -25,6 +27,8 @@ public slots :
 private:
     Ui::PageOne *ui;
     bool isWalking;
+    QMediaPlaylist *playlist;
+    QMediaPlayer* player;
 
 signals:
     void walk();

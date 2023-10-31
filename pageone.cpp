@@ -24,7 +24,7 @@ PageOne::PageOne(QWidget *parent) :
     QLabel* exit = this->findChild<QLabel*>("exit");
     exit->setVisible(false);
 
-     this->isWalking = false;
+    this->isWalking = false;
     connect(liam, &ClickableLabel::stopDragAndDrop, this, &PageOne::onStopDragAndDrop);
 }
 
@@ -55,6 +55,9 @@ void PageOne::onCollide(){
     }
 
     if (utils.areLabelsColliding(exit, liam)) {
+        //Stop the walking soud
+        player->stop();
+
          dynamic_cast<MainWindow*>(this->parent()->parent())
                 ->getGestionHaptique()->stopEffect(HapticHandler::SCENE_1);
 
@@ -69,6 +72,13 @@ void PageOne::onStopDragAndDrop(){
 }
 
 void PageOne::initializePage() {
+    // Define the sound background
+    playlist = new QMediaPlaylist(this);
+    playlist->addMedia(QUrl("file:///E:/LiamsJourney/sounds/walking.mp3"));
+    playlist->setPlaybackMode(QMediaPlaylist::Loop);
 
+    player = new QMediaPlayer(this);
+    player->setPlaylist(playlist);
+    player->play();
 }
 
