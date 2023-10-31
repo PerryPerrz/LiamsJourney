@@ -46,10 +46,242 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <widget class="QLabel" name="zone_1">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>150</y>
+        <width>124</width>
+        <height>76</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: red;</string>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="zone_2">
+      <property name="geometry">
+       <rect>
+        <x>71</x>
+        <y>226</y>
+        <width>53</width>
+        <height>137</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: red;</string>
+      </property>
+      <property name="text">
+       <string>2</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="zone_3">
+      <property name="geometry">
+       <rect>
+        <x>124</x>
+        <y>308</y>
+        <width>190</width>
+        <height>54</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: red;</string>
+      </property>
+      <property name="text">
+       <string>3</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="zone_4">
+      <property name="geometry">
+       <rect>
+        <x>263</x>
+        <y>362</y>
+        <width>56</width>
+        <height>229</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: red;</string>
+      </property>
+      <property name="text">
+       <string>4</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="zone_5">
+      <property name="geometry">
+       <rect>
+        <x>319</x>
+        <y>543</y>
+        <width>105</width>
+        <height>48</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: red;</string>
+      </property>
+      <property name="text">
+       <string>5</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="zone_6">
+      <property name="geometry">
+       <rect>
+        <x>371</x>
+        <y>591</y>
+        <width>53</width>
+        <height>94</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: red;</string>
+      </property>
+      <property name="text">
+       <string>6</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="zone_7">
+      <property name="geometry">
+       <rect>
+        <x>424</x>
+        <y>634</y>
+        <width>413</width>
+        <height>52</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: red;</string>
+      </property>
+      <property name="text">
+       <string>7</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="zone_8">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>425</y>
+        <width>57</width>
+        <height>209</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: red;</string>
+      </property>
+      <property name="text">
+       <string>8</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="zone_10">
+      <property name="geometry">
+       <rect>
+        <x>897</x>
+        <y>425</y>
+        <width>53</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: red;</string>
+      </property>
+      <property name="text">
+       <string>10</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="zone_9">
+      <property name="geometry">
+       <rect>
+        <x>837</x>
+        <y>425</y>
+        <width>60</width>
+        <height>63</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: red;</string>
+      </property>
+      <property name="text">
+       <string>9</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="zone_11">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>612</y>
+        <width>81</width>
+        <height>73</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: red;</string>
+      </property>
+      <property name="text">
+       <string>11</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="ClickableLabel" name="liam">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>36</width>
+        <height>44</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/images/liam_head.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ClickableLabel</class>
+   <extends>QLabel</extends>
+   <header>clickablelabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

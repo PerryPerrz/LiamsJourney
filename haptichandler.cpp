@@ -50,7 +50,7 @@ void HapticHandler::createEffects() {
     scene_2 = mProject->CreateEffect("scene_2",  mSouris, IMM_PARAM_NODOWNLOAD);
     if (!scene_2) {
         qDebug()<<"===> Error loading scene_2 ";
-        scene_1 = NULL;
+        scene_2 = NULL;
     } else {
         qDebug()<<"===> Loading scene_2 sucessfull ";
     }
@@ -59,7 +59,7 @@ void HapticHandler::createEffects() {
 
     if (!scene_3) {
         qDebug()<<"===> Error loading scene_3 ";
-        scene_1 = NULL;
+        scene_3 = NULL;
     } else {
         qDebug()<<"===> Loading scene_3 sucessfull ";
     }
@@ -68,9 +68,42 @@ void HapticHandler::createEffects() {
 
     if (!scene_4) {
         qDebug()<<"===> Error loading scene_4 ";
-        scene_1 = NULL;
+        scene_4 = NULL;
     } else {
         qDebug()<<"===> Loading scene_4 sucessfull ";
+    }
+
+    down_wall = mProject->CreateEffect("down_wall",  mSouris, IMM_PARAM_NODOWNLOAD);
+    if (!down_wall) {
+        qDebug()<<"===> Error loading down_wall ";
+        down_wall = NULL;
+    } else {
+        qDebug()<<"===> Loading down_wall sucessfull ";
+    }
+
+    up_wall = mProject->CreateEffect("up_wall",  mSouris, IMM_PARAM_NODOWNLOAD);
+
+    if (!up_wall) {
+        qDebug()<<"===> Error loading up_wall ";
+        up_wall = NULL;
+    } else {
+        qDebug()<<"===> Loading up_wall sucessfull ";
+    }
+
+    right_wall = mProject->CreateEffect("right_wall",  mSouris, IMM_PARAM_NODOWNLOAD);
+    if (!right_wall) {
+        qDebug()<<"===> Error loading right_wall ";
+        right_wall = NULL;
+    } else {
+        qDebug()<<"===> Loading right_wall sucessfull ";
+    }
+
+    left_wall = mProject->CreateEffect("left_wall",  mSouris, IMM_PARAM_NODOWNLOAD);
+    if (!left_wall) {
+        qDebug()<<"===> Error loading left_wall ";
+        left_wall = NULL;
+    } else {
+        qDebug()<<"===> Loading left_wall sucessfull ";
     }
 }
 
@@ -91,6 +124,18 @@ void HapticHandler::createEffects() {
         case HapticHandler::SCENE_4:
             scene_4->Start();
             break;
+        case HapticHandler::DOWN_WALL:
+            down_wall->Start();
+            break;
+        case HapticHandler::UP_WALL:
+            up_wall->Start();
+            break;
+        case HapticHandler::LEFT_WALL:
+            left_wall->Start();
+            break;
+        case HapticHandler::RIGHT_WALL:
+            right_wall->Start();
+            break;
     }
  }
 
@@ -110,6 +155,18 @@ void HapticHandler::createEffects() {
              break;
          case HapticHandler::SCENE_4:
              scene_4->Stop();
+             break;
+         case HapticHandler::DOWN_WALL:
+             down_wall->Stop();
+             break;
+         case HapticHandler::UP_WALL:
+             up_wall->Stop();
+             break;
+         case HapticHandler::LEFT_WALL:
+             left_wall->Stop();
+             break;
+         case HapticHandler::RIGHT_WALL:
+             right_wall->Stop();
              break;
      }
   }
@@ -141,3 +198,24 @@ void HapticHandler::createEffects() {
      static_cast<CImmPeriodic*>(this->scene_2->GetContainedEffect(0L))
               ->ChangeMagnitude(magnitude);
  }
+
+   void HapticHandler::changeWallPosition(const int wall, POINT point) {
+       switch (wall) {
+       case HapticHandler::DOWN_WALL:
+           static_cast<CImmSpring*>(down_wall->GetContainedEffect(0L))
+                   ->ChangeCenter(point);
+           break;
+       case HapticHandler::UP_WALL:
+           static_cast<CImmSpring*>(up_wall->GetContainedEffect(0L))
+                   ->ChangeCenter(point);
+           break;
+       case HapticHandler::RIGHT_WALL:
+           static_cast<CImmSpring*>(right_wall->GetContainedEffect(0L))
+                   ->ChangeCenter(point);
+           break;
+       case HapticHandler::LEFT_WALL:
+               static_cast<CImmSpring*>(left_wall->GetContainedEffect(0L))
+                       ->ChangeCenter(point);
+               break;
+       }
+   }
