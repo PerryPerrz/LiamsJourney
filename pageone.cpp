@@ -85,6 +85,7 @@ void PageOne::startSound() {
 
         player = new QMediaPlayer(this);
         player->setPlaylist(playlist);
+        player->setVolume(50);
         player->play();
         this->isFirstSound = false;
     }
