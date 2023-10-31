@@ -4,7 +4,6 @@
 #include "page.h"
 
 #include <QWidget>
-#include <QMediaPlaylist>
 #include <QMediaPlayer>
 
 namespace Ui {
