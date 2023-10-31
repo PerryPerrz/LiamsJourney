@@ -18,8 +18,12 @@ public:
     void initializePage() override;
     ~PageFive();
 
+public slots:
+    void onLiamMouved();
+
 private:
     Ui::PageFive *ui;
+    bool areEffectsActive;
 };
 
 #endif // PAGEFIVE_H

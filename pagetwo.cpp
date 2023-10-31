@@ -34,7 +34,7 @@ void PageTwo::mouseMoveEvent(QMouseEvent *event) {
 void PageTwo::initializePage()  {
     dynamic_cast<MainWindow*>(this->parent()->parent())
            ->getGestionHaptique()->startEffect(HapticHandler::SCENE_2);
-   startTimer(25);
+   startTimer(50);
 }
 
 void PageTwo::timerEvent(QTimerEvent *event){

@@ -100,5 +100,6 @@ PageThree::~PageThree()
  void PageThree::initializePage() {
      dynamic_cast<MainWindow*>(this->parent()->parent())
             ->getGestionHaptique()->stopEffect(HapticHandler::SCENE_2);
+
  }
 
