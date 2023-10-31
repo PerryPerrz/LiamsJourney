@@ -46,7 +46,7 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <widget class="ClickableLabel" name="liam">
+     <widget class="QLabel" name="liam">
       <property name="geometry">
        <rect>
         <x>20</x>

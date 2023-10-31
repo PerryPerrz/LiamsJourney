@@ -9,6 +9,7 @@
 #include "pagesix.h"
 #include "pageseven.h"
 #include "pageeight.h"
+#include "finalpage.h"'
 
 #include <QPushButton>
 #include <QStackedWidget>
@@ -21,6 +22,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QCursor cursor(QPixmap(":/images/main_cursor.png"));
+    this->setCursor(cursor);
+
     this->mHaptique = new HapticHandler(this);
     currentPage = new QStackedWidget();
     currentPage->insertWidget(0, new HomePage(this));
@@ -32,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent) :
     currentPage->insertWidget(6, new PageSix(this));
     currentPage->insertWidget(7, new PageSeven(this));
     currentPage->insertWidget(8, new PageEight(this));
+    currentPage->insertWidget(9, new FinalPage(this));
     setCentralWidget(currentPage);
 
     // Turn on fullscreen

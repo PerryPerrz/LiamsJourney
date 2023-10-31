@@ -32,5 +32,13 @@
         <file>images/3_of_4_jar.png</file>
         <file>images/empty_jar.png</file>
         <file>images/full_jar.png</file>
+        <file>images/exit_button_hover.png</file>
+        <file>images/exit_button_idle.png</file>
+        <file>images/exit_button_pressed.png</file>
+        <file>images/end_page.png</file>
+        <file>images/hand_cursor.png</file>
+        <file>images/next_button_hover.png</file>
+        <file>images/next_button_idle.png</file>
+        <file>images/next_button_pressed.png</file>
     </qresource>
 </RCC>

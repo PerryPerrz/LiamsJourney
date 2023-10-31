@@ -7,6 +7,9 @@
 ClickableLabel::ClickableLabel(QWidget *parent,  bool moveable,  QString restriction) : QLabel(parent), m_moveable(moveable), m_restriction(restriction)
 {
     doDragAndDrop = false;
+
+     QCursor cursor(QPixmap(":/images/hand_cursor.png"));
+     this->setCursor(cursor);
 }
 
 ClickableLabel::~ClickableLabel()
