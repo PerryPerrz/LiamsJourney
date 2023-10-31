@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image : url(:/images/end.png)</string>
+   <string notr="true">background-image : url(:/images/page_eight.png)</string>
   </property>
  </widget>
  <resources/>

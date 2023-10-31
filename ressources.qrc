@@ -27,5 +27,6 @@
         <file>images/base_match.png</file>
         <file>images/match_on_fire.png</file>
         <file>images/page_four_light.png</file>
+        <file>images/page_eight.png</file>
     </qresource>
 </RCC>
