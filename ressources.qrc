@@ -40,5 +40,7 @@
         <file>images/next_button_hover.png</file>
         <file>images/next_button_idle.png</file>
         <file>images/next_button_pressed.png</file>
+        <file>images/knife.png</file>
+        <file>images/spoon.png</file>
     </qresource>
 </RCC>

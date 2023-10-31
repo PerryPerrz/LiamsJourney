@@ -65,14 +65,14 @@
      <widget class="ClickableLabel" name="spoon">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>40</x>
         <y>380</y>
-        <width>141</width>
-        <height>31</height>
+        <width>187</width>
+        <height>36</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: black;</string>
+       <string notr="true">background-image: url(:/images/spoon.png);</string>
       </property>
       <property name="text">
        <string/>
