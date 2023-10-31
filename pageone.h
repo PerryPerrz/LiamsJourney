@@ -17,6 +17,7 @@ class PageOne : public QWidget, public Page
 
 public:
     explicit PageOne(QWidget *parent = 0);
+    void startSound();
     void initializePage() override;
     ~PageOne();
 
@@ -29,6 +30,7 @@ private:
     bool isWalking;
     QMediaPlaylist *playlist;
     QMediaPlayer* player;
+    bool isFirstSound;
 
 signals:
     void walk();
