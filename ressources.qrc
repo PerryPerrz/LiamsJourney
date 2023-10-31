@@ -27,5 +27,10 @@
         <file>images/page_four_light.png</file>
         <file>images/page_eight.png</file>
         <file>images/home_page.png</file>
+        <file>images/1_of_4_jar.png</file>
+        <file>images/2_of_4_jar.png</file>
+        <file>images/3_of_4_jar.png</file>
+        <file>images/empty_jar.png</file>
+        <file>images/full_jar.png</file>
     </qresource>
 </RCC>

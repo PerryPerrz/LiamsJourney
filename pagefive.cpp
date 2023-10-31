@@ -230,7 +230,7 @@ void PageFive::initializePage() {
          hapticHandler->stopEffect(HapticHandler::LEFT_WALL);
          areEffectsActive = false;
          dynamic_cast<MainWindow*>(this->parent()->parent())
-                 ->nextPage();
+                 ->setCurrentPage(6);
      }
  }
 

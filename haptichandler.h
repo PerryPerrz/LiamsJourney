@@ -32,7 +32,9 @@ public:
             DOWN_WALL,
             UP_WALL,
             RIGHT_WALL,
-            LEFT_WALL
+            LEFT_WALL,
+            SCENE_6,
+            SCENE_7
         };
 
 public slots:
@@ -52,6 +54,8 @@ private:
     CImmCompoundEffect *up_wall;
     CImmCompoundEffect *right_wall;
     CImmCompoundEffect *left_wall;
+    CImmCompoundEffect *scene_6;
+    CImmCompoundEffect *scene_7;
 };
 
 #endif // HAPTICHANDLER_H

@@ -28,7 +28,8 @@ SOURCES += main.cpp\
     pagefive.cpp \
     pagesix.cpp \
     pageseven.cpp \
-    finalpage.cpp
+    finalpage.cpp \
+    pageeight.cpp
 
 HEADERS  += mainwindow.h \
     pageone.h \
@@ -43,7 +44,8 @@ HEADERS  += mainwindow.h \
     pagesix.h \
     pageseven.h \
     finalpage.h \
-    page.h
+    page.h \
+    pageeight.h
 
 FORMS    += mainwindow.ui \
     pageone.ui \
@@ -54,7 +56,8 @@ FORMS    += mainwindow.ui \
     pagefive.ui \
     pagesix.ui \
     pageseven.ui \
-    finalpage.ui
+    finalpage.ui \
+    pageeight.ui
 
 DISTFILES += \
     README.md \

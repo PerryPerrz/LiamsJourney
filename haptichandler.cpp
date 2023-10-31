@@ -105,6 +105,22 @@ void HapticHandler::createEffects() {
     } else {
         qDebug()<<"===> Loading left_wall sucessfull ";
     }
+
+    scene_6 = mProject->CreateEffect("scene_6",  mSouris, IMM_PARAM_NODOWNLOAD);
+    if (!scene_6) {
+        qDebug()<<"===> Error loading scene_6 ";
+        scene_6 = NULL;
+    } else {
+        qDebug()<<"===> Loading scene_6 sucessfull ";
+    }
+
+        scene_7 = mProject->CreateEffect("scene_7",  mSouris, IMM_PARAM_NODOWNLOAD);
+        if (!scene_7) {
+            qDebug()<<"===> Error loading scene_7 ";
+            scene_7 = NULL;
+        } else {
+            qDebug()<<"===> Loading scene_7 sucessfull ";
+     }
 }
 
 /**
@@ -135,6 +151,12 @@ void HapticHandler::createEffects() {
             break;
         case HapticHandler::RIGHT_WALL:
             right_wall->Start();
+            break;
+        case HapticHandler::SCENE_6:
+            scene_6->Start();
+            break;
+        case HapticHandler::SCENE_7:
+            scene_7->Start();
             break;
     }
  }
@@ -167,6 +189,12 @@ void HapticHandler::createEffects() {
              break;
          case HapticHandler::RIGHT_WALL:
              right_wall->Stop();
+             break;
+         case HapticHandler::SCENE_6:
+             scene_6->Stop();
+             break;
+         case HapticHandler::SCENE_7:
+             scene_7->Stop();
              break;
      }
   }

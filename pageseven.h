@@ -18,8 +18,15 @@ public:
     void initializePage() override;
     ~PageSeven();
 
+public slots:
+    void onSpoonMoved();
+    void onSpoonReleased();
+
 private:
     Ui::PageSeven *ui;
+    int count;
+    bool done;
+    bool isTriggered;
 };
 
 #endif // PAGESEVEN_H

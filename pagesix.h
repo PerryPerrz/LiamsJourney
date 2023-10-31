@@ -18,8 +18,15 @@ public:
     void initializePage() override;
     ~PageSix();
 
+public slots:
+    void onSpoonMouve();
+    void onDragAndDropStopped();
+
 private:
     Ui::PageSix *ui;
+    bool isEnter;
+    int jarState;
+    bool done;
 };
 
 #endif // PAGESIX_H

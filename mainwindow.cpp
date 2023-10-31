@@ -7,6 +7,8 @@
 #include "pagefour.h"
 #include "pagefive.h"
 #include "pagesix.h"
+#include "pageseven.h"
+#include "pageeight.h"
 
 #include <QPushButton>
 #include <QStackedWidget>
@@ -27,7 +29,9 @@ MainWindow::MainWindow(QWidget *parent) :
     currentPage->insertWidget(3, new PageThree(this));
     currentPage->insertWidget(4, new PageFour(this));
     currentPage->insertWidget(5, new PageFive(this));
-     currentPage->insertWidget(6, new PageSix(this));
+    currentPage->insertWidget(6, new PageSix(this));
+    currentPage->insertWidget(7, new PageSeven(this));
+    currentPage->insertWidget(8, new PageEight(this));
     setCentralWidget(currentPage);
 
     // Turn on fullscreen
