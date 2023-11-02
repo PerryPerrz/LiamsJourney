@@ -2,6 +2,7 @@
 #define HOMEPAGE_H
 
 #include <QWidget>
+#include <QMediaPlayer>
 
 #include "page.h"
 
@@ -16,10 +17,12 @@ class HomePage : public QWidget, public Page
 public:
     explicit HomePage(QWidget *parent = 0);
     void initializePage() override;
+    void stopSound();
     ~HomePage();
 
 private:
     Ui::HomePage *ui;
+    QMediaPlayer* player;
 };
 
 #endif // HOMEPAGE_H

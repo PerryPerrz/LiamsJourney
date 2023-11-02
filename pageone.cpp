@@ -79,6 +79,7 @@ void PageOne::onStopDragAndDrop(){
 void PageOne::startSound() {
     if(isFirstSound){
         // Define the sound background
+        QMediaPlaylist *playlist;
         playlist = new QMediaPlaylist(this);
         playlist->addMedia(QUrl("file:///E:/LiamsJourney/sounds/walking.mp3"));
         playlist->setPlaybackMode(QMediaPlaylist::Loop);

@@ -27,7 +27,6 @@ public slots :
 private:
     Ui::PageOne *ui;
     bool isWalking;
-    QMediaPlaylist *playlist;
     QMediaPlayer* player;
     bool isFirstSound;
 
