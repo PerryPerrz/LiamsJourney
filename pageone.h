@@ -4,7 +4,6 @@
 #include "page.h"
 
 #include <QWidget>
-#include <QMediaPlayer>
 
 namespace Ui {
 class PageOne;
@@ -16,7 +15,6 @@ class PageOne : public QWidget, public Page
 
 public:
     explicit PageOne(QWidget *parent = 0);
-    void startSound();
     void initializePage() override;
     ~PageOne();
 
@@ -27,8 +25,6 @@ public slots :
 private:
     Ui::PageOne *ui;
     bool isWalking;
-    QMediaPlayer* player;
-    bool isFirstSound;
 
 signals:
     void walk();

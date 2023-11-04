@@ -2,8 +2,8 @@
 #define HOMEPAGE_H
 
 #include <QWidget>
-#include <QMediaPlayer>
 
+#include "soundhandler.h"
 #include "page.h"
 
 namespace Ui {
@@ -22,7 +22,6 @@ public:
 
 private:
     Ui::HomePage *ui;
-    QMediaPlayer* player;
 };
 
 #endif // HOMEPAGE_H

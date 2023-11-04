@@ -4,7 +4,6 @@
 #include "clickablelabel.h"
 
 #include <QDebug>
-#include <QMediaPlaylist>
 
 HomePage::HomePage(QWidget *parent) :
     QWidget(parent),
@@ -12,29 +11,32 @@ HomePage::HomePage(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // Define the sound background
-    QMediaPlaylist *playlist;
-    playlist = new QMediaPlaylist(this);
-    playlist->addMedia(QUrl("file:///E:/LiamsJourney/sounds/forest.mp3"));
-    playlist->setPlaybackMode(QMediaPlaylist::Loop);
-
-    player = new QMediaPlayer(this);
-    player->setPlaylist(playlist);
-    player->setVolume(75);
-    player->play();
+    // Get the sound handler from the main window
+    MainWindow* mainWindow = dynamic_cast<MainWindow*>(this->parent());
+    if (mainWindow) {
+        SoundHandler* soundHandler = mainWindow->getGestionSon();
+        if (soundHandler) {
+        soundHandler->startSounds(SoundHandler::SCENE_1);
+        } else {
+            qDebug() << "Error: could not start sound";
+        }
+    }
+    else {
+        qDebug() << "Error: could not get sound handler";
+        }
 
     // Signal defined for the play button
     ClickableLabel *playButton = this->findChild<ClickableLabel*>("playButton");
     connect(playButton, &ClickableLabel::clicked, dynamic_cast<MainWindow*>(this->parent()), &MainWindow::nextPage);
-    connect(playButton, &ClickableLabel::clicked, this, &HomePage::stopSound);
+    connect(playButton, &ClickableLabel::clicked, this, &HomePage::stopSound);    
 }
 
 void HomePage::initializePage() {
-
 }
 
-void HomePage::stopSound() {
- player->stop();
+void HomePage::stopSound(){
+    dynamic_cast<MainWindow*>(this->parent()->parent())
+                ->getGestionSon()->stopSounds(SoundHandler::SCENE_1);
 }
 
 HomePage::~HomePage()

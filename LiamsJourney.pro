@@ -29,7 +29,8 @@ SOURCES += main.cpp\
     pagesix.cpp \
     pageseven.cpp \
     finalpage.cpp \
-    pageeight.cpp
+    pageeight.cpp \
+    soundhandler.cpp
 
 HEADERS  += mainwindow.h \
     pageone.h \
@@ -45,7 +46,8 @@ HEADERS  += mainwindow.h \
     pageseven.h \
     finalpage.h \
     page.h \
-    pageeight.h
+    pageeight.h \
+    soundhandler.h
 
 FORMS    += mainwindow.ui \
     pageone.ui \

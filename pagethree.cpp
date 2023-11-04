@@ -101,5 +101,7 @@ PageThree::~PageThree()
      dynamic_cast<MainWindow*>(this->parent()->parent())
             ->getGestionHaptique()->stopEffect(HapticHandler::SCENE_2);
 
+     dynamic_cast<MainWindow*>(this->parent()->parent())
+        ->getGestionSon()->stopSounds(HapticHandler::SCENE_3);
  }
 

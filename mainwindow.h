@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include "haptichandler.h"
+#include "soundhandler.h"
 
 #include <QMainWindow>
 #include <QKeyEvent>
@@ -19,12 +20,14 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     void keyReleaseEvent(QKeyEvent *event);
     HapticHandler* getGestionHaptique() const;
+    SoundHandler* getGestionSon() const;
 
     ~MainWindow();
 
 private:
     Ui::MainWindow *ui;
     HapticHandler *mHaptique;
+    SoundHandler *mSon;
     QStackedWidget *currentPage;
 
 public slots:

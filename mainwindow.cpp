@@ -26,6 +26,8 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setCursor(cursor);
 
     this->mHaptique = new HapticHandler(this);
+    this->mSon = new SoundHandler(this);
+
     currentPage = new QStackedWidget();
     currentPage->insertWidget(0, new HomePage(this));
     currentPage->insertWidget(1, new PageOne(this));
@@ -70,6 +72,10 @@ void MainWindow::nextPage() {
     return mHaptique;
  }
 
+ SoundHandler* MainWindow::getGestionSon() const {
+    return mSon;
+ }
+
  void MainWindow::setCurrentPage(int pageNumber){
     this->currentPage->setCurrentIndex(pageNumber);
     dynamic_cast<Page*>(currentPage->currentWidget())->initializePage();
@@ -79,5 +85,6 @@ MainWindow::~MainWindow()
 {
     delete currentPage;
     delete mHaptique;
+    delete mSon;
     delete ui;
 }

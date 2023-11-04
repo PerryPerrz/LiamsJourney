@@ -34,6 +34,21 @@ void PageTwo::mouseMoveEvent(QMouseEvent *event) {
 void PageTwo::initializePage()  {
     dynamic_cast<MainWindow*>(this->parent()->parent())
            ->getGestionHaptique()->startEffect(HapticHandler::SCENE_2);
+
+    MainWindow* mainWindow = dynamic_cast<MainWindow*>(this->parent()->parent());
+    if (mainWindow) {
+        SoundHandler* soundHandler = mainWindow->getGestionSon();
+
+        if (soundHandler) {
+        soundHandler->startSounds(SoundHandler::SCENE_3);
+        } else {
+            qDebug() << "Error: could not start sound";
+        }
+    }
+    else {
+        qDebug() << "Error: could not get sound handler";
+        }
+
    startTimer(50);
 }
 
@@ -58,6 +73,9 @@ void PageTwo::timerEvent(QTimerEvent *event){
     dynamic_cast<MainWindow*>(this->parent()->parent())
             ->getGestionHaptique()
             ->changeMagnitudeOfScene_2(val);
+            
+      dynamic_cast<MainWindow*>(this->parent()->parent())
+            ->getGestionSon();
 }
 
 
