@@ -7,8 +7,9 @@
 #include <QMouseEvent>
 #include <QTimer>
 
-namespace Ui {
-class PageTwo;
+namespace Ui
+{
+    class PageTwo;
 }
 
 class PageTwo : public QWidget, public Page

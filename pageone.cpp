@@ -8,21 +8,20 @@
 
 #include <QPushButton>
 
-PageOne::PageOne(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::PageOne)
+PageOne::PageOne(QWidget *parent) : QWidget(parent),
+                                    ui(new Ui::PageOne)
 {
     ui->setupUi(this);
 
-    //Define liam moveable
-    ClickableLabel *liam = this->findChild<ClickableLabel*>("liam");
+    // Define liam moveable
+    ClickableLabel *liam = this->findChild<ClickableLabel *>("liam");
     liam->setMoveable(true);
     connect(liam, &ClickableLabel::moved, this, &PageOne::onCollide);
 
-    QLabel* road = this->findChild<QLabel*>("road");
+    QLabel *road = this->findChild<QLabel *>("road");
     road->setVisible(false);
 
-    QLabel* exit = this->findChild<QLabel*>("exit");
+    QLabel *exit = this->findChild<QLabel *>("exit");
     exit->setVisible(false);
 
     this->isWalking = false;
@@ -37,53 +36,66 @@ PageOne::~PageOne()
 /**
  * @brief PageOne::onCollide
  */
-void PageOne::onCollide(){
-    //Getting all the objects that we're going to test.
-    QLabel *exit = this->findChild<QLabel*>("exit");
-    QLabel *road = this->findChild<QLabel*>("road");
-    ClickableLabel *liam = this->findChild<ClickableLabel*>("liam");
+void PageOne::onCollide()
+{
+    // Getting all the objects that we're going to test.
+    QLabel *exit = this->findChild<QLabel *>("exit");
+    QLabel *road = this->findChild<QLabel *>("road");
+    ClickableLabel *liam = this->findChild<ClickableLabel *>("liam");
 
     Utils utils = Utils();
-    bool isLiamAndRoadColliding = utils.areLabelsColliding(road,liam);
-    if ( isLiamAndRoadColliding && !this->isWalking) {
-        dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getHapticHandler()->startEffect(HapticHandler::SCENE_1);
+    bool isLiamAndRoadColliding = utils.areLabelsColliding(road, liam);
+    if (isLiamAndRoadColliding && !this->isWalking)
+    {
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getHapticHandler()
+            ->startEffect(HapticHandler::SCENE_1);
 
-        dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getSoundHandler()->startSounds(SoundHandler::SCENE_2);
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getSoundHandler()
+            ->startSounds(SoundHandler::SCENE_2);
 
         this->isWalking = true;
-    } else if(this->isWalking && !isLiamAndRoadColliding){
-        dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getHapticHandler()->stopEffect(HapticHandler::SCENE_1);
+    }
+    else if (this->isWalking && !isLiamAndRoadColliding)
+    {
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getHapticHandler()
+            ->stopEffect(HapticHandler::SCENE_1);
 
-        dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getSoundHandler()->stopSounds(SoundHandler::SCENE_2);
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getSoundHandler()
+            ->stopSounds(SoundHandler::SCENE_2);
 
         this->isWalking = false;
     }
 
-    if (utils.areLabelsColliding(exit, liam)) {
-         dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getHapticHandler()->stopEffect(HapticHandler::SCENE_1);
+    if (utils.areLabelsColliding(exit, liam))
+    {
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getHapticHandler()
+            ->stopEffect(HapticHandler::SCENE_1);
 
-         dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getSoundHandler()->stopSounds(SoundHandler::SCENE_2);
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getSoundHandler()
+            ->stopSounds(SoundHandler::SCENE_2);
 
-        dynamic_cast<MainWindow*>(this->parent()->parent())->setCurrentPage(2);
+        dynamic_cast<MainWindow *>(this->parent()->parent())->setCurrentPage(2);
     }
 }
 
-void PageOne::onStopDragAndDrop(){
+void PageOne::onStopDragAndDrop()
+{
     this->isWalking = false;
-    dynamic_cast<MainWindow*>(this->parent()->parent())
-            ->getHapticHandler()->stopEffect(HapticHandler::SCENE_1);
-            
-    dynamic_cast<MainWindow*>(this->parent()->parent())
-            ->getSoundHandler()->stopSounds(SoundHandler::SCENE_2);
+    dynamic_cast<MainWindow *>(this->parent()->parent())
+        ->getHapticHandler()
+        ->stopEffect(HapticHandler::SCENE_1);
+
+    dynamic_cast<MainWindow *>(this->parent()->parent())
+        ->getSoundHandler()
+        ->stopSounds(SoundHandler::SCENE_2);
 }
 
-void PageOne::initializePage() {
-
+void PageOne::initializePage()
+{
 }
-

@@ -2,11 +2,11 @@
 
 Utils::Utils(QObject *parent) : QObject(parent)
 {
-
 }
 
-bool Utils::areLabelsColliding(QLabel *a, QLabel *b){
-    //Check if Liam's left corner is on the exit or no.
+bool Utils::areLabelsColliding(QLabel *a, QLabel *b)
+{
+    // Check if Liam's left corner is on the exit or no.
     QRect rect1 = a->geometry();
     QRect rect2 = b->geometry();
 
@@ -23,5 +23,5 @@ bool Utils::areLabelsColliding(QLabel *a, QLabel *b){
 
     // Vérifiez si les rectangles se chevauchent
     // Il faut envoyer un signal
-    return  !(right1 < left2 || left1 > right2 || bottom1 < top2 || top1 > bottom2);
+    return !(right1 < left2 || left1 > right2 || bottom1 < top2 || top1 > bottom2);
 }

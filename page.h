@@ -4,7 +4,6 @@
 class Page
 {
 public:
-
     void virtual initializePage() = 0;
 };
 

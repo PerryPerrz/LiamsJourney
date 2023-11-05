@@ -15,7 +15,7 @@ SoundHandler::SoundHandler(MainWindow *fen, QObject *parent) : QObject(parent), 
     scene_6 = new QMediaPlaylist();
     scene_7 = new QMediaPlaylist();
 
-    //Set up different media files for each scene here
+    // Set up different media files for each scene here
     scene_1->addMedia(QUrl("file:///E:/LiamsJourney/sounds/forest.mp3"));
     scene_2->addMedia(QUrl("file:///E:/LiamsJourney/sounds/walking.mp3"));
     scene_3->addMedia(QUrl("file:///E:/LiamsJourney/sounds/bzzbzz.mp3"));
@@ -30,48 +30,53 @@ SoundHandler::SoundHandler(MainWindow *fen, QObject *parent) : QObject(parent), 
     player->setPlaylist(NULL);
 }
 
-void SoundHandler::startSounds(const int sound){
+void SoundHandler::startSounds(const int sound)
+{
     // Stop the currently playing sound (if any)
     player->stop();
 
-    switch(sound) {
-        case SoundHandler::SCENE_1:
-            player->setPlaylist(scene_1);
-            player->setVolume(50);
-            qDebug()<<"1";
-            player->play();
+    switch (sound)
+    {
+    case SoundHandler::SCENE_1:
+        player->setPlaylist(scene_1);
+        player->setVolume(50);
+        qDebug() << "1";
+        player->play();
         break;
 
-        case SoundHandler::SCENE_2:
-            player->setPlaylist(scene_2);
-            player->setVolume(50);
-            qDebug()<<"2";
-            player->play();
+    case SoundHandler::SCENE_2:
+        player->setPlaylist(scene_2);
+        player->setVolume(50);
+        qDebug() << "2";
+        player->play();
         break;
 
     case SoundHandler::SCENE_3:
         player->setPlaylist(scene_3);
         player->setVolume(50);
-        qDebug()<<"3";
+        qDebug() << "3";
         player->play();
-    break;
+        break;
 
     case SoundHandler::SCENE_4:
         player->setPlaylist(scene_4);
         player->setVolume(50);
-        qDebug()<<"4";
+        qDebug() << "4";
         player->play();
-    break;
+        break;
     }
 }
 
-void SoundHandler::stopSounds(const int sound){
-    if (player->state() == QMediaPlayer::PlayingState) {
+void SoundHandler::stopSounds(const int sound)
+{
+    if (player->state() == QMediaPlayer::PlayingState)
+    {
         player->stop();
     }
 }
 
-SoundHandler::~SoundHandler() {
+SoundHandler::~SoundHandler()
+{
     delete player;
     delete scene_1;
     delete scene_2;

@@ -6,8 +6,9 @@
 #include "soundhandler.h"
 #include "page.h"
 
-namespace Ui {
-class HomePage;
+namespace Ui
+{
+    class HomePage;
 }
 
 class HomePage : public QWidget, public Page

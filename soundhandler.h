@@ -18,7 +18,8 @@ public:
     void startSounds(const int sound);
     void stopSounds(const int sound);
 
-    enum Sounds {
+    enum Sounds
+    {
         SCENE_1,
         SCENE_2,
         SCENE_3,
@@ -31,7 +32,7 @@ public:
 public slots:
 
 private:
-    MainWindow* mFenetre;
+    MainWindow *mFenetre;
     QMediaPlayer *player;
     QMediaPlaylist *scene_1;
     QMediaPlaylist *scene_2;

@@ -17,9 +17,8 @@
 #include <QVBoxLayout>
 #include <QLabel>
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
+                                          ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     QCursor cursor(QPixmap(":/images/main_cursor.png"));
@@ -49,8 +48,10 @@ MainWindow::MainWindow(QWidget *parent) :
  * @brief Close the application when the escape key is released
  * @param event
  */
-void MainWindow::keyReleaseEvent(QKeyEvent *event) {
-    if (event->key() == Qt::Key_Escape) {
+void MainWindow::keyReleaseEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_Escape)
+    {
         close();
     }
 }
@@ -58,28 +59,32 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event) {
 /**
  * @brief Set the first Page
  */
-void MainWindow::nextPage() {
+void MainWindow::nextPage()
+{
     int index = this->currentPage->currentIndex();
     currentPage->setCurrentIndex(++index);
-    dynamic_cast<Page*>(currentPage->currentWidget())->initializePage();
+    dynamic_cast<Page *>(currentPage->currentWidget())->initializePage();
 }
 
 /**
-  * @brief MainWindow::getGestionHaptique
-  * @return the haptic handler
-  */
- HapticHandler* MainWindow::getHapticHandler() const {
+ * @brief MainWindow::getGestionHaptique
+ * @return the haptic handler
+ */
+HapticHandler *MainWindow::getHapticHandler() const
+{
     return mHaptique;
- }
+}
 
- SoundHandler* MainWindow::getSoundHandler() const {
+SoundHandler *MainWindow::getSoundHandler() const
+{
     return mSon;
- }
+}
 
- void MainWindow::setCurrentPage(int pageNumber){
+void MainWindow::setCurrentPage(int pageNumber)
+{
     this->currentPage->setCurrentIndex(pageNumber);
-    dynamic_cast<Page*>(currentPage->currentWidget())->initializePage();
- }
+    dynamic_cast<Page *>(currentPage->currentWidget())->initializePage();
+}
 
 MainWindow::~MainWindow()
 {

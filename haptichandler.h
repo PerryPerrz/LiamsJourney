@@ -24,18 +24,19 @@ public:
     void changeMagnitudeOfScene_2(DWORD magnitude);
     void changeWallPosition(const int wall, POINT point);
 
-    enum Effects {
-            SCENE_1,
-            SCENE_2,
-            SCENE_3,
-            SCENE_4,
-            DOWN_WALL,
-            UP_WALL,
-            RIGHT_WALL,
-            LEFT_WALL,
-            SCENE_6,
-            SCENE_7
-        };
+    enum Effects
+    {
+        SCENE_1,
+        SCENE_2,
+        SCENE_3,
+        SCENE_4,
+        DOWN_WALL,
+        UP_WALL,
+        RIGHT_WALL,
+        LEFT_WALL,
+        SCENE_6,
+        SCENE_7
+    };
 
 public slots:
 

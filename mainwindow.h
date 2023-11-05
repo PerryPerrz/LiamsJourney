@@ -8,8 +8,9 @@
 #include <QKeyEvent>
 #include <QStackedWidget>
 
-namespace Ui {
-class MainWindow;
+namespace Ui
+{
+    class MainWindow;
 }
 
 class MainWindow : public QMainWindow
@@ -19,8 +20,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     void keyReleaseEvent(QKeyEvent *event);
-    HapticHandler* getHapticHandler() const;
-    SoundHandler* getSoundHandler() const;
+    HapticHandler *getHapticHandler() const;
+    SoundHandler *getSoundHandler() const;
 
     ~MainWindow();
 

@@ -5,8 +5,9 @@
 
 #include <QWidget>
 
-namespace Ui {
-class PageOne;
+namespace Ui
+{
+    class PageOne;
 }
 
 class PageOne : public QWidget, public Page
@@ -18,7 +19,7 @@ public:
     void initializePage() override;
     ~PageOne();
 
-public slots :
+public slots:
     void onCollide();
     void onStopDragAndDrop();
 

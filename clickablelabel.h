@@ -12,15 +12,15 @@ class ClickableLabel : public QLabel
     Q_PROPERTY(bool moveable READ isMoveable WRITE setMoveable)
 
 public:
-    explicit ClickableLabel(QWidget *parent = nullptr, bool moveable = false, QString restriction = "none" );
+    explicit ClickableLabel(QWidget *parent = nullptr, bool moveable = false, QString restriction = "none");
     ~ClickableLabel();
     bool isMoveable() const;
     void setMoveable(const bool &nm);
     void setRestriction(const QString &rest);
 
 signals:
-    void clicked();  // Signal emit when label is clicked with left button
-    void moved(); // Signal emit when label is moved
+    void clicked(); // Signal emit when label is clicked with left button
+    void moved();   // Signal emit when label is moved
     void stopDragAndDrop();
 
 protected:
@@ -35,7 +35,7 @@ private:
     // Attributes
     bool m_moveable;
     bool doDragAndDrop;
-    QPoint  firstPosOnDragAndDrop;
+    QPoint firstPosOnDragAndDrop;
     QString m_restriction;
 };
 

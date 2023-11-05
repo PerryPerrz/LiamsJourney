@@ -5,8 +5,9 @@
 
 #include <QWidget>
 
-namespace Ui {
-class PageEight;
+namespace Ui
+{
+    class PageEight;
 }
 
 class PageEight : public QWidget, public Page

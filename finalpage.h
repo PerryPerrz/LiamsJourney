@@ -5,8 +5,9 @@
 
 #include <QWidget>
 
-namespace Ui {
-class FinalPage;
+namespace Ui
+{
+    class FinalPage;
 }
 
 class FinalPage : public QWidget, public Page
