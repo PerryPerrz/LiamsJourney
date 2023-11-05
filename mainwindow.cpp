@@ -68,11 +68,11 @@ void MainWindow::nextPage() {
   * @brief MainWindow::getGestionHaptique
   * @return the haptic handler
   */
- HapticHandler* MainWindow::getGestionHaptique() const {
+ HapticHandler* MainWindow::getHapticHandler() const {
     return mHaptique;
  }
 
- SoundHandler* MainWindow::getGestionSon() const {
+ SoundHandler* MainWindow::getSoundHandler() const {
     return mSon;
  }
 

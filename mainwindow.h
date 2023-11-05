@@ -19,8 +19,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     void keyReleaseEvent(QKeyEvent *event);
-    HapticHandler* getGestionHaptique() const;
-    SoundHandler* getGestionSon() const;
+    HapticHandler* getHapticHandler() const;
+    SoundHandler* getSoundHandler() const;
 
     ~MainWindow();
 

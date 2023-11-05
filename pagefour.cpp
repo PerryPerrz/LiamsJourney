@@ -55,11 +55,11 @@ PageFour::~PageFour()
 
      if (utils.areLabelsColliding(head_match, grip)) {
          dynamic_cast<MainWindow*>(this->parent()->parent())
-                 ->getGestionHaptique()
+                 ->getHapticHandler()
                  ->startEffect(HapticHandler::SCENE_4);
      } else {
          dynamic_cast<MainWindow*>(this->parent()->parent())
-                 ->getGestionHaptique()
+                 ->getHapticHandler()
                  ->stopEffect(HapticHandler::SCENE_4);
          isTriggered = false;
      }
@@ -71,7 +71,7 @@ PageFour::~PageFour()
              match->setMoveable(false);
 
              dynamic_cast<MainWindow*>(this->parent()->parent())
-                     ->getGestionHaptique()
+                     ->getHapticHandler()
                      ->stopEffect(HapticHandler::SCENE_4);
 
              match->setStyleSheet(QString("background-image: url(:/images/match_on_fire.png);"));
@@ -95,7 +95,7 @@ PageFour::~PageFour()
 
  void PageFour::onStopDragAndDrop() {
      dynamic_cast<MainWindow*>(this->parent()->parent())
-             ->getGestionHaptique()
+             ->getHapticHandler()
              ->stopEffect(HapticHandler::SCENE_4);
  }
 

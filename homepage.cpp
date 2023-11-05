@@ -14,7 +14,7 @@ HomePage::HomePage(QWidget *parent) :
     // Get the sound handler from the main window
     MainWindow* mainWindow = dynamic_cast<MainWindow*>(this->parent());
     if (mainWindow) {
-        SoundHandler* soundHandler = mainWindow->getGestionSon();
+        SoundHandler* soundHandler = mainWindow->getSoundHandler();
         if (soundHandler) {
         soundHandler->startSounds(SoundHandler::SCENE_1);
         } else {
@@ -36,7 +36,7 @@ void HomePage::initializePage() {
 
 void HomePage::stopSound(){
     dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getGestionSon()->stopSounds(SoundHandler::SCENE_1);
+                ->getSoundHandler()->stopSounds(SoundHandler::SCENE_1);
 }
 
 HomePage::~HomePage()

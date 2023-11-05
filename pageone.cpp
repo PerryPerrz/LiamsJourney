@@ -47,28 +47,28 @@ void PageOne::onCollide(){
     bool isLiamAndRoadColliding = utils.areLabelsColliding(road,liam);
     if ( isLiamAndRoadColliding && !this->isWalking) {
         dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getGestionHaptique()->startEffect(HapticHandler::SCENE_1);
+                ->getHapticHandler()->startEffect(HapticHandler::SCENE_1);
 
         dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getGestionSon()->startSounds(SoundHandler::SCENE_2);
+                ->getSoundHandler()->startSounds(SoundHandler::SCENE_2);
 
         this->isWalking = true;
     } else if(this->isWalking && !isLiamAndRoadColliding){
         dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getGestionHaptique()->stopEffect(HapticHandler::SCENE_1);
+                ->getHapticHandler()->stopEffect(HapticHandler::SCENE_1);
 
         dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getGestionSon()->stopSounds(SoundHandler::SCENE_2);
+                ->getSoundHandler()->stopSounds(SoundHandler::SCENE_2);
 
         this->isWalking = false;
     }
 
     if (utils.areLabelsColliding(exit, liam)) {
          dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getGestionHaptique()->stopEffect(HapticHandler::SCENE_1);
+                ->getHapticHandler()->stopEffect(HapticHandler::SCENE_1);
 
          dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getGestionSon()->stopSounds(SoundHandler::SCENE_2);
+                ->getSoundHandler()->stopSounds(SoundHandler::SCENE_2);
 
         dynamic_cast<MainWindow*>(this->parent()->parent())->setCurrentPage(2);
     }
@@ -77,10 +77,10 @@ void PageOne::onCollide(){
 void PageOne::onStopDragAndDrop(){
     this->isWalking = false;
     dynamic_cast<MainWindow*>(this->parent()->parent())
-            ->getGestionHaptique()->stopEffect(HapticHandler::SCENE_1);
+            ->getHapticHandler()->stopEffect(HapticHandler::SCENE_1);
             
     dynamic_cast<MainWindow*>(this->parent()->parent())
-            ->getGestionSon()->stopSounds(SoundHandler::SCENE_2);
+            ->getSoundHandler()->stopSounds(SoundHandler::SCENE_2);
 }
 
 void PageOne::initializePage() {

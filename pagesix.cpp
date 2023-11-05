@@ -43,11 +43,11 @@ void PageSix::onSpoonMouve() {
 
     if (utils.areLabelsColliding(spoon, grid)) {
         dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getGestionHaptique()
+                ->getHapticHandler()
                 ->startEffect(HapticHandler::SCENE_6);
     } else {
         dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getGestionHaptique()
+                ->getHapticHandler()
                 ->stopEffect(HapticHandler::SCENE_6);
     }
 
@@ -70,7 +70,7 @@ void PageSix::onSpoonMouve() {
 
             if (!done) {
                 dynamic_cast<MainWindow*>(this->parent()->parent())
-                        ->getGestionHaptique()
+                        ->getHapticHandler()
                         ->stopEffect(HapticHandler::SCENE_6);
 
                 QTimer::singleShot(1000, dynamic_cast<MainWindow*>(this->parent()->parent()), &MainWindow::nextPage);
@@ -87,7 +87,7 @@ void PageSix::onSpoonMouve() {
 
 void PageSix::onDragAndDropStopped() {
     dynamic_cast<MainWindow*>(this->parent()->parent())
-            ->getGestionHaptique()
+            ->getHapticHandler()
             ->stopEffect(HapticHandler::SCENE_6);
     isEnter = false;
 }

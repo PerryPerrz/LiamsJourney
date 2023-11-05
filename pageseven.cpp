@@ -41,11 +41,11 @@ void PageSeven::onSpoonMoved() {
 
     if (utils.areLabelsColliding(spoon, honey)) {
         dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getGestionHaptique()
+                ->getHapticHandler()
                 ->startEffect(HapticHandler::SCENE_7);
     } else {
         dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getGestionHaptique()
+                ->getHapticHandler()
                 ->stopEffect(HapticHandler::SCENE_7);
     }
 
@@ -54,7 +54,7 @@ void PageSeven::onSpoonMoved() {
         isTriggered = true;
     } else if (count == 10 && !done && utils.areLabelsColliding(spoon, counter)) {
         dynamic_cast<MainWindow*>(this->parent()->parent())
-                ->getGestionHaptique()
+                ->getHapticHandler()
                 ->stopEffect(HapticHandler::SCENE_7);
 
         dynamic_cast<MainWindow*>(this->parent()->parent())
@@ -67,6 +67,6 @@ void PageSeven::onSpoonMoved() {
 
 void PageSeven::onSpoonReleased() {
     dynamic_cast<MainWindow*>(this->parent()->parent())
-            ->getGestionHaptique()
+            ->getHapticHandler()
             ->stopEffect(HapticHandler::SCENE_7);
 }

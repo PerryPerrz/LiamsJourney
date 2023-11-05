@@ -75,7 +75,7 @@ void PageFive::initializePage() {
      bool isInZone10 = utils.areLabelsColliding(liam, zone_10);
      bool isInZone11 = utils.areLabelsColliding(liam, zone_11);
 
-     HapticHandler *hapticHandler  =  dynamic_cast<MainWindow*>(this->parent()->parent())->getGestionHaptique();
+     HapticHandler *hapticHandler  =  dynamic_cast<MainWindow*>(this->parent()->parent())->getHapticHandler();
 
     if ((isInZone1 || isInZone2 || isInZone3 || isInZone4 || isInZone5 || isInZone6
             || isInZone7 || isInZone8 || isInZone9 || isInZone10 || isInZone11) && !areEffectsActive) {
@@ -235,7 +235,7 @@ void PageFive::initializePage() {
  }
 
   void PageFive::onStopDragAndDrop() {
-       HapticHandler *hapticHandler  =  dynamic_cast<MainWindow*>(this->parent()->parent())->getGestionHaptique();
+       HapticHandler *hapticHandler  =  dynamic_cast<MainWindow*>(this->parent()->parent())->getHapticHandler();
       hapticHandler->stopEffect(HapticHandler::UP_WALL);
       hapticHandler->stopEffect(HapticHandler::DOWN_WALL);
       hapticHandler->stopEffect(HapticHandler::RIGHT_WALL);

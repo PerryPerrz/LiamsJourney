@@ -41,7 +41,7 @@ PageThree::~PageThree()
   */
  void PageThree::changeLiamState() {
      dynamic_cast<MainWindow*>(this->parent()->parent())
-             ->getGestionHaptique()
+             ->getHapticHandler()
              ->startEffect(HapticHandler::SCENE_3);
    ClickableLabel *arrow = this->findChild<ClickableLabel*>("arrow");
     QLabel *secondPos = this->findChild<QLabel*>("secondPos");
@@ -93,15 +93,15 @@ PageThree::~PageThree()
      }
 
      dynamic_cast<MainWindow*>(this->parent()->parent())
-             ->getGestionHaptique()
+             ->getHapticHandler()
              ->stopEffect(HapticHandler::SCENE_3);
  }
 
  void PageThree::initializePage() {
      dynamic_cast<MainWindow*>(this->parent()->parent())
-            ->getGestionHaptique()->stopEffect(HapticHandler::SCENE_2);
+            ->getHapticHandler()->stopEffect(HapticHandler::SCENE_2);
 
      dynamic_cast<MainWindow*>(this->parent()->parent())
-        ->getGestionSon()->stopSounds(HapticHandler::SCENE_3);
+        ->getSoundHandler()->stopSounds(HapticHandler::SCENE_3);
  }
 
