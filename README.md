@@ -12,23 +12,21 @@ Par Hugo, Aurianne et Sacha.
 
 <H3>Histoire</H3>
 
-Scène 1 : Il était une fois, dans un village niché au cœur d'une vaste forêt, vivait un archer nommé Liam. La renommée de Liam s'étendait bien au-delà du village pour sa précision légendaire et sa nature généreuse. Comme chaque matin, Liam se dirigeait vers la forêt.
+Scène 1 : Il était une fois, dans un village isolé au cœur d'une vaste forêt, un archer du nom de Liam. La renommée de Liam s'étendait bien au-delà du village en raison de sa précision légendaire et de sa nature généreuse. Comme à son habitude, chaque matin, Liam se dirigeait vers la forêt.
 
 Scène 2 : Alors qu'il se promenait dans les bois, un bruit étrange attira son attention. Intrigué, il se laissa guider par le son jusqu'à un arbre où il découvrit un essaim d'abeilles en pleine agitation. Liam pressentit que quelque chose n'allait pas.
 
-Scène 3 : Avec une grande précaution, il s'approcha et remarqua un frelon asiatique au milieu des abeilles. Liam décocha une flèche d'une précision inégalée, sauvant ainsi les abeilles et libérant la ruche de la menace.
+Scène 3 : Avec une grande précaution, il s'approcha et remarqua un frelon asiatique au milieu des abeilles. Liam décocha une flèche d'une précision inégalée, sauvant ainsi les abeilles et libérant la ruche de la menace. Pour le remercier, les abeilles invitèrent Liam à rencontrer la reine.
 
-Scène 3 bis : En signe de gratitude, les abeilles bourdonnèrent autour de Liam. Pour le remercier, elles le guidèrent à l'intérieur de leur ruche.
+Scène 4 : À l'intérieur de la ruche, l'obscurité régnait en maître. Liam sortit alors délicatement sa boîte d'allumettes pour éclairer son chemin, illuminant la ruche d'une douce lumière.
 
-Scène 4 : À l'intérieur de la ruche, l'obscurité régnait en maître. Liam sortit alors délicatement sa boîte d'allumettes pour éclairer son chemin, illuminant la ruche d'une lumière douce.
+Scène 5 : Pour atteindre le miel royal, Liam dut traverser un labyrinthe de miel incroyablement collant, une épreuve que Liam accepta avec courage.
 
-Scène 5 : Dans ce doux halo de lumière, Liam découvrit un trésor doré de miel délicieux et pur. Les abeilles, reconnaissantes, lui indiquèrent la sortie de la ruche.
+Scène 6 : La reine, reconnaissante envers Liam, lui offrit un énorme pot vide. Liam prit son courage à deux mains et commença à gratter les opercules pour remplir ce précieux pot. Ensuite, Liam saisit ce précieux cadeau et entreprit le chemin de la sortie.
 
-Scène 6 : Cependant, pour atteindre la sortie, il devait traverser un labyrinthe de miel incroyablement collant, une épreuve que Liam accepta avec courage.
+Scène 7 : La reine raccompagna Liam, lui expliquant que s'il mélangeait parfaitement le miel, celui-ci aurait des propriétés magiques. Liam s'empressa donc de mélanger ce miel aussi vigoureusement qu'il le put.
 
-Scène 7 : Une fois sorti, il fut accueilli par la reine des abeilles, qui lui offrit un énorme pot de miel qu'il prit avec gratitude pour le rapporter au village. Connaissant les préférences des villageois en matière de texture, Liam décida de mélanger ce miel pour le rendre encore plus onctueux.
-
-Fin : Enfin, il ramena sa précieuse récolte au village. Les habitants furent enchantés par la douceur du miel et touchés par l'acte héroïque de Liam. Dès lors, il fut surnommé l'archer bien-aimé du village. Chaque année, en signe de gratitude, les abeilles lui offraient leur miel le plus exquis, perpétuant ainsi la légende de Liam, l'archer généreux.
+Fin : Enfin, il ramena sa précieuse récolte au village. Les habitants furent enchantés par la magie du miel et touchés par l'acte héroïque de Liam. Dès lors, il fut surnommé l'archer bien-aimé du village. Tous les dix ans, en signe de gratitude, les abeilles lui offraient leur miel le plus exquis, perpétuant ainsi la légende de Liam, l'archer généreux.
 
 ---
 
