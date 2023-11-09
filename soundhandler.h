@@ -34,13 +34,7 @@ public slots:
 private:
     MainWindow *mFenetre;
     QMediaPlayer *player;
-    QMediaPlaylist *scene_1;
-    QMediaPlaylist *scene_2;
-    QMediaPlaylist *scene_3;
-    QMediaPlaylist *scene_4;
-    QMediaPlaylist *scene_5;
-    QMediaPlaylist *scene_6;
-    QMediaPlaylist *scene_7;
+    QMediaPlaylist *playlist;
 };
 
 #endif // SOUNDHANDLER_H
