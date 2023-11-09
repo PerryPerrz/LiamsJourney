@@ -50,12 +50,20 @@ void PageSix::onSpoonMouve()
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->getHapticHandler()
                 ->startEffect(HapticHandler::SCENE_6);
+
+            MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
+            SoundHandler *soundHandler = mainWindow->getSoundHandler();
+            soundHandler->startSounds(SoundHandler::SCENE_8);
         }
         else
         {
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->getHapticHandler()
                 ->stopEffect(HapticHandler::SCENE_6);
+
+            dynamic_cast<MainWindow *>(this->parent()->parent())
+                ->getSoundHandler()
+                ->stopSounds(SoundHandler::SCENE_8);
         }
 
         if (isEnter && utils.areLabelsColliding(spoon, exit))
@@ -83,6 +91,10 @@ void PageSix::onSpoonMouve()
                         ->getHapticHandler()
                         ->stopEffect(HapticHandler::SCENE_6);
 
+                    dynamic_cast<MainWindow *>(this->parent()->parent())
+                        ->getSoundHandler()
+                        ->stopSounds(SoundHandler::SCENE_8);
+
                     QTimer::singleShot(1000, dynamic_cast<MainWindow *>(this->parent()->parent()), &MainWindow::nextPage);
                     done = true;
                 }
@@ -103,6 +115,11 @@ void PageSix::onDragAndDropStopped()
         dynamic_cast<MainWindow *>(this->parent()->parent())
             ->getHapticHandler()
             ->stopEffect(HapticHandler::SCENE_6);
+
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getSoundHandler()
+            ->stopSounds(SoundHandler::SCENE_8);
+
         isEnter = false;
     }
 }

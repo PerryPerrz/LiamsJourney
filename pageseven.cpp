@@ -35,6 +35,10 @@ void PageSeven::initializePage()
     dynamic_cast<MainWindow*>(this->parent()->parent())
             ->getHapticHandler()
             ->stopEffect(HapticHandler::SCENE_6);
+
+    dynamic_cast<MainWindow *>(this->parent()->parent())
+        ->getSoundHandler()
+        ->startSounds(SoundHandler::SCENE_9);
 }
 
 void PageSeven::onSpoonMoved()

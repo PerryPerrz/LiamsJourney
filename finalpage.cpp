@@ -14,6 +14,8 @@ FinalPage::FinalPage(QWidget *parent) : QWidget(parent),
     connect(exitButton, &ClickableLabel::clicked,
             dynamic_cast<MainWindow *>(this->parent()),
             &MainWindow::close);
+
+    connect(exitButton, &ClickableLabel::clicked, this, &FinalPage::stopSound);
 }
 
 FinalPage::~FinalPage()
@@ -27,4 +29,10 @@ void FinalPage::initializePage()
 
 void FinalPage::setState(bool isActive) {
     this->isActive = isActive;
+}
+
+void FinalPage::stopSound(){
+    dynamic_cast<MainWindow *>(this->parent()->parent())
+        ->getSoundHandler()
+        ->stopSounds(SoundHandler::SCENE_10);
 }

@@ -24,6 +24,14 @@ PageEight::~PageEight()
 
 void PageEight::initializePage()
 {
+    dynamic_cast<MainWindow *>(this->parent()->parent())
+        ->getSoundHandler()
+        ->stopSounds(SoundHandler::SCENE_9);
+
+    dynamic_cast<MainWindow *>(this->parent()->parent())
+        ->getSoundHandler()
+        ->startSounds(SoundHandler::SCENE_10);
+
     setState(true);
 }
 
