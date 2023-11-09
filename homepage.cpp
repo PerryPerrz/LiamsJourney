@@ -33,17 +33,26 @@ HomePage::HomePage(QWidget *parent) : QWidget(parent),
     ClickableLabel *playButton = this->findChild<ClickableLabel *>("playButton");
     connect(playButton, &ClickableLabel::clicked, dynamic_cast<MainWindow *>(this->parent()), &MainWindow::nextPage);
     connect(playButton, &ClickableLabel::clicked, this, &HomePage::stopSound);
+
+    isActive = false;
 }
 
 void HomePage::initializePage()
 {
+    setState(true);
 }
 
 void HomePage::stopSound()
 {
-    dynamic_cast<MainWindow *>(this->parent()->parent())
-        ->getSoundHandler()
-        ->stopSounds(SoundHandler::SCENE_1);
+    if (isActive) {
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getSoundHandler()
+            ->stopSounds(SoundHandler::SCENE_1);
+    }
+}
+
+void HomePage::setState(bool isActive) {
+    this->isActive =isActive;
 }
 
 HomePage::~HomePage()

@@ -24,3 +24,7 @@ FinalPage::~FinalPage()
 void FinalPage::initializePage()
 {
 }
+
+void FinalPage::setState(bool isActive) {
+    this->isActive = isActive;
+}

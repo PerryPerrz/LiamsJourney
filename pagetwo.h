@@ -19,6 +19,7 @@ class PageTwo : public QWidget, public Page
 public:
     explicit PageTwo(QWidget *parent = 0);
     void initializePage() override;
+    void setState(bool isActive) override;
     ~PageTwo();
 
 protected:
@@ -27,6 +28,7 @@ protected:
 
 private:
     Ui::PageTwo *ui;
+    bool isActive;
 };
 
 #endif // PAGETWO_H

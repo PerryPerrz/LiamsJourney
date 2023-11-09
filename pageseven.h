@@ -17,6 +17,7 @@ class PageSeven : public QWidget, public Page
 public:
     explicit PageSeven(QWidget *parent = 0);
     void initializePage() override;
+    void setState(bool isActive) override;
     ~PageSeven();
 
 public slots:
@@ -28,6 +29,7 @@ private:
     int count;
     bool done;
     bool isTriggered;
+    bool isActive;
 };
 
 #endif // PAGESEVEN_H

@@ -17,6 +17,7 @@ class PageThree : public QWidget, public Page
 public:
     explicit PageThree(QWidget *parent = 0);
     void initializePage() override;
+    void setState(bool isActive) override;
     ~PageThree();
 
 public slots:
@@ -26,6 +27,7 @@ public slots:
 private:
     Ui::PageThree *ui;
     int liamState;
+    bool isActive;
 };
 
 #endif // PAGETHREE_H

@@ -17,10 +17,12 @@ class FinalPage : public QWidget, public Page
 public:
     explicit FinalPage(QWidget *parent = 0);
     void initializePage() override;
+     void setState(bool isActive) override;
     ~FinalPage();
 
 private:
     Ui::FinalPage *ui;
+    bool isActive;
 };
 
 #endif // FINALPAGE_H

@@ -13,6 +13,8 @@ PageEight::PageEight(QWidget *parent) : QWidget(parent),
     connect(nextButton, &ClickableLabel::clicked,
             dynamic_cast<MainWindow *>(this->parent()),
             &MainWindow::nextPage);
+
+    setState(false);
 }
 
 PageEight::~PageEight()
@@ -22,4 +24,9 @@ PageEight::~PageEight()
 
 void PageEight::initializePage()
 {
+    setState(true);
+}
+
+void PageEight::setState(bool isActive) {
+    this->isActive = isActive;
 }

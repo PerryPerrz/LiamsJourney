@@ -17,6 +17,7 @@ class PageFour : public QWidget, public Page
 public:
     explicit PageFour(QWidget *parent = 0);
     void initializePage() override;
+    void setState(bool isActive) override;
     ~PageFour();
 
 public slots:
@@ -26,6 +27,7 @@ public slots:
 private:
     Ui::PageFour *ui;
     bool isTriggered;
+    bool isActive;
 };
 
 #endif // PAGEFOUR_H

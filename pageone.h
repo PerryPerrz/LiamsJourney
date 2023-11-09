@@ -17,6 +17,7 @@ class PageOne : public QWidget, public Page
 public:
     explicit PageOne(QWidget *parent = 0);
     void initializePage() override;
+    void setState(bool isActive) override;
     ~PageOne();
 
 public slots:
@@ -26,6 +27,7 @@ public slots:
 private:
     Ui::PageOne *ui;
     bool isWalking;
+    bool isActive;
 
 signals:
     void walk();

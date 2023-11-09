@@ -15,6 +15,8 @@ PageTwo::PageTwo(QWidget *parent) : QWidget(parent),
     connect(hive, &ClickableLabel::clicked,
             dynamic_cast<MainWindow *>(this->parent()),
             &MainWindow::nextPage);
+
+    setState(false);
 }
 
 PageTwo::~PageTwo()
@@ -56,29 +58,37 @@ void PageTwo::initializePage()
     }
 
     startTimer(50);
+
+    setState(true);
 }
 
 void PageTwo::timerEvent(QTimerEvent *event)
 {
-    // Center of hive X : 737, Y : 346 -> 10 000 of magnitude
-    // Max Circle (top-right corner of label liam)  X : 280, Y : 400
-    QPoint hiveCenter = QPoint(737, 346);
-    QPoint maxPoint = QPoint(200, 400);
+    if (isActive) {
+        // Center of hive X : 737, Y : 346 -> 10 000 of magnitude
+        // Max Circle (top-right corner of label liam)  X : 280, Y : 400
+        QPoint hiveCenter = QPoint(737, 346);
+        QPoint maxPoint = QPoint(200, 400);
 
-    int maxDistance = (hiveCenter.x() - maxPoint.x()) * (hiveCenter.x() - maxPoint.x()) + (hiveCenter.y() - maxPoint.y()) * (hiveCenter.y() - maxPoint.y());
+        int maxDistance = (hiveCenter.x() - maxPoint.x()) * (hiveCenter.x() - maxPoint.x()) + (hiveCenter.y() - maxPoint.y()) * (hiveCenter.y() - maxPoint.y());
 
-    QPoint mousePos = QCursor::pos();
-    int currentDistance = (hiveCenter.x() - mousePos.x()) * (hiveCenter.x() - mousePos.x()) + (hiveCenter.y() - mousePos.y()) * (hiveCenter.y() - mousePos.y());
+        QPoint mousePos = QCursor::pos();
+        int currentDistance = (hiveCenter.x() - mousePos.x()) * (hiveCenter.x() - mousePos.x()) + (hiveCenter.y() - mousePos.y()) * (hiveCenter.y() - mousePos.y());
 
-    currentDistance = qBound(0, currentDistance, maxDistance);
+        currentDistance = qBound(0, currentDistance, maxDistance);
 
-    float percent = static_cast<float>(maxDistance - currentDistance) / maxDistance;
+        float percent = static_cast<float>(maxDistance - currentDistance) / maxDistance;
 
-    int val = qBound(0, static_cast<int>(10000 * percent), 10000);
-    dynamic_cast<MainWindow *>(this->parent()->parent())
-        ->getHapticHandler()
-        ->changeMagnitudeOfScene_2(val);
+        int val = qBound(0, static_cast<int>(10000 * percent), 10000);
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getHapticHandler()
+            ->changeMagnitudeOfScene_2(val);
 
-    dynamic_cast<MainWindow *>(this->parent()->parent())
-        ->getSoundHandler();
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getSoundHandler();
+    }
+}
+
+void PageTwo::setState(bool isActive) {
+    this->isActive = isActive;
 }

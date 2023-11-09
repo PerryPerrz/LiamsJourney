@@ -17,10 +17,12 @@ class PageEight : public QWidget, public Page
 public:
     explicit PageEight(QWidget *parent = 0);
     void initializePage() override;
+    void setState(bool isActive) override;
     ~PageEight();
 
 private:
     Ui::PageEight *ui;
+    bool isActive;
 };
 
 #endif // PAGEEIGHT_H

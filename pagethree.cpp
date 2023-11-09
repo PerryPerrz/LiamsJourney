@@ -27,6 +27,8 @@ PageThree::PageThree(QWidget *parent) : QWidget(parent),
     secondPos->setVisible(false);
     QLabel *thirdPos = this->findChild<QLabel *>("thirdPos");
     thirdPos->setVisible(false);
+
+    setState(false);
 }
 
 PageThree::~PageThree()
@@ -40,37 +42,39 @@ PageThree::~PageThree()
  */
 void PageThree::changeLiamState()
 {
-    dynamic_cast<MainWindow *>(this->parent()->parent())
-        ->getHapticHandler()
-        ->startEffect(HapticHandler::SCENE_3);
-    ClickableLabel *arrow = this->findChild<ClickableLabel *>("arrow");
-    QLabel *secondPos = this->findChild<QLabel *>("secondPos");
-    QLabel *thirdPos = this->findChild<QLabel *>("thirdPos");
-    QLabel *liam = this->findChild<QLabel *>("liam");
+    if (isActive) {
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getHapticHandler()
+            ->startEffect(HapticHandler::SCENE_3);
+        ClickableLabel *arrow = this->findChild<ClickableLabel *>("arrow");
+        QLabel *secondPos = this->findChild<QLabel *>("secondPos");
+        QLabel *thirdPos = this->findChild<QLabel *>("thirdPos");
+        QLabel *liam = this->findChild<QLabel *>("liam");
 
-    Utils utils = Utils();
-    bool collisionWithSencondPos = utils.areLabelsColliding(arrow, secondPos);
-    bool collisionWithThirdPos = utils.areLabelsColliding(arrow, thirdPos);
+        Utils utils = Utils();
+        bool collisionWithSencondPos = utils.areLabelsColliding(arrow, secondPos);
+        bool collisionWithThirdPos = utils.areLabelsColliding(arrow, thirdPos);
 
-    if (this->liamState == 0 && collisionWithSencondPos)
-    {
-        this->liamState = 1;
-        liam->setStyleSheet(QString("background-image: url(:/images/shot_two.png);"));
-    }
-    else if (this->liamState == 2 && !collisionWithThirdPos && collisionWithSencondPos)
-    {
-        this->liamState = 1;
-        liam->setStyleSheet(QString("background-image: url(:/images/shot_two.png);"));
-    }
-    else if (this->liamState == 1 && collisionWithThirdPos)
-    {
-        this->liamState = 2;
-        liam->setStyleSheet(QString("background-image: url(:/images/shot_three.png);"));
-    }
-    else if (this->liamState == 1 && !collisionWithThirdPos && !collisionWithSencondPos)
-    {
-        this->liamState = 0;
-        liam->setStyleSheet(QString("background-image: url(:/images/shot_one.png);"));
+        if (this->liamState == 0 && collisionWithSencondPos)
+        {
+            this->liamState = 1;
+            liam->setStyleSheet(QString("background-image: url(:/images/shot_two.png);"));
+        }
+        else if (this->liamState == 2 && !collisionWithThirdPos && collisionWithSencondPos)
+        {
+            this->liamState = 1;
+            liam->setStyleSheet(QString("background-image: url(:/images/shot_two.png);"));
+        }
+        else if (this->liamState == 1 && collisionWithThirdPos)
+        {
+            this->liamState = 2;
+            liam->setStyleSheet(QString("background-image: url(:/images/shot_three.png);"));
+        }
+        else if (this->liamState == 1 && !collisionWithThirdPos && !collisionWithSencondPos)
+        {
+            this->liamState = 0;
+            liam->setStyleSheet(QString("background-image: url(:/images/shot_one.png);"));
+        }
     }
 }
 
@@ -79,32 +83,34 @@ void PageThree::changeLiamState()
  */
 void PageThree::shotArrow()
 {
-    ClickableLabel *arrow = this->findChild<ClickableLabel *>("arrow");
-    QLabel *liam = this->findChild<QLabel *>("liam");
+    if (isActive) {
+        ClickableLabel *arrow = this->findChild<ClickableLabel *>("arrow");
+        QLabel *liam = this->findChild<QLabel *>("liam");
 
-    if (this->liamState == 2)
-    {
-        arrow->setMoveable(false);
-        QPropertyAnimation *shotAnimation = new QPropertyAnimation(arrow, "geometry");
-        shotAnimation->setDuration(200);
-        shotAnimation->setStartValue(arrow->geometry());
-        shotAnimation->setEndValue(QRect(500, arrow->geometry().y(), arrow->geometry().width(), arrow->geometry().height()));
+        if (this->liamState == 2)
+        {
+            arrow->setMoveable(false);
+            QPropertyAnimation *shotAnimation = new QPropertyAnimation(arrow, "geometry");
+            shotAnimation->setDuration(200);
+            shotAnimation->setStartValue(arrow->geometry());
+            shotAnimation->setEndValue(QRect(500, arrow->geometry().y(), arrow->geometry().width(), arrow->geometry().height()));
 
-        // Change page after 1s
-        QTimer::singleShot(1000, dynamic_cast<MainWindow *>(this->parent()->parent()), &MainWindow::nextPage);
+            // Change page after 1s
+            QTimer::singleShot(1000, dynamic_cast<MainWindow *>(this->parent()->parent()), &MainWindow::nextPage);
 
-        shotAnimation->start();
+            shotAnimation->start();
+        }
+        else
+        {
+            liam->setStyleSheet(QString("background-image: url(:/images/shot_one.png);"));
+            this->liamState = 0;
+            arrow->move(208, arrow->geometry().y());
+        }
+
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getHapticHandler()
+            ->stopEffect(HapticHandler::SCENE_3);
     }
-    else
-    {
-        liam->setStyleSheet(QString("background-image: url(:/images/shot_one.png);"));
-        this->liamState = 0;
-        arrow->move(208, arrow->geometry().y());
-    }
-
-    dynamic_cast<MainWindow *>(this->parent()->parent())
-        ->getHapticHandler()
-        ->stopEffect(HapticHandler::SCENE_3);
 }
 
 void PageThree::initializePage()
@@ -116,4 +122,10 @@ void PageThree::initializePage()
     dynamic_cast<MainWindow *>(this->parent()->parent())
         ->getSoundHandler()
         ->stopSounds(HapticHandler::SCENE_3);
+
+    setState(true);
+}
+
+void PageThree::setState(bool isActive) {
+    this->isActive = isActive;
 }

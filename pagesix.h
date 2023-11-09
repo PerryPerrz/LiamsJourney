@@ -17,6 +17,7 @@ class PageSix : public QWidget, public Page
 public:
     explicit PageSix(QWidget *parent = 0);
     void initializePage() override;
+    void setState(bool isActive) override;
     ~PageSix();
 
 public slots:
@@ -28,6 +29,7 @@ private:
     bool isEnter;
     int jarState;
     bool done;
+    bool isActive;
 };
 
 #endif // PAGESIX_H

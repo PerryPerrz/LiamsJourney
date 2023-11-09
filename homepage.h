@@ -18,11 +18,13 @@ class HomePage : public QWidget, public Page
 public:
     explicit HomePage(QWidget *parent = 0);
     void initializePage() override;
+    void setState(bool isActive) override;
     void stopSound();
     ~HomePage();
 
 private:
     Ui::HomePage *ui;
+    bool isActive;
 };
 
 #endif // HOMEPAGE_H
