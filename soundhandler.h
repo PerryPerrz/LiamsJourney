@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
+#include <QMediaContent>
 
 class MainWindow;
 
@@ -26,7 +27,10 @@ public:
         SCENE_4,
         SCENE_5,
         SCENE_6,
-        SCENE_7
+        SCENE_7,
+        SCENE_8,
+        SCENE_9,
+        SCENE_10
     };
 
 public slots:
@@ -35,6 +39,19 @@ private:
     MainWindow *mFenetre;
     QMediaPlayer *player;
     QMediaPlaylist *playlist;
+
+    QMediaContent *scene1;
+    QMediaContent *scene2;
+    QMediaContent *scene3;
+    QMediaContent *scene4;
+    QMediaContent *scene5;
+    QMediaContent *scene6;
+    QMediaContent *scene7;
+    QMediaContent *scene8;
+    QMediaContent *scene9;
+    QMediaContent *scene10;
+    QMediaContent *scene11;
+    QMediaContent *scene12;
 };
 
 #endif // SOUNDHANDLER_H

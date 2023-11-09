@@ -43,9 +43,12 @@ PageFive::~PageFive()
 
 void PageFive::initializePage()
 {
-    /*dynamic_cast<MainWindow*>(this->parent()->parent())
-            ->getGestionHaptique()
-            ->startEffect(HapticHandler::UP_WALL);*/
+    MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
+    SoundHandler *soundHandler = mainWindow->getSoundHandler();
+    soundHandler->stopSounds(SoundHandler::SCENE_6);
+
+    soundHandler->startSounds(SoundHandler::SCENE_7);
+
     setState(true);
 }
 
@@ -255,6 +258,11 @@ void PageFive::onLiamMouved()
             hapticHandler->stopEffect(HapticHandler::RIGHT_WALL);
             hapticHandler->stopEffect(HapticHandler::LEFT_WALL);
             areEffectsActive = false;
+
+            MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
+            SoundHandler *soundHandler = mainWindow->getSoundHandler();
+            soundHandler->stopSounds(SoundHandler::SCENE_7);
+
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->setCurrentPage(6);
         }

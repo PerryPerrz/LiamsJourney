@@ -104,6 +104,10 @@ void PageOne::onStopDragAndDrop()
 
 void PageOne::initializePage()
 {
+    dynamic_cast<MainWindow *>(this->parent()->parent())
+        ->getSoundHandler()
+        ->stopSounds(SoundHandler::SCENE_1);
+
     setState(true);
 }
 
