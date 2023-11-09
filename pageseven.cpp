@@ -32,18 +32,19 @@ PageSeven::~PageSeven()
 void PageSeven::initializePage()
 {
     setState(true);
-    dynamic_cast<MainWindow*>(this->parent()->parent())
-            ->getHapticHandler()
-            ->stopEffect(HapticHandler::SCENE_6);
+    dynamic_cast<MainWindow *>(this->parent()->parent())
+        ->getHapticHandler()
+        ->stopEffect(HapticHandler::SCENE_6);
 
     dynamic_cast<MainWindow *>(this->parent()->parent())
         ->getSoundHandler()
-        ->startSounds(SoundHandler::SCENE_9);
+        ->startSound(SoundHandler::SCENE_9);
 }
 
 void PageSeven::onSpoonMoved()
 {
-    if (isActive) {
+    if (isActive)
+    {
         ClickableLabel *spoon = this->findChild<ClickableLabel *>("spoon");
         QLabel *honey = this->findChild<QLabel *>("honey");
         QLabel *counter = this->findChild<QLabel *>("counter");
@@ -87,13 +88,15 @@ void PageSeven::onSpoonMoved()
 
 void PageSeven::onSpoonReleased()
 {
-    if (isActive) {
+    if (isActive)
+    {
         dynamic_cast<MainWindow *>(this->parent()->parent())
             ->getHapticHandler()
             ->stopEffect(HapticHandler::SCENE_7);
     }
 }
 
-void PageSeven::setState(bool isActive) {
+void PageSeven::setState(bool isActive)
+{
     this->isActive = isActive;
 }

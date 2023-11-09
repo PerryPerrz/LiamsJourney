@@ -42,7 +42,8 @@ PageThree::~PageThree()
  */
 void PageThree::changeLiamState()
 {
-    if (isActive) {   
+    if (isActive)
+    {
         dynamic_cast<MainWindow *>(this->parent()->parent())
             ->getHapticHandler()
             ->startEffect(HapticHandler::SCENE_3);
@@ -83,7 +84,8 @@ void PageThree::changeLiamState()
  */
 void PageThree::shotArrow()
 {
-    if (isActive) {
+    if (isActive)
+    {
         ClickableLabel *arrow = this->findChild<ClickableLabel *>("arrow");
         QLabel *liam = this->findChild<QLabel *>("liam");
 
@@ -91,7 +93,7 @@ void PageThree::shotArrow()
         {
             MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
             SoundHandler *soundHandler = mainWindow->getSoundHandler();
-            soundHandler->startSounds(SoundHandler::SCENE_4);
+            soundHandler->startSound(SoundHandler::SCENE_4);
 
             arrow->setMoveable(false);
             QPropertyAnimation *shotAnimation = new QPropertyAnimation(arrow, "geometry");
@@ -125,11 +127,12 @@ void PageThree::initializePage()
 
     dynamic_cast<MainWindow *>(this->parent()->parent())
         ->getSoundHandler()
-        ->stopSounds(SoundHandler::SCENE_3);
+        ->stopSound(SoundHandler::SCENE_3);
 
     setState(true);
 }
 
-void PageThree::setState(bool isActive) {
+void PageThree::setState(bool isActive)
+{
     this->isActive = isActive;
 }

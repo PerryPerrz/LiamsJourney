@@ -40,7 +40,8 @@ PageOne::~PageOne()
  */
 void PageOne::onCollide()
 {
-    if (isActive) {
+    if (isActive)
+    {
         // Getting all the objects that we're going to test.
         QLabel *exit = this->findChild<QLabel *>("exit");
         QLabel *road = this->findChild<QLabel *>("road");
@@ -56,7 +57,7 @@ void PageOne::onCollide()
 
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->getSoundHandler()
-                ->startSounds(SoundHandler::SCENE_2);
+                ->startSound(SoundHandler::SCENE_2);
 
             this->isWalking = true;
         }
@@ -68,7 +69,7 @@ void PageOne::onCollide()
 
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->getSoundHandler()
-                ->stopSounds(SoundHandler::SCENE_2);
+                ->stopSound(SoundHandler::SCENE_2);
 
             this->isWalking = false;
         }
@@ -81,7 +82,7 @@ void PageOne::onCollide()
 
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->getSoundHandler()
-                ->stopSounds(SoundHandler::SCENE_2);
+                ->stopSound(SoundHandler::SCENE_2);
 
             dynamic_cast<MainWindow *>(this->parent()->parent())->setCurrentPage(2);
         }
@@ -90,7 +91,8 @@ void PageOne::onCollide()
 
 void PageOne::onStopDragAndDrop()
 {
-    if (isActive) {
+    if (isActive)
+    {
         this->isWalking = false;
         dynamic_cast<MainWindow *>(this->parent()->parent())
             ->getHapticHandler()
@@ -98,7 +100,7 @@ void PageOne::onStopDragAndDrop()
 
         dynamic_cast<MainWindow *>(this->parent()->parent())
             ->getSoundHandler()
-            ->stopSounds(SoundHandler::SCENE_2);
+            ->stopSound(SoundHandler::SCENE_2);
     }
 }
 
@@ -106,11 +108,12 @@ void PageOne::initializePage()
 {
     dynamic_cast<MainWindow *>(this->parent()->parent())
         ->getSoundHandler()
-        ->stopSounds(SoundHandler::SCENE_1);
+        ->stopSound(SoundHandler::SCENE_1);
 
     setState(true);
 }
 
- void PageOne::setState(bool isActive) {
-     this->isActive = isActive;
- }
+void PageOne::setState(bool isActive)
+{
+    this->isActive = isActive;
+}

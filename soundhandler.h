@@ -16,8 +16,8 @@ public:
     explicit SoundHandler(MainWindow *fen, QObject *parent = nullptr);
     ~SoundHandler();
 
-    void startSounds(const int sound);
-    void stopSounds(const int sound);
+    void startSound(const int sound);
+    void stopSound(const int sound);
 
     enum Sounds
     {

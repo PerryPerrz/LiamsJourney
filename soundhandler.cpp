@@ -8,7 +8,7 @@ SoundHandler::SoundHandler(MainWindow *fen, QObject *parent) : QObject(parent), 
     playlist = new QMediaPlaylist(this);
     player->setPlaylist(playlist);
 
-    scene1 = new  QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/forest.mp3"));
+    scene1 = new QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/forest.mp3"));
     scene2 = new QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/walking.mp3"));
     scene3 = new QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/bzzbzz.mp3"));
     scene4 = new QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/shot.mp3"));
@@ -18,10 +18,9 @@ SoundHandler::SoundHandler(MainWindow *fen, QObject *parent) : QObject(parent), 
     scene8 = new QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/walking.mp3"));
     scene9 = new QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/forest.mp3"));
     scene10 = new QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/walking.mp3"));
-
 }
 
-void SoundHandler::startSounds(const int sound)
+void SoundHandler::startSound(const int sound)
 {
     // Stop the currently playing sound (if any)
     player->stop();
@@ -44,8 +43,8 @@ void SoundHandler::startSounds(const int sound)
         break;
 
     case SoundHandler::SCENE_3:
-       playlist->addMedia(*scene3);
-       playlist->setPlaybackMode(QMediaPlaylist::Loop);
+        playlist->addMedia(*scene3);
+        playlist->setPlaybackMode(QMediaPlaylist::Loop);
         player->setVolume(50);
         qDebug() << "3";
         break;
@@ -96,7 +95,7 @@ void SoundHandler::startSounds(const int sound)
     player->play();
 }
 
-void SoundHandler::stopSounds(const int sound)
+void SoundHandler::stopSound(const int sound)
 {
     if (player->state() == QMediaPlayer::PlayingState)
     {

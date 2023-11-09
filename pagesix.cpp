@@ -36,7 +36,8 @@ void PageSix::initializePage()
 
 void PageSix::onSpoonMouve()
 {
-    if (isActive) {
+    if (isActive)
+    {
         ClickableLabel *spoon = this->findChild<ClickableLabel *>("spoon");
         QLabel *grid = this->findChild<QLabel *>("grid");
         QLabel *enter = this->findChild<QLabel *>("enter");
@@ -53,7 +54,7 @@ void PageSix::onSpoonMouve()
 
             MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
             SoundHandler *soundHandler = mainWindow->getSoundHandler();
-            soundHandler->startSounds(SoundHandler::SCENE_8);
+            soundHandler->startSound(SoundHandler::SCENE_8);
         }
         else
         {
@@ -63,7 +64,7 @@ void PageSix::onSpoonMouve()
 
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->getSoundHandler()
-                ->stopSounds(SoundHandler::SCENE_8);
+                ->stopSound(SoundHandler::SCENE_8);
         }
 
         if (isEnter && utils.areLabelsColliding(spoon, exit))
@@ -93,7 +94,7 @@ void PageSix::onSpoonMouve()
 
                     dynamic_cast<MainWindow *>(this->parent()->parent())
                         ->getSoundHandler()
-                        ->stopSounds(SoundHandler::SCENE_8);
+                        ->stopSound(SoundHandler::SCENE_8);
 
                     QTimer::singleShot(1000, dynamic_cast<MainWindow *>(this->parent()->parent()), &MainWindow::nextPage);
                     done = true;
@@ -111,19 +112,21 @@ void PageSix::onSpoonMouve()
 
 void PageSix::onDragAndDropStopped()
 {
-    if (isActive) {
+    if (isActive)
+    {
         dynamic_cast<MainWindow *>(this->parent()->parent())
             ->getHapticHandler()
             ->stopEffect(HapticHandler::SCENE_6);
 
         dynamic_cast<MainWindow *>(this->parent()->parent())
             ->getSoundHandler()
-            ->stopSounds(SoundHandler::SCENE_8);
+            ->stopSound(SoundHandler::SCENE_8);
 
         isEnter = false;
     }
 }
 
-void PageSix::setState(bool isActive) {
+void PageSix::setState(bool isActive)
+{
     this->isActive = isActive;
 }

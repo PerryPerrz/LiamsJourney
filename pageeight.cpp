@@ -13,7 +13,6 @@ PageEight::PageEight(QWidget *parent) : QWidget(parent),
     connect(nextButton, &ClickableLabel::clicked,
             dynamic_cast<MainWindow *>(this->parent()),
             &MainWindow::nextPage);
-
     setState(false);
 }
 
@@ -26,15 +25,16 @@ void PageEight::initializePage()
 {
     dynamic_cast<MainWindow *>(this->parent()->parent())
         ->getSoundHandler()
-        ->stopSounds(SoundHandler::SCENE_9);
+        ->stopSound(SoundHandler::SCENE_9);
 
     dynamic_cast<MainWindow *>(this->parent()->parent())
         ->getSoundHandler()
-        ->startSounds(SoundHandler::SCENE_10);
+        ->startSound(SoundHandler::SCENE_10);
 
     setState(true);
 }
 
-void PageEight::setState(bool isActive) {
+void PageEight::setState(bool isActive)
+{
     this->isActive = isActive;
 }

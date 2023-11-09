@@ -45,7 +45,7 @@ void PageTwo::initializePage()
 
         if (soundHandler)
         {
-            soundHandler->startSounds(SoundHandler::SCENE_3);
+            soundHandler->startSound(SoundHandler::SCENE_3);
         }
         else
         {
@@ -64,7 +64,8 @@ void PageTwo::initializePage()
 
 void PageTwo::timerEvent(QTimerEvent *event)
 {
-    if (isActive) {
+    if (isActive)
+    {
         // Center of hive X : 737, Y : 346 -> 10 000 of magnitude
         // Max Circle (top-right corner of label liam)  X : 280, Y : 400
         QPoint hiveCenter = QPoint(737, 346);
@@ -89,6 +90,7 @@ void PageTwo::timerEvent(QTimerEvent *event)
     }
 }
 
-void PageTwo::setState(bool isActive) {
+void PageTwo::setState(bool isActive)
+{
     this->isActive = isActive;
 }

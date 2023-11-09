@@ -39,7 +39,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     currentPage->insertWidget(8, new PageEight(this));
     currentPage->insertWidget(9, new FinalPage(this));
     setCentralWidget(currentPage);
-    dynamic_cast<Page*>(currentPage->currentWidget())->initializePage();
+    dynamic_cast<Page *>(currentPage->currentWidget())->initializePage();
 
     // Turn on fullscreen
     setWindowState(Qt::WindowFullScreen);
@@ -62,7 +62,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event)
  */
 void MainWindow::nextPage()
 {
-    dynamic_cast<Page*>(currentPage->currentWidget())->setState(false);
+    dynamic_cast<Page *>(currentPage->currentWidget())->setState(false);
     int index = this->currentPage->currentIndex();
     currentPage->setCurrentIndex(++index);
     dynamic_cast<Page *>(currentPage->currentWidget())->initializePage();
@@ -84,7 +84,7 @@ SoundHandler *MainWindow::getSoundHandler() const
 
 void MainWindow::setCurrentPage(int pageNumber)
 {
-    dynamic_cast<Page*>(currentPage->currentWidget())->setState(false);
+    dynamic_cast<Page *>(currentPage->currentWidget())->setState(false);
     this->currentPage->setCurrentIndex(pageNumber);
     dynamic_cast<Page *>(currentPage->currentWidget())->initializePage();
 }

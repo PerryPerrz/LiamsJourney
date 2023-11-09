@@ -27,12 +27,14 @@ void FinalPage::initializePage()
 {
 }
 
-void FinalPage::setState(bool isActive) {
+void FinalPage::setState(bool isActive)
+{
     this->isActive = isActive;
 }
 
-void FinalPage::stopSound(){
+void FinalPage::stopSound()
+{
     dynamic_cast<MainWindow *>(this->parent()->parent())
         ->getSoundHandler()
-        ->stopSounds(SoundHandler::SCENE_10);
+        ->stopSound(SoundHandler::SCENE_10);
 }

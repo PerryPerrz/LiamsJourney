@@ -17,7 +17,7 @@ HomePage::HomePage(QWidget *parent) : QWidget(parent),
         SoundHandler *soundHandler = mainWindow->getSoundHandler();
         if (soundHandler)
         {
-            soundHandler->startSounds(SoundHandler::SCENE_1);
+            soundHandler->startSound(SoundHandler::SCENE_1);
         }
         else
         {
@@ -44,15 +44,17 @@ void HomePage::initializePage()
 
 void HomePage::stopSound()
 {
-    if (isActive) {
+    if (isActive)
+    {
         dynamic_cast<MainWindow *>(this->parent()->parent())
             ->getSoundHandler()
-            ->stopSounds(SoundHandler::SCENE_1);
+            ->stopSound(SoundHandler::SCENE_1);
     }
 }
 
-void HomePage::setState(bool isActive) {
-    this->isActive =isActive;
+void HomePage::setState(bool isActive)
+{
+    this->isActive = isActive;
 }
 
 HomePage::~HomePage()

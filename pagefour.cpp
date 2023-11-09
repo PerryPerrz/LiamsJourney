@@ -45,7 +45,8 @@ PageFour::~PageFour()
 
 void PageFour::onCollide()
 {
-    if (isActive) {
+    if (isActive)
+    {
         Utils utils = Utils();
 
         ClickableLabel *match = this->findChild<ClickableLabel *>("match");
@@ -64,7 +65,7 @@ void PageFour::onCollide()
 
             MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
             SoundHandler *soundHandler = mainWindow->getSoundHandler();
-            soundHandler->startSounds(SoundHandler::SCENE_5);
+            soundHandler->startSound(SoundHandler::SCENE_5);
         }
         else
         {
@@ -75,7 +76,7 @@ void PageFour::onCollide()
 
             MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
             SoundHandler *soundHandler = mainWindow->getSoundHandler();
-            soundHandler->stopSounds(SoundHandler::SCENE_5);
+            soundHandler->stopSound(SoundHandler::SCENE_5);
         }
 
         if (utils.areLabelsColliding(head_match, trigger) && !isTriggered)
@@ -91,7 +92,7 @@ void PageFour::onCollide()
 
                 MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
                 SoundHandler *soundHandler = mainWindow->getSoundHandler();
-                soundHandler->startSounds(SoundHandler::SCENE_6);
+                soundHandler->startSound(SoundHandler::SCENE_6);
 
                 match->setStyleSheet(QString("background-image: url(:/images/match_on_fire.png);"));
                 match->resize(54, 228);
@@ -115,14 +116,15 @@ void PageFour::onCollide()
 
 void PageFour::onStopDragAndDrop()
 {
-    if (isActive) {
+    if (isActive)
+    {
         dynamic_cast<MainWindow *>(this->parent()->parent())
             ->getHapticHandler()
             ->stopEffect(HapticHandler::SCENE_4);
 
         MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
         SoundHandler *soundHandler = mainWindow->getSoundHandler();
-        soundHandler->startSounds(SoundHandler::SCENE_5);
+        soundHandler->startSound(SoundHandler::SCENE_5);
     }
 }
 
@@ -130,11 +132,12 @@ void PageFour::initializePage()
 {
     dynamic_cast<MainWindow *>(this->parent()->parent())
         ->getSoundHandler()
-        ->stopSounds(SoundHandler::SCENE_4);
+        ->stopSound(SoundHandler::SCENE_4);
 
     setState(true);
 }
 
-void PageFour::setState(bool isActive) {
+void PageFour::setState(bool isActive)
+{
     this->isActive = isActive;
 }

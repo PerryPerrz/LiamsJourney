@@ -45,16 +45,17 @@ void PageFive::initializePage()
 {
     MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
     SoundHandler *soundHandler = mainWindow->getSoundHandler();
-    soundHandler->stopSounds(SoundHandler::SCENE_6);
+    soundHandler->stopSound(SoundHandler::SCENE_6);
 
-    soundHandler->startSounds(SoundHandler::SCENE_7);
+    soundHandler->startSound(SoundHandler::SCENE_7);
 
     setState(true);
 }
 
 void PageFive::onLiamMouved()
 {
-    if (isActive) {
+    if (isActive)
+    {
         QLabel *zone_1 = this->findChild<QLabel *>("zone_1");
         QLabel *zone_2 = this->findChild<QLabel *>("zone_2");
         QLabel *zone_3 = this->findChild<QLabel *>("zone_3");
@@ -261,7 +262,7 @@ void PageFive::onLiamMouved()
 
             MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
             SoundHandler *soundHandler = mainWindow->getSoundHandler();
-            soundHandler->stopSounds(SoundHandler::SCENE_7);
+            soundHandler->stopSound(SoundHandler::SCENE_7);
 
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->setCurrentPage(6);
@@ -271,7 +272,8 @@ void PageFive::onLiamMouved()
 
 void PageFive::onStopDragAndDrop()
 {
-    if (isActive) {
+    if (isActive)
+    {
         HapticHandler *hapticHandler = dynamic_cast<MainWindow *>(this->parent()->parent())->getHapticHandler();
         hapticHandler->stopEffect(HapticHandler::UP_WALL);
         hapticHandler->stopEffect(HapticHandler::DOWN_WALL);
@@ -281,6 +283,7 @@ void PageFive::onStopDragAndDrop()
     }
 }
 
-void PageFive::setState(bool isActive) {
+void PageFive::setState(bool isActive)
+{
     this->isActive = isActive;
 }
