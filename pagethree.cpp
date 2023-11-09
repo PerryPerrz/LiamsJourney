@@ -91,9 +91,9 @@ void PageThree::shotArrow()
 
         if (this->liamState == 2)
         {
-            MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
-            SoundHandler *soundHandler = mainWindow->getSoundHandler();
-            soundHandler->startSound(SoundHandler::SCENE_4);
+            dynamic_cast<MainWindow *>(this->parent()->parent())
+                ->getSoundHandler()
+                ->startSound(SoundHandler::SCENE_4);
 
             arrow->setMoveable(false);
             QPropertyAnimation *shotAnimation = new QPropertyAnimation(arrow, "geometry");

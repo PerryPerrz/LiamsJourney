@@ -38,24 +38,9 @@ void PageTwo::initializePage()
         ->getHapticHandler()
         ->startEffect(HapticHandler::SCENE_2);
 
-    MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
-    if (mainWindow)
-    {
-        SoundHandler *soundHandler = mainWindow->getSoundHandler();
-
-        if (soundHandler)
-        {
-            soundHandler->startSound(SoundHandler::SCENE_3);
-        }
-        else
-        {
-            qDebug() << "Error: could not start sound";
-        }
-    }
-    else
-    {
-        qDebug() << "Error: could not get sound handler";
-    }
+    dynamic_cast<MainWindow *>(this->parent()->parent())
+        ->getSoundHandler()
+        ->startSound(SoundHandler::SCENE_3);
 
     startTimer(50);
 

@@ -17,8 +17,8 @@ class FinalPage : public QWidget, public Page
 public:
     explicit FinalPage(QWidget *parent = 0);
     void initializePage() override;
-     void setState(bool isActive) override;
-     void stopSound();
+    void setState(bool isActive) override;
+    void stopSound();
     ~FinalPage();
 
 private:

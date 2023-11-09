@@ -11,23 +11,9 @@ HomePage::HomePage(QWidget *parent) : QWidget(parent),
     ui->setupUi(this);
 
     // Get the sound handler from the main window
-    MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent());
-    if (mainWindow)
-    {
-        SoundHandler *soundHandler = mainWindow->getSoundHandler();
-        if (soundHandler)
-        {
-            soundHandler->startSound(SoundHandler::SCENE_1);
-        }
-        else
-        {
-            qDebug() << "Error: could not start sound";
-        }
-    }
-    else
-    {
-        qDebug() << "Error: could not get sound handler";
-    }
+    dynamic_cast<MainWindow *>(this->parent())
+        ->getSoundHandler()
+        ->startSound(SoundHandler::SCENE_1);
 
     // Signal defined for the play button
     ClickableLabel *playButton = this->findChild<ClickableLabel *>("playButton");

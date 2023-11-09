@@ -260,9 +260,9 @@ void PageFive::onLiamMouved()
             hapticHandler->stopEffect(HapticHandler::LEFT_WALL);
             areEffectsActive = false;
 
-            MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
-            SoundHandler *soundHandler = mainWindow->getSoundHandler();
-            soundHandler->stopSound(SoundHandler::SCENE_7);
+            dynamic_cast<MainWindow *>(this->parent()->parent())
+                ->getSoundHandler()
+                ->stopSound(SoundHandler::SCENE_7);
 
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->setCurrentPage(6);

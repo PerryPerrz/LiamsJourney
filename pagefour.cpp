@@ -63,9 +63,9 @@ void PageFour::onCollide()
                 ->getHapticHandler()
                 ->startEffect(HapticHandler::SCENE_4);
 
-            MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
-            SoundHandler *soundHandler = mainWindow->getSoundHandler();
-            soundHandler->startSound(SoundHandler::SCENE_5);
+            dynamic_cast<MainWindow *>(this->parent()->parent())
+                ->getSoundHandler()
+                ->startSound(SoundHandler::SCENE_5);
         }
         else
         {
@@ -74,9 +74,9 @@ void PageFour::onCollide()
                 ->stopEffect(HapticHandler::SCENE_4);
             isTriggered = false;
 
-            MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
-            SoundHandler *soundHandler = mainWindow->getSoundHandler();
-            soundHandler->stopSound(SoundHandler::SCENE_5);
+            dynamic_cast<MainWindow *>(this->parent()->parent())
+                ->getSoundHandler()
+                ->stopSound(SoundHandler::SCENE_5);
         }
 
         if (utils.areLabelsColliding(head_match, trigger) && !isTriggered)
@@ -90,9 +90,9 @@ void PageFour::onCollide()
                     ->getHapticHandler()
                     ->stopEffect(HapticHandler::SCENE_4);
 
-                MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
-                SoundHandler *soundHandler = mainWindow->getSoundHandler();
-                soundHandler->startSound(SoundHandler::SCENE_6);
+                dynamic_cast<MainWindow *>(this->parent()->parent())
+                    ->getSoundHandler()
+                    ->startSound(SoundHandler::SCENE_6);
 
                 match->setStyleSheet(QString("background-image: url(:/images/match_on_fire.png);"));
                 match->resize(54, 228);
@@ -122,9 +122,9 @@ void PageFour::onStopDragAndDrop()
             ->getHapticHandler()
             ->stopEffect(HapticHandler::SCENE_4);
 
-        MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
-        SoundHandler *soundHandler = mainWindow->getSoundHandler();
-        soundHandler->startSound(SoundHandler::SCENE_5);
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getSoundHandler()
+            ->startSound(SoundHandler::SCENE_5);
     }
 }
 
