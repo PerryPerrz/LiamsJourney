@@ -36,6 +36,7 @@ PageFour::PageFour(QWidget *parent) : QWidget(parent),
     std::srand(std::time(nullptr));
 
     setState(false);
+    isColliding = false;
 }
 
 PageFour::~PageFour()
@@ -57,7 +58,7 @@ void PageFour::onCollide()
 
         QLabel *grip = this->findChild<QLabel *>("grip");
 
-        if (utils.areLabelsColliding(head_match, grip))
+        if (utils.areLabelsColliding(head_match, grip) && !isColliding)
         {
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->getHapticHandler()
@@ -66,8 +67,9 @@ void PageFour::onCollide()
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->getSoundHandler()
                 ->startSound(SoundHandler::SCENE_5);
+            isColliding = true;
         }
-        else
+        else if (isColliding && !utils.areLabelsColliding(head_match, grip))
         {
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->getHapticHandler()
@@ -77,6 +79,8 @@ void PageFour::onCollide()
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->getSoundHandler()
                 ->stopSound(SoundHandler::SCENE_5);
+
+            isColliding = false;
         }
 
         if (utils.areLabelsColliding(head_match, trigger) && !isTriggered)
@@ -107,6 +111,8 @@ void PageFour::onCollide()
                 this->setStyleSheet(QString("background-image: url(:/images/page_four_light.png);"));
 
                 QTimer::singleShot(3000, dynamic_cast<MainWindow *>(this->parent()->parent()), &MainWindow::nextPage);
+                disconnect(head_match, 0, 0, 0);
+                disconnect(match, 0, 0, 0);
             }
 
             isTriggered = true;
@@ -125,6 +131,8 @@ void PageFour::onStopDragAndDrop()
         dynamic_cast<MainWindow *>(this->parent()->parent())
             ->getSoundHandler()
             ->startSound(SoundHandler::SCENE_5);
+
+        isColliding = false;
     }
 }
 

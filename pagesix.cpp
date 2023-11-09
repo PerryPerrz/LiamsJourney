@@ -22,6 +22,7 @@ PageSix::PageSix(QWidget *parent) : QWidget(parent),
     done = false;
 
     setState(false);
+    isColliding = false;
 }
 
 PageSix::~PageSix()
@@ -46,8 +47,9 @@ void PageSix::onSpoonMouve()
 
         Utils utils = Utils();
 
-        if (utils.areLabelsColliding(spoon, grid))
+        if (utils.areLabelsColliding(spoon, grid) && !isColliding)
         {
+            isColliding = true;
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->getHapticHandler()
                 ->startEffect(HapticHandler::SCENE_6);
@@ -56,8 +58,9 @@ void PageSix::onSpoonMouve()
                 ->getSoundHandler()
                 ->startSound(SoundHandler::SCENE_8);
         }
-        else
+        else if (!utils.areLabelsColliding(spoon, grid) && isColliding)
         {
+            isColliding = false;
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->getHapticHandler()
                 ->stopEffect(HapticHandler::SCENE_6);
@@ -67,7 +70,7 @@ void PageSix::onSpoonMouve()
                 ->stopSound(SoundHandler::SCENE_8);
         }
 
-        if (isEnter && utils.areLabelsColliding(spoon, exit))
+        if (isEnter && !done && utils.areLabelsColliding(spoon, exit))
         {
             isEnter = false;
             jarState++;
@@ -98,6 +101,7 @@ void PageSix::onSpoonMouve()
 
                     QTimer::singleShot(1000, dynamic_cast<MainWindow *>(this->parent()->parent()), &MainWindow::nextPage);
                     done = true;
+                    disconnect(spoon, 0, 0, 0);
                 }
 
                 break;
@@ -123,6 +127,7 @@ void PageSix::onDragAndDropStopped()
             ->stopSound(SoundHandler::SCENE_8);
 
         isEnter = false;
+        isColliding = false;
     }
 }
 

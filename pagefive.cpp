@@ -266,6 +266,7 @@ void PageFive::onLiamMouved()
 
             dynamic_cast<MainWindow *>(this->parent()->parent())
                 ->setCurrentPage(6);
+            disconnect(liam, 0, 0, 0);
         }
     }
 }

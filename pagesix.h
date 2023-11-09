@@ -30,6 +30,7 @@ private:
     int jarState;
     bool done;
     bool isActive;
+    bool isColliding;
 };
 
 #endif // PAGESIX_H

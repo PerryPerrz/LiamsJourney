@@ -30,6 +30,7 @@ private:
     bool done;
     bool isTriggered;
     bool isActive;
+    bool isColliding;
 };
 
 #endif // PAGESEVEN_H

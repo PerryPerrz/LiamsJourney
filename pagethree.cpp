@@ -14,20 +14,6 @@ PageThree::PageThree(QWidget *parent) : QWidget(parent),
 {
     ui->setupUi(this);
 
-    this->liamState = 0; // Start position of liam
-
-    ClickableLabel *arrow = this->findChild<ClickableLabel *>("arrow");
-    arrow->setMoveable(true);
-    arrow->setRestriction("x");
-
-    connect(arrow, &ClickableLabel::moved, this, &PageThree::changeLiamState);
-    connect(arrow, &ClickableLabel::stopDragAndDrop, this, &PageThree::shotArrow);
-
-    QLabel *secondPos = this->findChild<QLabel *>("secondPos");
-    secondPos->setVisible(false);
-    QLabel *thirdPos = this->findChild<QLabel *>("thirdPos");
-    thirdPos->setVisible(false);
-
     setState(false);
 }
 
@@ -105,6 +91,8 @@ void PageThree::shotArrow()
             QTimer::singleShot(1000, dynamic_cast<MainWindow *>(this->parent()->parent()), &MainWindow::nextPage);
 
             shotAnimation->start();
+
+            disconnect(arrow, 0, 0, 0);
         }
         else
         {
@@ -121,15 +109,30 @@ void PageThree::shotArrow()
 
 void PageThree::initializePage()
 {
-    dynamic_cast<MainWindow *>(this->parent()->parent())
-        ->getHapticHandler()
-        ->stopEffect(HapticHandler::SCENE_2);
+    if (!isActive) {
+        this->liamState = 0; // Start position of liam
 
-    dynamic_cast<MainWindow *>(this->parent()->parent())
-        ->getSoundHandler()
-        ->stopSound(SoundHandler::SCENE_3);
+        ClickableLabel *arrow = this->findChild<ClickableLabel *>("arrow");
+        arrow->setMoveable(true);
+        arrow->setRestriction("x");
 
-    setState(true);
+        connect(arrow, &ClickableLabel::moved, this, &PageThree::changeLiamState);
+        connect(arrow, &ClickableLabel::stopDragAndDrop, this, &PageThree::shotArrow);
+
+        QLabel *secondPos = this->findChild<QLabel *>("secondPos");
+        secondPos->setVisible(false);
+        QLabel *thirdPos = this->findChild<QLabel *>("thirdPos");
+        thirdPos->setVisible(false);
+
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getHapticHandler()
+            ->stopEffect(HapticHandler::SCENE_2);
+
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getSoundHandler()
+            ->stopSound(SoundHandler::SCENE_3);
+        setState(true);
+    }
 }
 
 void PageThree::setState(bool isActive)

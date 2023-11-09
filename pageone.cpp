@@ -12,21 +12,6 @@ PageOne::PageOne(QWidget *parent) : QWidget(parent),
                                     ui(new Ui::PageOne)
 {
     ui->setupUi(this);
-
-    // Define liam moveable
-    ClickableLabel *liam = this->findChild<ClickableLabel *>("liam");
-    liam->setMoveable(true);
-    connect(liam, &ClickableLabel::moved, this, &PageOne::onCollide);
-
-    QLabel *road = this->findChild<QLabel *>("road");
-    road->setVisible(false);
-
-    QLabel *exit = this->findChild<QLabel *>("exit");
-    exit->setVisible(false);
-
-    this->isWalking = false;
-    connect(liam, &ClickableLabel::stopDragAndDrop, this, &PageOne::onStopDragAndDrop);
-
     setState(false);
 }
 
@@ -85,6 +70,7 @@ void PageOne::onCollide()
                 ->stopSound(SoundHandler::SCENE_2);
 
             dynamic_cast<MainWindow *>(this->parent()->parent())->setCurrentPage(2);
+            disconnect(liam, 0, 0, 0);
         }
     }
 }
@@ -106,11 +92,27 @@ void PageOne::onStopDragAndDrop()
 
 void PageOne::initializePage()
 {
-    dynamic_cast<MainWindow *>(this->parent()->parent())
-        ->getSoundHandler()
-        ->stopSound(SoundHandler::SCENE_1);
+    if (!isActive) {
+        // Define liam moveable
+        ClickableLabel *liam = this->findChild<ClickableLabel *>("liam");
+        liam->setMoveable(true);
+        connect(liam, &ClickableLabel::moved, this, &PageOne::onCollide);
 
-    setState(true);
+        QLabel *road = this->findChild<QLabel *>("road");
+        road->setVisible(false);
+
+        QLabel *exit = this->findChild<QLabel *>("exit");
+        exit->setVisible(false);
+
+        this->isWalking = false;
+        connect(liam, &ClickableLabel::stopDragAndDrop, this, &PageOne::onStopDragAndDrop);
+
+        dynamic_cast<MainWindow *>(this->parent()->parent())
+            ->getSoundHandler()
+            ->stopSound(SoundHandler::SCENE_1);
+
+        setState(true);
+    }
 }
 
 void PageOne::setState(bool isActive)

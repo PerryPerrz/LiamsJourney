@@ -28,6 +28,7 @@ private:
     Ui::PageFour *ui;
     bool isTriggered;
     bool isActive;
+    bool isColliding;
 };
 
 #endif // PAGEFOUR_H

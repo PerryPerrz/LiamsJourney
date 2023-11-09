@@ -29,6 +29,7 @@ protected:
 private:
     Ui::PageTwo *ui;
     bool isActive;
+    int timer;
 };
 
 #endif // PAGETWO_H
