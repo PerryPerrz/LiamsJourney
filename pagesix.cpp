@@ -12,10 +12,10 @@ PageSix::PageSix(QWidget *parent) : QWidget(parent),
 {
     ui->setupUi(this);
 
-    ClickableLabel *spoon = this->findChild<ClickableLabel *>("spoon");
-    spoon->setMoveable(true);
-    connect(spoon, &ClickableLabel::moved, this, &PageSix::onSpoonMouve);
-    connect(spoon, &ClickableLabel::stopDragAndDrop, this, &PageSix::onDragAndDropStopped);
+    ClickableLabel *knife = this->findChild<ClickableLabel *>("knife");
+    knife->setMoveable(true);
+    connect(knife, &ClickableLabel::moved, this, &PageSix::onKnifeMove);
+    connect(knife, &ClickableLabel::stopDragAndDrop, this, &PageSix::onDragAndDropStopped);
 
     isEnter = false;
     jarState = 0;
@@ -35,11 +35,11 @@ void PageSix::initializePage()
     setState(true);
 }
 
-void PageSix::onSpoonMouve()
+void PageSix::onKnifeMove()
 {
     if (isActive)
     {
-        ClickableLabel *spoon = this->findChild<ClickableLabel *>("spoon");
+        ClickableLabel *knife = this->findChild<ClickableLabel *>("knife");
         QLabel *grid = this->findChild<QLabel *>("grid");
         QLabel *enter = this->findChild<QLabel *>("enter");
         QLabel *exit = this->findChild<QLabel *>("exit");
@@ -47,7 +47,7 @@ void PageSix::onSpoonMouve()
 
         Utils utils = Utils();
 
-        if (utils.areLabelsColliding(spoon, grid) && !isColliding)
+        if (utils.areLabelsColliding(knife, grid) && !isColliding)
         {
             isColliding = true;
             dynamic_cast<MainWindow *>(this->parent()->parent())
@@ -58,7 +58,7 @@ void PageSix::onSpoonMouve()
                 ->getSoundHandler()
                 ->startSound(SoundHandler::SCENE_8);
         }
-        else if (!utils.areLabelsColliding(spoon, grid) && isColliding)
+        else if (!utils.areLabelsColliding(knife, grid) && isColliding)
         {
             isColliding = false;
             dynamic_cast<MainWindow *>(this->parent()->parent())
@@ -70,7 +70,7 @@ void PageSix::onSpoonMouve()
                 ->stopSound(SoundHandler::SCENE_8);
         }
 
-        if (isEnter && !done && utils.areLabelsColliding(spoon, exit))
+        if (isEnter && !done && utils.areLabelsColliding(knife, exit))
         {
             isEnter = false;
             jarState++;
@@ -101,13 +101,13 @@ void PageSix::onSpoonMouve()
 
                     QTimer::singleShot(1000, dynamic_cast<MainWindow *>(this->parent()->parent()), &MainWindow::nextPage);
                     done = true;
-                    disconnect(spoon, 0, 0, 0);
+                    disconnect(knife, 0, 0, 0);
                 }
 
                 break;
             }
         }
-        else if (!isEnter && utils.areLabelsColliding(spoon, enter))
+        else if (!isEnter && utils.areLabelsColliding(knife, enter))
         {
             isEnter = true;
         }

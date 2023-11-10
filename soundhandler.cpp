@@ -27,7 +27,6 @@ void SoundHandler::startSound(const int sound)
     player->pause();
     playlist->clear();
 
-
     switch (sound)
     {
     case SoundHandler::SCENE_1:

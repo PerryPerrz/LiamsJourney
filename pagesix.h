@@ -21,7 +21,7 @@ public:
     ~PageSix();
 
 public slots:
-    void onSpoonMouve();
+    void onKnifeMove();
     void onDragAndDropStopped();
 
 private:
