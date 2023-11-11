@@ -6,6 +6,7 @@
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
 #include <QMediaContent>
+#include <QThread>
 
 class MainWindow;
 
@@ -34,11 +35,11 @@ public:
     };
 
 public slots:
+    void restartSound(QMediaPlayer::MediaStatus status);
 
 private:
     MainWindow *mFenetre;
     QMediaPlayer *player;
-    QMediaPlaylist *playlist;
 
     QMediaContent scene1;
     QMediaContent scene2;
@@ -52,6 +53,8 @@ private:
     QMediaContent scene10;
     QMediaContent scene11;
     QMediaContent scene12;
+
+    bool isLooping;
 };
 
 #endif // SOUNDHANDLER_H

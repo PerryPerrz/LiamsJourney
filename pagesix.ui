@@ -106,7 +106,7 @@ border-radius: 20px;</string>
        <string/>
       </property>
      </widget>
-     <widget class="ClickableLabel" name="spoon">
+     <widget class="ClickableLabel" name="knife">
       <property name="geometry">
        <rect>
         <x>80</x>
