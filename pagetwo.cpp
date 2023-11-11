@@ -75,7 +75,7 @@ void PageTwo::timerEvent(QTimerEvent *event)
         dynamic_cast<MainWindow *>(this->parent()->parent())
             ->getSoundHandler();
 
-      killTimer(timer);
+     // killTimer(timer);
     }
 }
 
