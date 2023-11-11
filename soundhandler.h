@@ -51,8 +51,6 @@ private:
     QMediaContent scene8;
     QMediaContent scene9;
     QMediaContent scene10;
-    QMediaContent scene11;
-    QMediaContent scene12;
 
     bool isLooping;
 };
