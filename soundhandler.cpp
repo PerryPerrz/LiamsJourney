@@ -18,10 +18,10 @@ SoundHandler::SoundHandler(MainWindow *fen, QObject *parent) : QObject(parent), 
     scene4 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/shot.mp3"));
     scene5 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/scratch.mp3"));
     scene6 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/fire.mp3"));
-    scene7 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/forest.mp3"));
-    scene8 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/walking.mp3"));
-    scene9 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/forest.mp3"));
-    scene10 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/walking.mp3"));
+    scene7 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/labyrinth.mp3"));
+    scene8 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/honey.mp3"));
+    scene9 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/forest_two.mp3"));
+    scene10 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/end.mp3"));
 
     isLooping = false;
 
@@ -39,24 +39,28 @@ void SoundHandler::startSound(const int sound)
     {
     case SoundHandler::SCENE_1:
         player->setMedia(scene1);
+        player->setVolume(50);
         isLooping = true;
         qDebug() << "1";
         break;
 
     case SoundHandler::SCENE_2:
         player->setMedia(scene2);
+        player->setVolume(100);
         isLooping = true;
         qDebug() << "2";
         break;
 
     case SoundHandler::SCENE_3:
         player->setMedia(scene3);
+        player->setVolume(35);
         isLooping = true;
         qDebug() << "3";
         break;
 
     case SoundHandler::SCENE_4:
         player->setMedia(scene4);
+        player->setVolume(50);
         qDebug() << "4";
         break;
 
@@ -87,6 +91,7 @@ void SoundHandler::startSound(const int sound)
 
     case SoundHandler::SCENE_10:
         player->setMedia(scene10);
+        player->setVolume(35);
         qDebug() << "10";
         break;
     }
