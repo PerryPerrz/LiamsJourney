@@ -4,6 +4,12 @@
 #include <QWindow>
 #include <QPoint>
 
+/**
+ * @brief Constructor of the class ClickableLabel
+ * @param parent
+ * @param moveable
+ * @param restriction
+ */
 ClickableLabel::ClickableLabel(QWidget *parent, bool moveable, QString restriction) : QLabel(parent), m_moveable(moveable), m_restriction(restriction)
 {
     doDragAndDrop = false;
@@ -12,15 +18,26 @@ ClickableLabel::ClickableLabel(QWidget *parent, bool moveable, QString restricti
     this->setCursor(cursor);
 }
 
+/**
+ * @brief Destructor of the class ClickableLabel
+ */
 ClickableLabel::~ClickableLabel()
 {
 }
 
+/**
+ * @brief Return if the label is moveable or not
+ * @return
+ */
 bool ClickableLabel::isMoveable() const
 {
     return m_moveable;
 }
 
+/**
+ * @brief Set the label moveable or not
+ * @param nm
+ */
 void ClickableLabel::setMoveable(const bool &nm)
 {
     m_moveable = nm;
@@ -46,7 +63,7 @@ void ClickableLabel::mouseReleaseEvent(QMouseEvent *event)
 }
 
 /**
- * @brief Redefine the mouse press event in order to stop the drag & drop event when
+ * @brief Redefine the mouse press event in order to start the drag & drop event when
  * the clic is release
  * @param event
  */
@@ -63,6 +80,11 @@ void ClickableLabel::mousePressEvent(QMouseEvent *event)
     // QLabel::mousePressEvent(event);
 }
 
+/**
+ * @brief Redefine the mouse move event in order to move the label when the drag and drop
+ * event is started
+ * @param event
+ */
 void ClickableLabel::mouseMoveEvent(QMouseEvent *event)
 {
 
@@ -79,7 +101,7 @@ void ClickableLabel::mouseMoveEvent(QMouseEvent *event)
 }
 
 /**
- * @brief Fonction qui effectue le drag an drop
+ * @brief Move the label when the drag and drop event is started
  * @param event
  */
 void ClickableLabel::dragAndDrop(QMouseEvent *event)

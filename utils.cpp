@@ -1,9 +1,18 @@
 #include "utils.h"
 
+/**
+ * @brief Constructor of the class Utils
+ * @param parent
+ */
 Utils::Utils(QObject *parent) : QObject(parent)
 {
 }
 
+/**
+ * @brief Function that checks if two labels are colliding
+ * @param a
+ * @param b
+ */
 bool Utils::areLabelsColliding(QLabel *a, QLabel *b)
 {
     // Check if Liam's left corner is on the exit or no.

@@ -5,6 +5,10 @@
 
 #include <QLabel>
 
+/**
+ * @brief Constructor of the class FinalPage
+ * @param parent
+ */
 FinalPage::FinalPage(QWidget *parent) : QWidget(parent),
                                         ui(new Ui::FinalPage)
 {
@@ -18,20 +22,33 @@ FinalPage::FinalPage(QWidget *parent) : QWidget(parent),
     connect(exitButton, &ClickableLabel::clicked, this, &FinalPage::stopSound);
 }
 
+/**
+ * @brief Destructor of the class FinalPage
+ */
 FinalPage::~FinalPage()
 {
     delete ui;
 }
 
+/**
+ * @brief Initialize the page
+ */
 void FinalPage::initializePage()
 {
 }
 
+/**
+ * @brief Set the state of the page
+ * @param isActive
+ */
 void FinalPage::setState(bool isActive)
 {
     this->isActive = isActive;
 }
 
+/**
+ * @brief Stop the sound of the page
+ */
 void FinalPage::stopSound()
 {
     dynamic_cast<MainWindow *>(this->parent()->parent())

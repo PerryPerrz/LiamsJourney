@@ -7,6 +7,10 @@
 #include <QLabel>
 #include <QTimer>
 
+/**
+ * @brief Constructor of the class PageSix
+ * @param parent
+ */
 PageSix::PageSix(QWidget *parent) : QWidget(parent),
                                     ui(new Ui::PageSix)
 {
@@ -25,16 +29,25 @@ PageSix::PageSix(QWidget *parent) : QWidget(parent),
     isColliding = false;
 }
 
+/**
+ * @brief Destructor of the class PageSix
+ */
 PageSix::~PageSix()
 {
     delete ui;
 }
 
+/**
+ * @brief Initialize the page
+ */
 void PageSix::initializePage()
 {
     setState(true);
 }
 
+/**
+ * @brief Function called when the knife is moved
+ */
 void PageSix::onKnifeMove()
 {
     if (isActive)
@@ -114,6 +127,9 @@ void PageSix::onKnifeMove()
     }
 }
 
+/**
+ * @brief Function called when drag and drop is stopped
+ */
 void PageSix::onDragAndDropStopped()
 {
     if (isActive)
@@ -131,6 +147,10 @@ void PageSix::onDragAndDropStopped()
     }
 }
 
+/**
+ * @brief Set the state of the page
+ * @param isActive
+ */
 void PageSix::setState(bool isActive)
 {
     this->isActive = isActive;

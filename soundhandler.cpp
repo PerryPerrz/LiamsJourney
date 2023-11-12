@@ -3,7 +3,7 @@
 #include "qdebug.h"
 
 /**
- * @brief Class that handle the music all over the app
+ * @brief Class that handle the sound all over the app
  * @param fen
  * @param parent
  */
@@ -29,6 +29,10 @@ SoundHandler::SoundHandler(MainWindow *fen, QObject *parent) : QObject(parent), 
     connect(player, &QMediaPlayer::mediaStatusChanged, this, &SoundHandler::restartSound);
 }
 
+/**
+ * @brief Start the sound
+ * @param sound
+ */
 void SoundHandler::startSound(const int sound)
 {
     // Stop the currently playing sound (if any)
@@ -99,6 +103,10 @@ void SoundHandler::startSound(const int sound)
     player->play();
 }
 
+/**
+ * @brief Stop the sound
+ * @param sound
+ */
 void SoundHandler::stopSound(const int sound)
 {
     if (player->state() == QMediaPlayer::PlayingState)
@@ -108,12 +116,19 @@ void SoundHandler::stopSound(const int sound)
     }
 }
 
+/**
+ * @brief Restart the sound
+ * @param status
+ */
 void SoundHandler::restartSound(QMediaPlayer::MediaStatus status) {
     if (isLooping && status == QMediaPlayer::EndOfMedia) {
         player->play();
     }
 }
 
+/**
+ * @brief Destructor of the class SoundHandler
+ */
 SoundHandler::~SoundHandler()
 {
     delete player;

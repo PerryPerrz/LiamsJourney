@@ -8,6 +8,10 @@
 
 #include <QPushButton>
 
+/**
+ * @brief Constructor of the class PageOne
+ * @param parent
+ */
 PageOne::PageOne(QWidget *parent) : QWidget(parent),
                                     ui(new Ui::PageOne)
 {
@@ -15,13 +19,16 @@ PageOne::PageOne(QWidget *parent) : QWidget(parent),
     setState(false);
 }
 
+/**
+ * @brief Destructor of the class PageOne
+ */
 PageOne::~PageOne()
 {
     delete ui;
 }
 
 /**
- * @brief PageOne::onCollide
+ * @brief Function called when Liam is colliding with the road, the exit or the wall
  */
 void PageOne::onCollide()
 {
@@ -75,6 +82,9 @@ void PageOne::onCollide()
     }
 }
 
+/**
+ * @brief Function called when drag and drop is stopped
+ */
 void PageOne::onStopDragAndDrop()
 {
     if (isActive)
@@ -90,6 +100,9 @@ void PageOne::onStopDragAndDrop()
     }
 }
 
+/**
+ * @brief Initialize the page
+ */
 void PageOne::initializePage()
 {
     if (!isActive) {
@@ -115,6 +128,10 @@ void PageOne::initializePage()
     }
 }
 
+/**
+ * @brief Set the state of the page
+ * @param isActive
+ */
 void PageOne::setState(bool isActive)
 {
     this->isActive = isActive;

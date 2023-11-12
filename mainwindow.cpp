@@ -17,6 +17,10 @@
 #include <QVBoxLayout>
 #include <QLabel>
 
+/**
+ * @brief Constructor of the class MainWindow
+ * @param parent
+ */
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
                                           ui(new Ui::MainWindow)
 {
@@ -77,11 +81,19 @@ HapticHandler *MainWindow::getHapticHandler() const
     return mHaptique;
 }
 
+/**
+ * @brief Function used to get the sound handler
+ * @return the sound handler
+ */
 SoundHandler *MainWindow::getSoundHandler() const
 {
     return mSon;
 }
 
+/**
+ * @brief Set the current page
+ * @param pageNumber
+ */
 void MainWindow::setCurrentPage(int pageNumber)
 {
     dynamic_cast<Page *>(currentPage->currentWidget())->setState(false);
@@ -89,6 +101,9 @@ void MainWindow::setCurrentPage(int pageNumber)
     dynamic_cast<Page *>(currentPage->currentWidget())->initializePage();
 }
 
+/**
+ * @brief Destructor of the class MainWindow
+ */
 MainWindow::~MainWindow()
 {
     delete currentPage;

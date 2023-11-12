@@ -8,6 +8,10 @@
 #include <QLabel>
 #include <QDebug>
 
+/**
+ * @brief Constructor of the class PageFive
+ * @param parent
+ */
 PageFive::PageFive(QWidget *parent) : QWidget(parent),
                                       ui(new Ui::PageFive)
 {
@@ -36,11 +40,17 @@ PageFive::PageFive(QWidget *parent) : QWidget(parent),
     setState(false);
 }
 
+/**
+ * @brief Destructor of the class PageFive
+ */
 PageFive::~PageFive()
 {
     delete ui;
 }
 
+/**
+ * @brief Initialize the page
+ */
 void PageFive::initializePage()
 {
     MainWindow *mainWindow = dynamic_cast<MainWindow *>(this->parent()->parent());
@@ -52,6 +62,9 @@ void PageFive::initializePage()
     setState(true);
 }
 
+/**
+ * @brief Handle the mouvement of Liam
+ */
 void PageFive::onLiamMouved()
 {
     if (isActive)
@@ -271,6 +284,9 @@ void PageFive::onLiamMouved()
     }
 }
 
+/**
+ * @brief Function called when the drag and drop is stopped
+ */
 void PageFive::onStopDragAndDrop()
 {
     if (isActive)
@@ -284,6 +300,10 @@ void PageFive::onStopDragAndDrop()
     }
 }
 
+/**
+ * @brief Set the state of the page
+ * @param isActive
+ */
 void PageFive::setState(bool isActive)
 {
     this->isActive = isActive;

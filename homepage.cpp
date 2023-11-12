@@ -5,6 +5,10 @@
 
 #include <QDebug>
 
+/**
+ * @brief Constructor of the class HomePage
+ * @param parent
+ */
 HomePage::HomePage(QWidget *parent) : QWidget(parent),
                                       ui(new Ui::HomePage)
 {
@@ -23,11 +27,17 @@ HomePage::HomePage(QWidget *parent) : QWidget(parent),
     isActive = false;
 }
 
+/**
+ * @brief Initialize the page
+ */
 void HomePage::initializePage()
 {
     setState(true);
 }
 
+/**
+ * @brief Stop the sound of the page
+ */
 void HomePage::stopSound()
 {
     if (isActive)
@@ -38,11 +48,18 @@ void HomePage::stopSound()
     }
 }
 
+/**
+ * @brief Set the state of the page
+ * @param isActive
+ */
 void HomePage::setState(bool isActive)
 {
     this->isActive = isActive;
 }
 
+/**
+ * @brief Destructor of the class HomePage
+ */
 HomePage::~HomePage()
 {
     delete ui;

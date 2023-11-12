@@ -1,6 +1,11 @@
 #include "haptichandler.h"
 #include "mainwindow.h"
 
+/**
+ * @brief Constructor of the class HapticHandler
+ * @param fen
+ * @param parent
+ */
 HapticHandler::HapticHandler(MainWindow *fen, QObject *parent) : QObject(parent), mFenetre(fen)
 {
     mSouris = new CImmMouse();
@@ -28,7 +33,7 @@ HapticHandler::HapticHandler(MainWindow *fen, QObject *parent) : QObject(parent)
 }
 
 /**
- * @brief This where the different effects are created
+ * @brief Create the effects
  */
 void HapticHandler::createEffects()
 {
@@ -197,7 +202,7 @@ void HapticHandler::startEffect(const int effect)
 }
 
 /**
- * @brief Stop the vibrations
+ * @brief Stop the vibrations of the haptic mouse
  */
 void HapticHandler::stopEffect(const int effect)
 {
@@ -236,6 +241,9 @@ void HapticHandler::stopEffect(const int effect)
     }
 }
 
+/**
+ * @brief Destructor of the class HapticHandler
+ */
 HapticHandler::~HapticHandler()
 {
     if (mProject)
@@ -261,6 +269,10 @@ HapticHandler::~HapticHandler()
    **/
 }
 
+/**
+ * @brief Change the magnitude of the scene 2
+ * @param magnitude
+ */
 void HapticHandler::changeMagnitudeOfScene_2(DWORD magnitude)
 {
     // this->scene_2->Stop();
@@ -268,6 +280,11 @@ void HapticHandler::changeMagnitudeOfScene_2(DWORD magnitude)
         ->ChangeMagnitude(magnitude);
 }
 
+/**
+ * @brief Change the wall position
+ * @param wall
+ * @param point
+ */
 void HapticHandler::changeWallPosition(const int wall, POINT point)
 {
     switch (wall)

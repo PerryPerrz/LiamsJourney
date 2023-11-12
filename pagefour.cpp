@@ -9,6 +9,10 @@
 #include <QPropertyAnimation>
 #include <QTimer>
 
+/**
+ * @brief Constructor of the class PageFour
+ * @param parent
+ */
 PageFour::PageFour(QWidget *parent) : QWidget(parent),
                                       ui(new Ui::PageFour)
 {
@@ -39,11 +43,17 @@ PageFour::PageFour(QWidget *parent) : QWidget(parent),
     isColliding = false;
 }
 
+/**
+ * @brief Destructor of the class PageFour
+ */
 PageFour::~PageFour()
 {
     delete ui;
 }
 
+/**
+ * @brief Function called when the match is colliding with the grip
+ */
 void PageFour::onCollide()
 {
     if (isActive)
@@ -120,6 +130,9 @@ void PageFour::onCollide()
     }
 }
 
+/**
+ * @brief Function called when the drag and drop is stopped
+ */
 void PageFour::onStopDragAndDrop()
 {
     if (isActive)
@@ -136,6 +149,9 @@ void PageFour::onStopDragAndDrop()
     }
 }
 
+/**
+ * @brief Initialize the page
+ */
 void PageFour::initializePage()
 {
     dynamic_cast<MainWindow *>(this->parent()->parent())
@@ -145,6 +161,10 @@ void PageFour::initializePage()
     setState(true);
 }
 
+/**
+ * @brief Set the state of the page
+ * @param isActive
+ */
 void PageFour::setState(bool isActive)
 {
     this->isActive = isActive;

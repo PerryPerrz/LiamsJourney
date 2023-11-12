@@ -9,6 +9,10 @@
 #include <QPropertyAnimation>
 #include <QTimer>
 
+/**
+ * @brief Constructor of the class PageThree
+ * @param parent
+ */
 PageThree::PageThree(QWidget *parent) : QWidget(parent),
                                         ui(new Ui::PageThree)
 {
@@ -17,14 +21,16 @@ PageThree::PageThree(QWidget *parent) : QWidget(parent),
     setState(false);
 }
 
+/**
+ * @brief Destructor of the class PageThree
+ */
 PageThree::~PageThree()
 {
     delete ui;
 }
 
 /**
- * @brief Change the background related to the position of the arrow during
- * the drang and drop event
+ * @brief Change the background related to the position of the arrow during the drag and drop event
  */
 void PageThree::changeLiamState()
 {
@@ -107,6 +113,9 @@ void PageThree::shotArrow()
     }
 }
 
+/**
+ * @brief Initialize the page
+ */
 void PageThree::initializePage()
 {
     if (!isActive) {
@@ -135,6 +144,10 @@ void PageThree::initializePage()
     }
 }
 
+/**
+ * @brief Set the state of the page
+ * @param isActive
+ */
 void PageThree::setState(bool isActive)
 {
     this->isActive = isActive;

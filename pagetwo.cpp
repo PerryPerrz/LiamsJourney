@@ -5,6 +5,10 @@
 #include <QLabel>
 #include <QDebug>
 
+/**
+ * @brief Constructor of the class PageTwo
+ * @param parent
+ */
 PageTwo::PageTwo(QWidget *parent) : QWidget(parent),
                                     ui(new Ui::PageTwo)
 {
@@ -19,6 +23,9 @@ PageTwo::PageTwo(QWidget *parent) : QWidget(parent),
     setState(false);
 }
 
+/**
+ * @brief Destructor of the class PageTwo
+ */
 PageTwo::~PageTwo()
 {
     delete ui;
@@ -49,6 +56,10 @@ void PageTwo::initializePage()
     }
 }
 
+/**
+ * @brief Function called when the timer is triggered
+ * @param event
+ */
 void PageTwo::timerEvent(QTimerEvent *event)
 {
     if (isActive)
@@ -79,6 +90,10 @@ void PageTwo::timerEvent(QTimerEvent *event)
     }
 }
 
+/**
+ * @brief Set the state of the page
+ * @param isActive
+ */
 void PageTwo::setState(bool isActive)
 {
     this->isActive = isActive;

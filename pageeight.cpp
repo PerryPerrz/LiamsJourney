@@ -3,6 +3,10 @@
 #include "clickablelabel.h"
 #include "mainwindow.h"
 
+/**
+ * @brief Constructor of the class PageEight
+ * @param parent
+ */
 PageEight::PageEight(QWidget *parent) : QWidget(parent),
                                         ui(new Ui::PageEight)
 {
@@ -16,11 +20,17 @@ PageEight::PageEight(QWidget *parent) : QWidget(parent),
     setState(false);
 }
 
+/**
+ * @brief Destructor of the class PageEight
+ */
 PageEight::~PageEight()
 {
     delete ui;
 }
 
+/**
+ * @brief Initialize the page
+ */
 void PageEight::initializePage()
 {
     dynamic_cast<MainWindow *>(this->parent()->parent())
@@ -34,6 +44,10 @@ void PageEight::initializePage()
     setState(true);
 }
 
+/**
+ * @brief Set the state of the page
+ * @param isActive
+ */
 void PageEight::setState(bool isActive)
 {
     this->isActive = isActive;

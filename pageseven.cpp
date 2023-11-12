@@ -6,6 +6,10 @@
 
 #include <QLabel>
 
+/**
+ * @brief Constructor of the class PageSeven
+ * @param parent
+ */
 PageSeven::PageSeven(QWidget *parent) : QWidget(parent),
                                         ui(new Ui::PageSeven)
 {
@@ -24,11 +28,17 @@ PageSeven::PageSeven(QWidget *parent) : QWidget(parent),
     setState(false);
 }
 
+/**
+ * @brief Destructor of the class PageSeven
+ */
 PageSeven::~PageSeven()
 {
     delete ui;
 }
 
+/**
+ * @brief Initialize the page
+ */
 void PageSeven::initializePage()
 {
     setState(true);
@@ -41,6 +51,9 @@ void PageSeven::initializePage()
         ->startSound(SoundHandler::SCENE_9);
 }
 
+/**
+ * @brief Function called when the spoon is moved
+ */
 void PageSeven::onSpoonMoved()
 {
     if (isActive)
@@ -89,6 +102,9 @@ void PageSeven::onSpoonMoved()
     }
 }
 
+/**
+ * @brief Function called when the spoon is released
+ */
 void PageSeven::onSpoonReleased()
 {
     if (isActive)
@@ -101,6 +117,10 @@ void PageSeven::onSpoonReleased()
     }
 }
 
+/**
+ * @brief Set the state of the page
+ * @param isActive
+ */
 void PageSeven::setState(bool isActive)
 {
     this->isActive = isActive;
