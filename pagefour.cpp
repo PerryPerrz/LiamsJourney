@@ -96,7 +96,8 @@ void PageFour::onCollide()
         if (utils.areLabelsColliding(head_match, trigger) && !isTriggered)
         {
             float randomValue = static_cast<float>((std::rand())) / RAND_MAX;
-            if (randomValue <= 0.4f)
+            limit++;
+            if (randomValue <= 0.4f || limit > 7)
             {
                 match->setMoveable(false);
 
@@ -157,6 +158,7 @@ void PageFour::initializePage()
     dynamic_cast<MainWindow *>(this->parent()->parent())
         ->getSoundHandler()
         ->stopSound(SoundHandler::SCENE_4);
+    this->limit = 0;
 
     setState(true);
 }

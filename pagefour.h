@@ -29,6 +29,7 @@ private:
     bool isTriggered;
     bool isActive;
     bool isColliding;
+     int limit;
 };
 
 #endif // PAGEFOUR_H
