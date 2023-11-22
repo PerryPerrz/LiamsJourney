@@ -94,7 +94,7 @@
      <widget class="QLabel" name="trigger">
       <property name="geometry">
        <rect>
-        <x>590</x>
+        <x>550</x>
         <y>465</y>
         <width>1</width>
         <height>71</height>

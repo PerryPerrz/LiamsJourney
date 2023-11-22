@@ -39,6 +39,8 @@ PageFour::PageFour(QWidget *parent) : QWidget(parent),
     this->isTriggered = false;
     std::srand(std::time(nullptr));
 
+    this->limit = 0;
+
     setState(false);
     isColliding = false;
 }
@@ -97,7 +99,8 @@ void PageFour::onCollide()
         {
             float randomValue = static_cast<float>((std::rand())) / RAND_MAX;
             limit++;
-            if (randomValue <= 0.4f || limit > 7)
+
+            if (randomValue <= 0.4f || limit > 2)
             {
                 match->setMoveable(false);
 
@@ -158,7 +161,6 @@ void PageFour::initializePage()
     dynamic_cast<MainWindow *>(this->parent()->parent())
         ->getSoundHandler()
         ->stopSound(SoundHandler::SCENE_4);
-    this->limit = 0;
 
     setState(true);
 }

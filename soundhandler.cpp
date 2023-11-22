@@ -45,58 +45,48 @@ void SoundHandler::startSound(const int sound)
         player->setMedia(scene1);
         player->setVolume(50);
         isLooping = true;
-        qDebug() << "1";
         break;
 
     case SoundHandler::SCENE_2:
         player->setMedia(scene2);
         player->setVolume(100);
         isLooping = true;
-        qDebug() << "2";
         break;
 
     case SoundHandler::SCENE_3:
         player->setMedia(scene3);
         player->setVolume(35);
         isLooping = true;
-        qDebug() << "3";
         break;
 
     case SoundHandler::SCENE_4:
         player->setMedia(scene4);
         player->setVolume(50);
-        qDebug() << "4";
         break;
 
     case SoundHandler::SCENE_5:
         player->setMedia(scene5);
-        qDebug() << "5";
         break;
 
     case SoundHandler::SCENE_6:
         player->setMedia(scene6);
-        qDebug() << "6";
         break;
 
     case SoundHandler::SCENE_7:
         player->setMedia(scene7);
-        qDebug() << "7";
         break;
 
     case SoundHandler::SCENE_8:
         player->setMedia(scene8);
-        qDebug() << "8";
         break;
 
     case SoundHandler::SCENE_9:
         player->setMedia(scene9);
-        qDebug() << "9";
         break;
 
     case SoundHandler::SCENE_10:
         player->setMedia(scene10);
         player->setVolume(35);
-        qDebug() << "10";
         break;
     }
 
