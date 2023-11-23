@@ -49,8 +49,8 @@
      <widget class="ClickableLabel" name="exitButton">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>580</y>
+        <x>345</x>
+        <y>530</y>
         <width>342</width>
         <height>90</height>
        </rect>
