@@ -12,7 +12,7 @@ SoundHandler::SoundHandler(MainWindow *fen, QObject *parent) : QObject(parent), 
     player = new QMediaPlayer(this, QMediaPlayer::StreamPlayback);
     player->setVolume(50);
 
-    scene1 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/forest.mp3"));
+    scene1 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/forest_two.mp3"));
     scene2 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/walking.mp3"));
     scene3 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/bzzbzz.mp3"));
     scene4 = QMediaContent(QUrl("file:///E:/LiamsJourney/sounds/shot.mp3"));
