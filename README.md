@@ -39,3 +39,18 @@ Fin : Enfin, il ramena sa précieuse récolte au village. Les habitants furent e
 - Scène 6 : Les murs du labyrinthe/tunnel sont collants. Le curseur de l'utilisateur a des difficultés pour se décoller du mur.
 - Scène 7 : Activer l'effet miel remué.
 - Effet BONUS : Gratter pour récupèrer le miel entre scène 6 et scène 7.
+
+---
+
+<H3>Captures d'écran</H3>
+
+![Image 1](images/screenshots/image_1.png)
+![Image 2](images/screenshots/image_2.png)
+![Image 3](images/screenshots/image_3.png)
+![Image 4](images/screenshots/image_4.png)
+![Image 5](images/screenshots/image_5.png)
+![Image 6](images/screenshots/image_6.png)
+![Image 7](images/screenshots/image_7.png)
+![Image 8](images/screenshots/image_8.png)
+![Image 9](images/screenshots/image_9.png)
+![Image 10](images/screenshots/image_10.png)
